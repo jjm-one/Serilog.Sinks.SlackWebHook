@@ -36,9 +36,9 @@ namespace Serilog.Sinks.Slack
             Func<LogEvent, IFormatProvider, object, List<Block>> generateSlackMessageBlocks = null
             )
             : base(
-                slackSinkOptions.PeriodicBatchingSinkOptionsBatchSizeLimit ?? default,
-                slackSinkOptions.PeriodicBatchingSinkOptionsPeriod ?? default,
-                slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit ?? default)
+                slackSinkOptions.PeriodicBatchingSinkOptionsBatchSizeLimit ?? SlackSinkOptions.DefaultBatchSizeLimit,
+                slackSinkOptions.PeriodicBatchingSinkOptionsPeriod ?? SlackSinkOptions.DefaultPeriod,
+                slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit ?? SlackSinkOptions.DefaultQueueLimit)
         {
             _slackSinkOptions = slackSinkOptions;
             _formatProvider = formatProvider;
@@ -48,8 +48,8 @@ namespace Serilog.Sinks.Slack
             if (generateSlackMessageAttachments == null) _generateSlackMessageAttachments = SlackSinkMessageTools.GenerateSlackMessageAttachments;
             if (generateSlackMessageBlocks == null) _generateSlackMessageBlocks = SlackSinkMessageTools.GenerateSlackMessageBlocks;
 
-
-            _slackClient = new SlackClient(slackSinkOptions.SlackWebHookUrl, slackSinkOptions.SlackConnectionTimeout ?? default, _slackHttpClient);
+            _slackClient = new SlackClient(slackSinkOptions.SlackWebHookUrl);
+            //_slackClient = new SlackClient(slackSinkOptions.SlackWebHookUrl, slackSinkOptions.SlackConnectionTimeout ?? SlackSinkOptions.DefaultTimeout, _slackHttpClient);
         }
 
         protected override void Dispose(bool disposing)

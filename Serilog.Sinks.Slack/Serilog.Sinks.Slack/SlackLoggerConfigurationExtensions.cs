@@ -106,10 +106,17 @@ namespace Serilog.Sinks.Slack
             IFormatProvider sinkFormatProvider = null
         )
         {
-            var slackParse = (ParseMode)slackParseObj;
-            var slackAttachmentColors = (IDictionary<LogEventLevel, string>)slackAttachmentColorsObj;
-            var slackAttachmentFooterIcon = (IDictionary<LogEventLevel, string>)slackAttachmentFooterIconObj;
-            var slackHttpClient = (HttpClient)slackHttpClientObj;
+            ParseMode? slackParse = null;
+            if (slackParseObj != null) slackParse = (ParseMode)slackParseObj;
+
+            IDictionary<LogEventLevel, string> slackAttachmentColors = null;
+            if (slackAttachmentColorsObj != null) slackAttachmentColors = (IDictionary<LogEventLevel, string>)slackAttachmentColorsObj;
+
+            IDictionary<LogEventLevel, string> slackAttachmentFooterIcon = null;
+            if (slackAttachmentFooterIconObj != null) slackAttachmentFooterIcon = (IDictionary<LogEventLevel, string>)slackAttachmentFooterIconObj;
+
+            HttpClient slackHttpClient = null;
+            if (slackHttpClientObj != null) slackHttpClient = (HttpClient)slackHttpClientObj;
 
             Func<LogEvent, IFormatProvider, object, string> generateSlackMessageText = null;
             Func<LogEvent, IFormatProvider, object, List<SlackAttachment>> generateSlackMessageAttachments = null;

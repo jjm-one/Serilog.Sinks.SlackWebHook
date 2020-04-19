@@ -9,6 +9,10 @@ namespace Serilog.Sinks.Slack
     {
         // defaults
         public const string DefaultOutputTemplate = "{Message:lj}";
+        public const int DefaultBatchSizeLimit = 10;
+        public static readonly TimeSpan DefaultPeriod = TimeSpan.FromSeconds(2);
+        public const int DefaultQueueLimit = 10000;
+        public const int DefaultTimeout = 1000;
 
 
         // Slack
@@ -44,6 +48,7 @@ namespace Serilog.Sinks.Slack
             {LogEventLevel.Error, Emoji.Bomb},
             {LogEventLevel.Fatal, Emoji.Fire}
         };
+
         public bool SlackAddShortInfoAttachment { get; set; } = true;
         public bool SlackDisplayShortInfoAttachmentShort { get; set; } = true;
         public bool SlackAddExtendedInfoAttachment { get; set; } = false;
@@ -52,13 +57,13 @@ namespace Serilog.Sinks.Slack
         public bool SlackDisplayExceptionAttachmentShort { get; set; } = true;
 
         // slack connection
-        public int? SlackConnectionTimeout { get; set; } = null;
+        public int? SlackConnectionTimeout { get; set; } = DefaultTimeout;
 
 
         // Periodic Batch Sink
-        public int? PeriodicBatchingSinkOptionsBatchSizeLimit { get; set; } = null;
-        public TimeSpan? PeriodicBatchingSinkOptionsPeriod { get; set; } = null;
-        public int? PeriodicBatchingSinkOptionsQueueLimit { get; set; } = null;
+        public int? PeriodicBatchingSinkOptionsBatchSizeLimit { get; set; } = DefaultBatchSizeLimit;
+        public TimeSpan? PeriodicBatchingSinkOptionsPeriod { get; set; } = DefaultPeriod;
+        public int? PeriodicBatchingSinkOptionsQueueLimit { get; set; } = DefaultQueueLimit;
 
 
         // Sink
