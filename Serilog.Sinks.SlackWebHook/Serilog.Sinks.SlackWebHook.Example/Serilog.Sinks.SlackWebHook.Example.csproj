@@ -2,16 +2,18 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Authors>Jonas Merkle [JJM]</Authors>
     <Description>A example for the basic Slack Sink for the Serilog framwork.</Description>
     <Copyright>© by Jonas Merkle [JJM], 2020.</Copyright>
-    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slack</RepositoryUrl>
+    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>serilog, serilog-sink, slack, logging, csharp, example</PackageTags>
-    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slack</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</PackageProjectUrl>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyName>Serilog.Sinks.SlackWebHook.Example</AssemblyName>
+    <RootNamespace>Serilog.Sinks.SlackWebHook.Example</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Serilog.Sinks.Slack\Serilog.Sinks.Slack.csproj" />
+    <ProjectReference Include="..\Serilog.Sinks.SlackWebHook\Serilog.Sinks.SlackWebHook.csproj" />
   </ItemGroup>
 
 </Project>

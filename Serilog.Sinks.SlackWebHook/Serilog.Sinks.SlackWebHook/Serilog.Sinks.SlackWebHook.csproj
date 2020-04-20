@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Authors>Jonas Merkle [JJM]</Authors>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <RepositoryType>GitHub</RepositoryType>
-    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slack</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slack</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</PackageProjectUrl>
     <Copyright>© by Jonas Merkle [JJM], 2020.</Copyright>
     <PackageTags>serilog, serilog-sink, slack, logging, csharp</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -14,6 +14,7 @@
     <Description>A basic Slack Sink for the Serilog framwork.</Description>
     <NeutralLanguage></NeutralLanguage>
     <SignAssembly>false</SignAssembly>
+    <PackageId>Serilog.Sinks.SlackWebHook</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
