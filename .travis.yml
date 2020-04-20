@@ -1,15 +1,18 @@
+branches:
+  - master
+  - develop
+
 language: csharp
 
 solution: Serilog.Sinks.Slack.sln
 
 before_install:
-  - cd $SOLUTION_DIR
-  
+  - cd Serilog.Sinks.Slack
+
 install:
   - nuget restore Serilog.Sinks.Slack.sln
-  - nuget install NUnit.Console -Version 3.11.1 -OutputDirectory testrunner
-  
+  - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
+
 script:
   - msbuild /p:Configuration=Release Serilog.Sinks.Slack.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.11.1/tools/nunit3-console.exe ./Serilog.Sinks.Slack.Tests/bin/Release/netcoreapp3.1/Serilog.Sinks.Slack.Tests.dll
-  
+  - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./Serilog.Sinks.Slack.Tests/bin/Release/netcoreapp3.0/Serilog.Sinks.Slack.Tests.dll
