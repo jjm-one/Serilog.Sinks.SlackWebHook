@@ -13,9 +13,9 @@
 
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 
-    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slack</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</PackageProjectUrl>
 
-    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slack</RepositoryUrl>
+    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</RepositoryUrl>
 
     <RepositoryType>GitHub</RepositoryType>
 
@@ -38,7 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Serilog.Sinks.Slack\Serilog.Sinks.Slack.csproj" />
+    <ProjectReference Include="..\Serilog.Sinks.SlackWebHook\Serilog.Sinks.SlackWebHook.csproj" />
   </ItemGroup>
 
 </Project>
