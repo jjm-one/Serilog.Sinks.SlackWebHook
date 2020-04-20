@@ -9,8 +9,6 @@ namespace Serilog.Sinks.Slack.Example
         public static void Main(string[] args)
         {
             string slackChannel = null;
-            var slackUsername = "Serilog Slack Sink Example";
-            var slackUserIcon = ":monkey_face:";
 
             Console.WriteLine("####################################################################################################");
             Console.WriteLine("Serilog Slack Sink Example (ver. " + typeof(SlackSinkExample).Assembly.GetName().Version + ")");
@@ -31,15 +29,16 @@ namespace Serilog.Sinks.Slack.Example
 
             Console.Write("Slack Username (optional): ");
             input = Console.ReadLine();
-            if (string.IsNullOrEmpty(input)) slackUsername = input;
+            var slackUsername = string.IsNullOrEmpty(input) ? input : "Serilog Slack Sink Example";
             Console.WriteLine();
 
             Console.Write("Slack User Icon (optional): ");
             input = Console.ReadLine();
-            if (string.IsNullOrEmpty(input)) slackUserIcon = input;
+            var slackUserIcon = string.IsNullOrEmpty(input) ? input : ":monkey_face:";
             Console.WriteLine();
 
             Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
                 .WriteTo.Slack(
                             slackWebHookUrl: slackWebHookUrl,
                             slackChannel: slackChannel,
@@ -51,7 +50,7 @@ namespace Serilog.Sinks.Slack.Example
                             periodicBatchingSinkOptionsQueueLimit: 100,
 
                             sinkRestrictedToMinimumLevel: LogEventLevel.Verbose,
-                            sinkOutputTemplate: "{message}",
+                            sinkOutputTemplate: "{Message}",
                             sinkLevelSwitch:new LoggingLevelSwitch(initialMinimumLevel: LogEventLevel.Verbose)
                 )
                 .CreateLogger();
