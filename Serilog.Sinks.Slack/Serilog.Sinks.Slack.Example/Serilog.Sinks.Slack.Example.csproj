@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Authors>Jonas Merkle [JJM]</Authors>
     <Description>A example for the basic Slack Sink for the Serilog framwork.</Description>
