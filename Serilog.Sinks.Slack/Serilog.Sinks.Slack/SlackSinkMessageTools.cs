@@ -8,21 +8,43 @@ using Slack.Webhooks;
 
 namespace Serilog.Sinks.Slack
 {
+    /// <summary>
+    /// Class with default tools for message generation.
+    /// </summary>
     public static class SlackSinkMessageTools
     {
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logEvent"></param>
+        /// <param name="formatProvider"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
         public static string GenerateSlackMessageText(LogEvent logEvent, IFormatProvider formatProvider, object options)
         {
+            // input check
             var slackSinkOptions = (SlackSinkOptions)options ?? throw new InvalidCastException();
+            
             var textFormatter = new MessageTemplateTextFormatter(slackSinkOptions.SinkOutputTemplate, formatProvider);
             var stringWriter = new StringWriter();
             textFormatter.Format(logEvent, stringWriter);
+
             return stringWriter.ToString();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logEvent"></param>
+        /// <param name="formatProvider"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
         public static List<SlackAttachment> GenerateSlackMessageAttachments(LogEvent logEvent, IFormatProvider formatProvider, object options)
         {
+            // input check
             var slackSinkOptions = (SlackSinkOptions)options ?? throw new InvalidCastException();
+
             var attachments = new List<SlackAttachment>(2);
 
             if (slackSinkOptions.SlackAddShortInfoAttachment && !slackSinkOptions.SlackAddExtendedInfoAttachment)
@@ -167,9 +189,18 @@ namespace Serilog.Sinks.Slack
             return attachments.Any() ? attachments : null;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logEvent"></param>
+        /// <param name="formatProvider"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
         public static List<Block> GenerateSlackMessageBlocks(LogEvent logEvent, IFormatProvider formatProvider, object options)
         {
+            // input check
             //var slackSinkOptions = (SlackSinkOptions)options ?? throw new InvalidCastException();
+            
             return null;
         }
     }

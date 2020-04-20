@@ -10,6 +10,43 @@ namespace Serilog.Sinks.Slack
 {
     public static class SlackLoggerConfigurationExtensions
     {
+        #region public constructors
+
+        /// <summary>
+        /// Public constructor which supports a single Slack Channels.
+        /// </summary>
+        /// <param name="loggerSinkConfiguration"></param>
+        /// <param name="slackWebHookUrl"></param>
+        /// <param name="slackUsername"></param>
+        /// <param name="slackEmojiIcon"></param>
+        /// <param name="slackUriIcon"></param>
+        /// <param name="slackChannel"></param>
+        /// <param name="slackDeleteOriginal"></param>
+        /// <param name="slackLinkNames"></param>
+        /// <param name="slackMarkdown"></param>
+        /// <param name="slackParseObj"></param>
+        /// <param name="slackReplaceOriginal"></param>
+        /// <param name="slackResponseType"></param>
+        /// <param name="slackThreadId"></param>
+        /// <param name="slackAttachmentColorsObj"></param>
+        /// <param name="slackAttachmentFooterIconObj"></param>
+        /// <param name="slackAddShortInfoAttachment"></param>
+        /// <param name="slackDisplayShortInfoAttachmentShort"></param>
+        /// <param name="slackAddExtendedInfoAttachment"></param>
+        /// <param name="slackDisplayExtendedInfoAttachmentShort"></param>
+        /// <param name="slackAddExceptionAttachment"></param>
+        /// <param name="slackDisplayExceptionAttachmentShort"></param>
+        /// <param name="slackConnectionTimeout"></param>
+        /// <param name="slackHttpClientObj"></param>
+        /// <param name="generateSlackFunctions"></param>
+        /// <param name="periodicBatchingSinkOptionsBatchSizeLimit"></param>
+        /// <param name="periodicBatchingSinkOptionsPeriod"></param>
+        /// <param name="periodicBatchingSinkOptionsQueueLimit"></param>
+        /// <param name="sinkRestrictedToMinimumLevel"></param>
+        /// <param name="sinkOutputTemplate"></param>
+        /// <param name="sinkLevelSwitch"></param>
+        /// <param name="sinkFormatProvider"></param>
+        /// <returns></returns>
         public static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
 
@@ -54,7 +91,7 @@ namespace Serilog.Sinks.Slack
         )
         {
             return Slack(loggerSinkConfiguration, slackWebHookUrl, slackUsername, slackEmojiIcon, slackUriIcon,
-                string.IsNullOrEmpty(slackChannel) ? null : new List<string> { slackChannel }, slackDeleteOriginal, 
+                string.IsNullOrEmpty(slackChannel) ? null : new List<string> { slackChannel }, slackDeleteOriginal,
                 slackLinkNames, slackMarkdown, slackParseObj, slackReplaceOriginal,
                 slackResponseType, slackThreadId, slackAttachmentColorsObj, slackAttachmentFooterIconObj,
                 slackAddShortInfoAttachment, slackDisplayShortInfoAttachmentShort, slackAddExtendedInfoAttachment,
@@ -64,6 +101,41 @@ namespace Serilog.Sinks.Slack
                 sinkOutputTemplate, sinkLevelSwitch, sinkFormatProvider);
         }
 
+        /// <summary>
+        /// Public constructor which supports multiple Slack Channels.
+        /// </summary>
+        /// <param name="loggerSinkConfiguration"></param>
+        /// <param name="slackWebHookUrl"></param>
+        /// <param name="slackUsername"></param>
+        /// <param name="slackEmojiIcon"></param>
+        /// <param name="slackUriIcon"></param>
+        /// <param name="slackChannels"></param>
+        /// <param name="slackDeleteOriginal"></param>
+        /// <param name="slackLinkNames"></param>
+        /// <param name="slackMarkdown"></param>
+        /// <param name="slackParseObj"></param>
+        /// <param name="slackReplaceOriginal"></param>
+        /// <param name="slackResponseType"></param>
+        /// <param name="slackThreadId"></param>
+        /// <param name="slackAttachmentColorsObj"></param>
+        /// <param name="slackAttachmentFooterIconObj"></param>
+        /// <param name="slackAddShortInfoAttachment"></param>
+        /// <param name="slackDisplayShortInfoAttachmentShort"></param>
+        /// <param name="slackAddExtendedInfoAttachment"></param>
+        /// <param name="slackDisplayExtendedInfoAttachmentShort"></param>
+        /// <param name="slackAddExceptionAttachment"></param>
+        /// <param name="slackDisplayExceptionAttachmentShort"></param>
+        /// <param name="slackConnectionTimeout"></param>
+        /// <param name="slackHttpClientObj"></param>
+        /// <param name="generateSlackFunctions"></param>
+        /// <param name="periodicBatchingSinkOptionsBatchSizeLimit"></param>
+        /// <param name="periodicBatchingSinkOptionsPeriod"></param>
+        /// <param name="periodicBatchingSinkOptionsQueueLimit"></param>
+        /// <param name="sinkRestrictedToMinimumLevel"></param>
+        /// <param name="sinkOutputTemplate"></param>
+        /// <param name="sinkLevelSwitch"></param>
+        /// <param name="sinkFormatProvider"></param>
+        /// <returns></returns>
         public static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
 
@@ -144,6 +216,47 @@ namespace Serilog.Sinks.Slack
                 sinkOutputTemplate, sinkLevelSwitch, sinkFormatProvider);
         }
 
+        #endregion
+
+        #region private constructors
+
+        /// <summary>
+        /// Main private constructor.
+        /// </summary>
+        /// <param name="loggerSinkConfiguration"></param>
+        /// <param name="slackWebHookUrl"></param>
+        /// <param name="slackUsername"></param>
+        /// <param name="slackEmojiIcon"></param>
+        /// <param name="slackUriIcon"></param>
+        /// <param name="slackChannels"></param>
+        /// <param name="slackDeleteOriginal"></param>
+        /// <param name="slackLinkNames"></param>
+        /// <param name="slackMarkdown"></param>
+        /// <param name="slackParse"></param>
+        /// <param name="slackReplaceOriginal"></param>
+        /// <param name="slackResponseType"></param>
+        /// <param name="slackThreadId"></param>
+        /// <param name="slackAttachmentColors"></param>
+        /// <param name="slackAttachmentFooterIcon"></param>
+        /// <param name="slackAddShortInfoAttachment"></param>
+        /// <param name="slackDisplayShortInfoAttachmentShort"></param>
+        /// <param name="slackAddExtendedInfoAttachment"></param>
+        /// <param name="slackDisplayExtendedInfoAttachmentShort"></param>
+        /// <param name="slackAddExceptionAttachment"></param>
+        /// <param name="slackDisplayExceptionAttachmentShort"></param>
+        /// <param name="slackConnectionTimeout"></param>
+        /// <param name="slackHttpClient"></param>
+        /// <param name="generateSlackMessageText"></param>
+        /// <param name="generateSlackMessageAttachments"></param>
+        /// <param name="generateSlackMessageBlocks"></param>
+        /// <param name="periodicBatchingSinkOptionsBatchSizeLimit"></param>
+        /// <param name="periodicBatchingSinkOptionsPeriod"></param>
+        /// <param name="periodicBatchingSinkOptionsQueueLimit"></param>
+        /// <param name="sinkRestrictedToMinimumLevel"></param>
+        /// <param name="sinkOutputTemplate"></param>
+        /// <param name="sinkLevelSwitch"></param>
+        /// <param name="sinkFormatProvider"></param>
+        /// <returns></returns>
         private static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
 
@@ -222,11 +335,13 @@ namespace Serilog.Sinks.Slack
             if (periodicBatchingSinkOptionsPeriod != null) slackSinkOptions.PeriodicBatchingSinkOptionsPeriod = (TimeSpan)periodicBatchingSinkOptionsPeriod;
             if (periodicBatchingSinkOptionsQueueLimit != null) slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit = (int)periodicBatchingSinkOptionsQueueLimit;
 
-            if (sinkRestrictedToMinimumLevel != null) slackSinkOptions.SinkRestrictedToMinimumLevel = (LogEventLevel)sinkRestrictedToMinimumLevel; 
+            if (sinkRestrictedToMinimumLevel != null) slackSinkOptions.SinkRestrictedToMinimumLevel = (LogEventLevel)sinkRestrictedToMinimumLevel;
             if (sinkOutputTemplate != null) slackSinkOptions.SinkOutputTemplate = sinkOutputTemplate;
 
             return loggerSinkConfiguration.Sink(new SlackSink(slackSinkOptions, sinkFormatProvider, sinkLevelSwitch, slackHttpClient,
                 generateSlackMessageText, generateSlackMessageAttachments, generateSlackMessageBlocks));
         }
+
+        #endregion
     }
 }

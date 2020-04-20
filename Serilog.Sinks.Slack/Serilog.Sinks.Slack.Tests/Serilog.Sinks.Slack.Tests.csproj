@@ -4,12 +4,35 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <Authors>Jonas Merkle [JJM]</Authors>
+
+    <Description>Unit Tests for a basic Slack Sink for the Serilog framwork.</Description>
+
+    <Copyright>© by Jonas Merkle [JJM], 2020.</Copyright>
+
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+
+    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slack</PackageProjectUrl>
+
+    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slack</RepositoryUrl>
+
+    <RepositoryType>GitHub</RepositoryType>
+
+    <PackageTags>serilog, serilog-sink, slack, logging, csharp, unit-tests</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="nunit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0"/>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
