@@ -302,7 +302,8 @@ namespace Serilog.Sinks.Slack
             IFormatProvider sinkFormatProvider = null
         )
         {
-            if (string.IsNullOrEmpty(slackWebHookUrl)) throw new ArgumentNullException(nameof(slackWebHookUrl));
+            if (slackWebHookUrl == null) throw new ArgumentNullException(nameof(slackWebHookUrl), "The Slack WebHook can't be null!");
+            if (string.IsNullOrEmpty(slackWebHookUrl)) throw new ArgumentException("The Slack WebHook can't be empty!", nameof(slackWebHookUrl));
 
             var slackSinkOptions = new SlackSinkOptions();
 
