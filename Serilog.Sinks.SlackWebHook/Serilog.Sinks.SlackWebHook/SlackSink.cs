@@ -85,7 +85,7 @@ namespace Serilog.Sinks.Slack
                 slackSinkOptions.PeriodicBatchingSinkOptionsPeriod,
                 slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit)
         {
-            _slackSinkOptions = slackSinkOptions ?? throw new ArgumentNullException(nameof(slackSinkOptions));
+            _slackSinkOptions = slackSinkOptions;
             _formatProvider = formatProvider;
             _sinkLevelSwitch = sinkLevelSwitch ?? new LoggingLevelSwitch(LevelAlias.Minimum);
             _slackHttpClient = slackHttpClient ?? new HttpClient();
