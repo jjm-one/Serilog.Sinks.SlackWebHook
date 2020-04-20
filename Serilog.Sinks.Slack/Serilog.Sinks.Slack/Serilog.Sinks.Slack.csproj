@@ -2,12 +2,31 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Jonas Merkle [JJM]</Authors>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slack</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slack</PackageProjectUrl>
+    <Copyright>© by Jonas Merkle [JJM], 2020.</Copyright>
+    <PackageTags>serilog, serilog-sink, slack, logging, csharp</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Description>A basic Slack Sink for the Serilog framwork.</Description>
+    <NeutralLanguage></NeutralLanguage>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.9.0" />
     <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="2.3.0" />
     <PackageReference Include="Slack.Webhooks" Version="1.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
