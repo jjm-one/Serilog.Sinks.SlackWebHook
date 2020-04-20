@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using NUnit.Framework;
 using Serilog.Events;
 using Slack.Webhooks;
@@ -193,10 +194,10 @@ namespace Serilog.Sinks.Slack.Tests
                 Log.Logger = new LoggerConfiguration()
                     .WriteTo.Slack(
                         slackWebHookUrl: ValidWebHook,
-                        slackChannels: null,
+                        slackChannel: null,
                         slackAttachmentColorsObj: new Dictionary<LogEventLevel, string>()
                         {
-                            {LogEventLevel.Verbose, "#DFDFDF"},
+                            {LogEventLevel.Verbose, ""},
                         }
                     )
                     .CreateLogger();
@@ -212,7 +213,7 @@ namespace Serilog.Sinks.Slack.Tests
                 Log.Logger = new LoggerConfiguration()
                     .WriteTo.Slack(
                         slackWebHookUrl: ValidWebHook,
-                        slackChannel: null,
+                        slackChannels: null,
                         slackAttachmentColorsObj: "TestObject"
                     )
                     .CreateLogger();
@@ -226,8 +227,207 @@ namespace Serilog.Sinks.Slack.Tests
                         slackChannels: null,
                         slackAttachmentColorsObj: new Dictionary<LogEventLevel, string>()
                         {
-                            {LogEventLevel.Verbose, "#DFDFDF"},
+                            {LogEventLevel.Verbose, ""},
                         }
+                    )
+                    .CreateLogger();
+            });
+        }
+
+        #endregion
+
+        #region slackAttachmentFooterIconObj cast test
+
+        [Test]
+        public void SingleChannel_ConstructorTest_SlackAttachmentFooterIconObjCast()
+        {
+
+            Assert.Throws<InvalidCastException>(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannel: null,
+                        slackAttachmentFooterIconObj: "TestObject"
+                    )
+                    .CreateLogger();
+            });
+
+            Assert.DoesNotThrow(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannel: null,
+                        slackAttachmentFooterIconObj: new Dictionary<LogEventLevel, string>()
+                        {
+                            {LogEventLevel.Verbose, ""},
+                        }
+                    )
+                    .CreateLogger();
+            });
+        }
+
+        [Test]
+        public void MultiChannel_ConstructorTest_SlackAttachmentFooterIconObjCast()
+        {
+
+            Assert.Throws<InvalidCastException>(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannels: null,
+                        slackAttachmentFooterIconObj: "TestObject"
+                    )
+                    .CreateLogger();
+            });
+
+            Assert.DoesNotThrow(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannels: null,
+                        slackAttachmentFooterIconObj: new Dictionary<LogEventLevel, string>()
+                        {
+                            {LogEventLevel.Verbose, ""},
+                        }
+                    )
+                    .CreateLogger();
+            });
+        }
+
+        #endregion
+
+        #region slackHttpClientObj cast test
+
+        [Test]
+        public void SingleChannel_ConstructorTest_SlackHttpClientObjCast()
+        {
+
+            Assert.Throws<InvalidCastException>(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannel: null,
+                        slackHttpClientObj: "TestObject"
+                    )
+                    .CreateLogger();
+            });
+
+            Assert.DoesNotThrow(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannel: null,
+                        slackHttpClientObj: new HttpClient()
+                    )
+                    .CreateLogger();
+            });
+        }
+
+        [Test]
+        public void MultiChannel_ConstructorTest_SlackHttpClientObjCast()
+        {
+
+            Assert.Throws<InvalidCastException>(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannels: null,
+                        slackHttpClientObj: "TestObject"
+                    )
+                    .CreateLogger();
+            });
+
+            Assert.DoesNotThrow(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannels: null,
+                        slackHttpClientObj: new HttpClient()
+                    )
+                    .CreateLogger();
+            });
+        }
+
+        #endregion
+
+        #region  generateSlackFunctions cast test
+
+        private static string TestF1(LogEvent a, IFormatProvider b, object c)
+        {
+            return null;
+        }
+        private static List<SlackAttachment> TestF2(LogEvent a, IFormatProvider b, object c)
+        {
+            return null;
+        }
+        private static List<Block> TestF3(LogEvent a, IFormatProvider b, object c)
+        {
+            return null;
+        }
+
+        [Test]
+        public void SingleChannel_ConstructorTest_GenerateSlackFunctionsCast()
+        {
+            Func<LogEvent, IFormatProvider, object, string> f1 = TestF1;
+            Func<LogEvent, IFormatProvider, object, List<SlackAttachment>> f2 = TestF2;
+            Func<LogEvent, IFormatProvider, object, List<Block>> f3 = TestF3;
+
+            Assert.Throws<InvalidCastException>(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannel: null,
+                        generateSlackFunctions: new Tuple<object, object, object>("", "", "")
+                    )
+                    .CreateLogger();
+            });
+
+            Assert.DoesNotThrow(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannel: null,
+                        generateSlackFunctions: new Tuple<object, object, object>(f1, f2, f3)
+                    )
+                    .CreateLogger();
+            });
+        }
+
+        [Test]
+        public void MultiChannel_ConstructorTest_GenerateSlackFunctionsCast()
+        {
+            Func<LogEvent, IFormatProvider, object, string> f1 = TestF1;
+            Func<LogEvent, IFormatProvider, object, List<SlackAttachment>> f2 = TestF2;
+            Func<LogEvent, IFormatProvider, object, List<Block>> f3 = TestF3;
+
+            Assert.Throws<InvalidCastException>(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannels: null,
+                        generateSlackFunctions: new Tuple<object, object, object>("", "", "")
+                    )
+                    .CreateLogger();
+            });
+
+            Assert.DoesNotThrow(() =>
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Slack(
+                        slackWebHookUrl: ValidWebHook,
+                        slackChannels: null,
+                        generateSlackFunctions: new Tuple<object, object, object>(f1, f2, f3)
                     )
                     .CreateLogger();
             });
