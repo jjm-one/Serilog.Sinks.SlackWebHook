@@ -21,11 +21,11 @@ namespace Serilog.Sinks.Slack
         public string SlackEmojiIcon { get; set; } = null;
         public Uri SlackUriIcon { get; set; } = null;
         public List<string> SlackChannels { get; set; } = null;
-        public bool? SlackDeleteOriginal { get; set; } = null;
-        public bool? SlackLinkNames { get; set; } = null;
-        public bool? SlackMarkdown { get; set; } = null;
-        public ParseMode? SlackParse { get; set; } = null;
-        public bool? SlackReplaceOriginal { get; set; } = null;
+        public bool SlackDeleteOriginal { get; set; } = false;
+        public bool SlackLinkNames { get; set; } = false;
+        public bool SlackMarkdown { get; set; } = false;
+        public ParseMode SlackParse { get; set; } = ParseMode.None;
+        public bool SlackReplaceOriginal { get; set; } = false;
         public string SlackResponseType { get; set; } = null;
         public string SlackThreadId { get; set; } = null;
 
@@ -57,13 +57,13 @@ namespace Serilog.Sinks.Slack
         public bool SlackDisplayExceptionAttachmentShort { get; set; } = true;
 
         // slack connection
-        public int? SlackConnectionTimeout { get; set; } = DefaultTimeout;
+        public int SlackConnectionTimeout { get; set; } = DefaultTimeout;
 
 
         // Periodic Batch Sink
-        public int? PeriodicBatchingSinkOptionsBatchSizeLimit { get; set; } = DefaultBatchSizeLimit;
-        public TimeSpan? PeriodicBatchingSinkOptionsPeriod { get; set; } = DefaultPeriod;
-        public int? PeriodicBatchingSinkOptionsQueueLimit { get; set; } = DefaultQueueLimit;
+        public int PeriodicBatchingSinkOptionsBatchSizeLimit { get; set; } = DefaultBatchSizeLimit;
+        public TimeSpan PeriodicBatchingSinkOptionsPeriod { get; set; } = DefaultPeriod;
+        public int PeriodicBatchingSinkOptionsQueueLimit { get; set; } = DefaultQueueLimit;
 
 
         // Sink

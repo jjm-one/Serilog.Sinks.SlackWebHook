@@ -36,9 +36,9 @@ namespace Serilog.Sinks.Slack
             Func<LogEvent, IFormatProvider, object, List<Block>> generateSlackMessageBlocks = null
             )
             : base(
-                slackSinkOptions.PeriodicBatchingSinkOptionsBatchSizeLimit ?? SlackSinkOptions.DefaultBatchSizeLimit,
-                slackSinkOptions.PeriodicBatchingSinkOptionsPeriod ?? SlackSinkOptions.DefaultPeriod,
-                slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit ?? SlackSinkOptions.DefaultQueueLimit)
+                slackSinkOptions.PeriodicBatchingSinkOptionsBatchSizeLimit,
+                slackSinkOptions.PeriodicBatchingSinkOptionsPeriod,
+                slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit)
         {
             _slackSinkOptions = slackSinkOptions;
             _formatProvider = formatProvider;
@@ -48,8 +48,7 @@ namespace Serilog.Sinks.Slack
             if (generateSlackMessageAttachments == null) _generateSlackMessageAttachments = SlackSinkMessageTools.GenerateSlackMessageAttachments;
             if (generateSlackMessageBlocks == null) _generateSlackMessageBlocks = SlackSinkMessageTools.GenerateSlackMessageBlocks;
 
-            _slackClient = new SlackClient(slackSinkOptions.SlackWebHookUrl);
-            //_slackClient = new SlackClient(slackSinkOptions.SlackWebHookUrl, slackSinkOptions.SlackConnectionTimeout ?? SlackSinkOptions.DefaultTimeout, _slackHttpClient);
+            _slackClient = new SlackClient(slackSinkOptions.SlackWebHookUrl, slackSinkOptions.SlackConnectionTimeout, _slackHttpClient);
         }
 
         protected override void Dispose(bool disposing)
@@ -66,18 +65,18 @@ namespace Serilog.Sinks.Slack
                 if (logEvent.Level < _slackSinkOptions.SinkRestrictedToMinimumLevel) continue;
                 if (logEvent.Level < _sinkLevelSwitch.MinimumLevel) continue;
 
-                var msg = new SlackMessage()
+                var msg = new SlackMessage
                 {
                     Attachments = _generateSlackMessageAttachments(logEvent, _formatProvider, _slackSinkOptions),
                     Blocks = _generateSlackMessageBlocks(logEvent, _formatProvider, _slackSinkOptions),
                     Channel = _slackSinkOptions.SlackChannels != null && _slackSinkOptions.SlackChannels.Any() ? _slackSinkOptions.SlackChannels[0] : null,
-                    DeleteOriginal = _slackSinkOptions.SlackDeleteOriginal ?? default,
+                    DeleteOriginal = _slackSinkOptions.SlackDeleteOriginal,
                     IconEmoji = _slackSinkOptions.SlackEmojiIcon,
                     IconUrl = _slackSinkOptions.SlackUriIcon,
-                    LinkNames = _slackSinkOptions.SlackLinkNames ?? default,
-                    Markdown = _slackSinkOptions.SlackMarkdown ?? default,
-                    Parse = _slackSinkOptions.SlackParse ?? default,
-                    ReplaceOriginal = _slackSinkOptions.SlackReplaceOriginal ?? default,
+                    LinkNames = _slackSinkOptions.SlackLinkNames,
+                    Markdown = _slackSinkOptions.SlackMarkdown,
+                    Parse = _slackSinkOptions.SlackParse,
+                    ReplaceOriginal = _slackSinkOptions.SlackReplaceOriginal,
                     ResponseType = _slackSinkOptions.SlackResponseType,
                     Text = _generateSlackMessageText(logEvent, _formatProvider, _slackSinkOptions),
                     ThreadId = _slackSinkOptions.SlackThreadId,
