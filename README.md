@@ -1,11 +1,13 @@
 # serilog-sinks-slackwebhook
 A basic Slack Sink for the Serilog framwork.
 
-## Build Status
+## Status
 
-#### Master [![Build status](https://dev.azure.com/jonas-merkle/serilog-sinks-slackwebhook/_apis/build/status/serilog-sinks-slack-CI_master)](https://dev.azure.com/jonas-merkle/serilog-sinks-slackwebhook/_build/latest?definitionId=3)
+#### Nuget Package Deploy: [![Deployment Status](https://vsrm.dev.azure.com/jonas-merkle/_apis/public/Release/badge/09454b63-c969-4591-aa24-ea8867d031bd/1/2)](https://dev.azure.com/jonas-merkle/serilog-sinks-slackwebhook/_release?_a=releases&view=mine&definitionId=1)
 
-#### Develop [![Build status](https://dev.azure.com/jonas-merkle/serilog-sinks-slackwebhook/_apis/build/status/serilog-sinks-slack-CI_develop)](https://dev.azure.com/jonas-merkle/serilog-sinks-slackwebhook/_build/latest?definitionId=4)
+#### Build Status Master: [![Build status](https://dev.azure.com/jonas-merkle/serilog-sinks-slackwebhook/_apis/build/status/serilog-sinks-slack-CI_master)](https://dev.azure.com/jonas-merkle/serilog-sinks-slackwebhook/_build/latest?definitionId=3)
+
+#### Build Status Develop: [![Build status](https://dev.azure.com/jonas-merkle/serilog-sinks-slackwebhook/_apis/build/status/serilog-sinks-slack-CI_develop)](https://dev.azure.com/jonas-merkle/serilog-sinks-slackwebhook/_build/latest?definitionId=4)
 
 ## Nuget Package
 
