@@ -34,3 +34,76 @@ You can get the latest version of this software as a nuget package form [nuget.o
 - [Slack.Webhooks](https://github.com/mrb0nj/Slack.Webhooks) [Version 1.1.3](https://github.com/mrb0nj/Slack.Webhooks/releases/tag/v1.1.3)
 
 ## Usage
+
+a) Absolute basic usage:
+
+```csharp
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Verbose()
+            .WriteTo.Slack(
+                slackWebHookUrl: "https://...",
+                slackChannel: null
+            .CreateLogger();
+```
+
+b) Recomended usage:
+
+```csharp
+var logLevelSwitch = new LoggingLevelSwitch(initialMinimumLevel: LogEventLevel.Verbos);
+Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.Slack(
+                    slackWebHookUrl: "https://...",
+                    slackChannel: "log-output-channel",
+                    slackUsername: "Serilog Slack Sink Bot",
+                    slackEmojiIcon: ":monkey_face:",
+
+                    periodicBatchingSinkOptionsBatchSizeLimit: 1,
+                    periodicBatchingSinkOptionsPeriod: TimeSpan.FromMilliseconds(1000),
+                    periodicBatchingSinkOptionsQueueLimit: 10000,
+
+                    sinkRestrictedToMinimumLevel: LogEventLevel.Verbose,
+                    sinkLevelSwitch:logLevelSwitch)
+                )
+                .CreateLogger();
+```
+
+c) Advanced usage (all available option exposed):
+
+```csharp
+Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.Slack(
+                    slackWebHookUrl: "https://...",
+                    slackUsername: null,
+                    slackEmojiIcon: null,
+                    slackUriIcon: null,
+                    slackChannels: null,
+                    slackDeleteOriginal: null,
+                    slackLinkNames: null,
+                    slackMarkdown: null,
+                    slackParseObj: null,
+                    slackReplaceOriginal: null,
+                    slackResponseType: null,
+                    slackThreadId: null,
+                    slackAttachmentColorsObj: null,
+                    slackAttachmentFooterIconObj: null,
+                    slackAddShortInfoAttachment: null,
+                    slackDisplayShortInfoAttachmentShort: null,
+                    slackAddExtendedInfoAttachment: null,
+                    slackDisplayExtendedInfoAttachmentShort: null,
+                    slackAddExceptionAttachment: null,
+                    slackDisplayExceptionAttachmentShort: null,
+                    slackConnectionTimeout: null,
+                    slackHttpClientObj: null,
+                    generateSlackFunctions: null,
+                    periodicBatchingSinkOptionsBatchSizeLimit: null,
+                    periodicBatchingSinkOptionsPeriod: null,
+                    periodicBatchingSinkOptionsQueueLimit: null,
+                    sinkRestrictedToMinimumLevel: null,
+                    sinkOutputTemplate: null,
+                    sinkLevelSwitch: null,
+                    sinkFormatProvider: null
+                )
+                .CreateLogger();
+```
