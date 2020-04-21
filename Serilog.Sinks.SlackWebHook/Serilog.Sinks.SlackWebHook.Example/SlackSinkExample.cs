@@ -4,7 +4,7 @@ using Serilog.Events;
 
 namespace Serilog.Sinks.SlackWebHook.Example
 {
-    public class SlackSinkExample
+    public static class SlackSinkExample
     {
         public static void Main(string[] args)
         {
@@ -64,7 +64,7 @@ namespace Serilog.Sinks.SlackWebHook.Example
 
             try
             {
-                throw new Exception("TEST EXCEPTION!");
+                throw new TestException("TEST EXCEPTION!", 42);
             }
             catch (Exception e)
             {
@@ -77,6 +77,16 @@ namespace Serilog.Sinks.SlackWebHook.Example
             Console.ReadKey();
 
             Environment.Exit(0);
+        }
+    }
+
+    public class TestException : Exception
+    {
+        public int? TestNumber { get; set; }
+
+        public TestException(string message, int? testNumber, Exception innerException = null) : base(message, innerException)
+        {
+            TestNumber = testNumber;
         }
     }
 }

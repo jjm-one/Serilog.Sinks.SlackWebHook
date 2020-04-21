@@ -305,9 +305,11 @@ namespace Serilog.Sinks.SlackWebHook
             if (slackWebHookUrl == null) throw new ArgumentNullException(nameof(slackWebHookUrl), "The Slack WebHook can't be null!");
             if (string.IsNullOrEmpty(slackWebHookUrl)) throw new ArgumentException("The Slack WebHook can't be empty!", nameof(slackWebHookUrl));
 
-            var slackSinkOptions = new SlackSinkOptions();
+            var slackSinkOptions = new SlackSinkOptions
+            {
+                SlackWebHookUrl = slackWebHookUrl
+            };
 
-            if (slackWebHookUrl != null) slackSinkOptions.SlackWebHookUrl = slackWebHookUrl;
             if (slackUsername != null) slackSinkOptions.SlackUsername = slackUsername;
             if (slackEmojiIcon != null) slackSinkOptions.SlackEmojiIcon = slackEmojiIcon;
             if (slackUriIcon != null) slackSinkOptions.SlackUriIcon = slackUriIcon;
