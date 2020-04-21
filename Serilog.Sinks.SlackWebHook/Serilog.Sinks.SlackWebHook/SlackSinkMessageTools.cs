@@ -6,7 +6,7 @@ using Serilog.Events;
 using Serilog.Formatting.Display;
 using Slack.Webhooks;
 
-namespace Serilog.Sinks.Slack
+namespace Serilog.Sinks.SlackWebHook
 {
     /// <summary>
     /// Class with default tools for message generation.

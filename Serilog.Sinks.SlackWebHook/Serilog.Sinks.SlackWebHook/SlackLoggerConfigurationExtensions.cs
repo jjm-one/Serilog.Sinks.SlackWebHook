@@ -6,7 +6,7 @@ using Serilog.Core;
 using Serilog.Events;
 using Slack.Webhooks;
 
-namespace Serilog.Sinks.Slack
+namespace Serilog.Sinks.SlackWebHook
 {
     public static class SlackLoggerConfigurationExtensions
     {

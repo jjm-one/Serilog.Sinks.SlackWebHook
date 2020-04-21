@@ -5,7 +5,7 @@ using NUnit.Framework;
 using Serilog.Events;
 using Slack.Webhooks;
 
-namespace Serilog.Sinks.Slack.Tests
+namespace Serilog.Sinks.SlackWebHook.Tests
 {
     [TestFixture]
     public class SlackLoggerConfigurationExtensionsConstructorParameterTests

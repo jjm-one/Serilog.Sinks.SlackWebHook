@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Serilog.Events;
 using Slack.Webhooks;
 
-namespace Serilog.Sinks.Slack
+namespace Serilog.Sinks.SlackWebHook
 {
     public class SlackSinkOptions
     {

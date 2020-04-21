@@ -2,7 +2,7 @@
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Serilog.Sinks.Slack.Example
+namespace Serilog.Sinks.SlackWebHook.Example
 {
     public class SlackSinkExample
     {
