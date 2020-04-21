@@ -16,36 +16,36 @@ namespace Serilog.Sinks.SlackWebHook
         /// <see cref="LoggerSinkConfiguration"/> extension that provides configuration chaining.
         /// </summary>
         /// <param name="loggerSinkConfiguration">Instance of <see cref="LoggerSinkConfiguration"/> object.</param>
-        /// <param name="slackWebHookUrl"></param>
-        /// <param name="slackUsername"></param>
-        /// <param name="slackEmojiIcon"></param>
-        /// <param name="slackUriIcon"></param>
-        /// <param name="slackChannel"></param>
-        /// <param name="slackDeleteOriginal"></param>
-        /// <param name="slackLinkNames"></param>
-        /// <param name="slackMarkdown"></param>
-        /// <param name="slackParseObj"></param>
-        /// <param name="slackReplaceOriginal"></param>
-        /// <param name="slackResponseType"></param>
-        /// <param name="slackThreadId"></param>
-        /// <param name="slackAttachmentColorsObj"></param>
-        /// <param name="slackAttachmentFooterIconObj"></param>
-        /// <param name="slackAddShortInfoAttachment"></param>
-        /// <param name="slackDisplayShortInfoAttachmentShort"></param>
-        /// <param name="slackAddExtendedInfoAttachment"></param>
-        /// <param name="slackDisplayExtendedInfoAttachmentShort"></param>
-        /// <param name="slackAddExceptionAttachment"></param>
-        /// <param name="slackDisplayExceptionAttachmentShort"></param>
-        /// <param name="slackConnectionTimeout"></param>
-        /// <param name="slackHttpClientObj"></param>
-        /// <param name="generateSlackFunctions"></param>
-        /// <param name="periodicBatchingSinkOptionsBatchSizeLimit"></param>
-        /// <param name="periodicBatchingSinkOptionsPeriod"></param>
-        /// <param name="periodicBatchingSinkOptionsQueueLimit"></param>
-        /// <param name="sinkRestrictedToMinimumLevel"></param>
-        /// <param name="sinkOutputTemplate"></param>
-        /// <param name="sinkLevelSwitch"></param>
-        /// <param name="sinkFormatProvider"></param>
+        /// <param name="slackWebHookUrl">Slack WebHook URL (required).</param>
+        /// <param name="slackUsername">Slack username (recommended).</param>
+        /// <param name="slackEmojiIcon">Slack user-icon emoji string (recommended).</param>
+        /// <param name="slackUriIcon">Slack user-icon image URI (optional).</param>
+        /// <param name="slackChannel">Name of the Slack channel in which the log message should be posted (recommended).</param>
+        /// <param name="slackDeleteOriginal">Slack message option 'DeleteOriginal' (optional).</param>
+        /// <param name="slackLinkNames">Slack message option 'LinkNames' (optional).</param>
+        /// <param name="slackMarkdown">Slack message option 'Markdown' (optional).</param>
+        /// <param name="slackParseObj">Slack message option 'Parse' as <see cref="ParseMode"/></param>
+        /// <param name="slackReplaceOriginal">Slack message option 'ReplaceOriginal' (optional).</param>
+        /// <param name="slackResponseType">Slack message option 'ResponseType' (optional).</param>
+        /// <param name="slackThreadId">Slack message option 'ThreadID' (optional).</param>
+        /// <param name="slackAttachmentColorsObj">Slack message attachment color list as <see cref="IDictionary{LogEventLevel,String}"/> (optional).</param>
+        /// <param name="slackAttachmentFooterIconObj">Slack message attachment footer icon list as <see cref="IDictionary{LogEventLevel,String}"/> (optional).</param>
+        /// <param name="slackAddShortInfoAttachment">Add the short info attachment to the log message (optional).</param>
+        /// <param name="slackDisplayShortInfoAttachmentShort">Display the short info attachment in short form (optional).</param>
+        /// <param name="slackAddExtendedInfoAttachment">Add the extended info attachment to the log message (optional).</param>
+        /// <param name="slackDisplayExtendedInfoAttachmentShort">Display the extended info attachment in short form (optional).</param>
+        /// <param name="slackAddExceptionAttachment">Add the short exception to the log message (optional).</param>
+        /// <param name="slackDisplayExceptionAttachmentShort">Display the exception attachment in short form (optional).</param>
+        /// <param name="slackConnectionTimeout">Timeout for the connection to the Slack servers (optional).</param>
+        /// <param name="slackHttpClientObj">The <see cref="HttpClient"/> instance which the <see cref="SlackClient"/> uses.</param>
+        /// <param name="generateSlackFunctions">A <see cref="Tuple{Func{LogEvent, IFormatProvider, Object, String}, Func{LogEvent, IFormatProvider, Object, List{SlackAttachment}}, Func{LogEvent, IFormatProvider, object, List{Block}}}"/> containing custom functions [Item1 for message text generation, Item2 for message attachment list generation, Item3 for message block list generation] for the Slack message generation (optional).</param>
+        /// <param name="periodicBatchingSinkOptionsBatchSizeLimit">Size of the batch of messages that get send at once to Slack (recommended).</param>
+        /// <param name="periodicBatchingSinkOptionsPeriod">Time period between sending of batches of messages (recommended).</param>
+        /// <param name="periodicBatchingSinkOptionsQueueLimit">Maximum size of the queue that stores the messages before the messages were send in batches to Slack (optional).</param>
+        /// <param name="sinkRestrictedToMinimumLevel">The absolute minimum <see cref="LogEventLevel"/> a log message must have to be send to Slack (optional).</param>
+        /// <param name="sinkOutputTemplate">The template for the output format of the log messages (optional).</param>
+        /// <param name="sinkLevelSwitch">A <see cref="LoggingLevelSwitch"/> to change the minimum <see cref="LogEventLevel"/> a log message must have to be send to Slack (optional).</param>
+        /// <param name="sinkFormatProvider">A format provider (optional).</param>
         /// <returns>Instance of <see cref="LoggerConfiguration"/> object.</returns>
         public static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
@@ -105,36 +105,36 @@ namespace Serilog.Sinks.SlackWebHook
         /// <see cref="LoggerSinkConfiguration"/> extension that provides configuration chaining.
         /// </summary>
         /// <param name="loggerSinkConfiguration">Instance of <see cref="LoggerSinkConfiguration"/> object.</param>
-        /// <param name="slackWebHookUrl"></param>
-        /// <param name="slackUsername"></param>
-        /// <param name="slackEmojiIcon"></param>
-        /// <param name="slackUriIcon"></param>
-        /// <param name="slackChannels"></param>
-        /// <param name="slackDeleteOriginal"></param>
-        /// <param name="slackLinkNames"></param>
-        /// <param name="slackMarkdown"></param>
-        /// <param name="slackParseObj"></param>
-        /// <param name="slackReplaceOriginal"></param>
-        /// <param name="slackResponseType"></param>
-        /// <param name="slackThreadId"></param>
-        /// <param name="slackAttachmentColorsObj"></param>
-        /// <param name="slackAttachmentFooterIconObj"></param>
-        /// <param name="slackAddShortInfoAttachment"></param>
-        /// <param name="slackDisplayShortInfoAttachmentShort"></param>
-        /// <param name="slackAddExtendedInfoAttachment"></param>
-        /// <param name="slackDisplayExtendedInfoAttachmentShort"></param>
-        /// <param name="slackAddExceptionAttachment"></param>
-        /// <param name="slackDisplayExceptionAttachmentShort"></param>
-        /// <param name="slackConnectionTimeout"></param>
-        /// <param name="slackHttpClientObj"></param>
-        /// <param name="generateSlackFunctions"></param>
-        /// <param name="periodicBatchingSinkOptionsBatchSizeLimit"></param>
-        /// <param name="periodicBatchingSinkOptionsPeriod"></param>
-        /// <param name="periodicBatchingSinkOptionsQueueLimit"></param>
-        /// <param name="sinkRestrictedToMinimumLevel"></param>
-        /// <param name="sinkOutputTemplate"></param>
-        /// <param name="sinkLevelSwitch"></param>
-        /// <param name="sinkFormatProvider"></param>
+        /// <param name="slackWebHookUrl">Slack WebHook URL.</param>
+        /// <param name="slackUsername">Slack username (recommended).</param>
+        /// <param name="slackEmojiIcon">Slack user-icon emoji string (optional).</param>
+        /// <param name="slackUriIcon">Slack user-icon image URI (optional).</param>
+        /// <param name="slackChannels">A <see cref="List{String}"/> containing the name of all Slack channels in which the log message should be posted (recommended).</param>
+        /// <param name="slackDeleteOriginal">Slack message option 'DeleteOriginal' (optional).</param>
+        /// <param name="slackLinkNames">Slack message option 'LinkNames' (optional).</param>
+        /// <param name="slackMarkdown">Slack message option 'Markdown' (optional).</param>
+        /// <param name="slackParseObj">Slack message option 'Parse' as <see cref="ParseMode"/></param>
+        /// <param name="slackReplaceOriginal">Slack message option 'ReplaceOriginal' (optional).</param>
+        /// <param name="slackResponseType">Slack message option 'ResponseType' (optional).</param>
+        /// <param name="slackThreadId">Slack message option 'ThreadID' (optional).</param>
+        /// <param name="slackAttachmentColorsObj">Slack message attachment color list as <see cref="IDictionary{LogEventLevel,String}"/> (optional).</param>
+        /// <param name="slackAttachmentFooterIconObj">Slack message attachment footer icon list as <see cref="IDictionary{LogEventLevel,String}"/> (optional).</param>
+        /// <param name="slackAddShortInfoAttachment">Add the short info attachment to the log message (optional).</param>
+        /// <param name="slackDisplayShortInfoAttachmentShort">Display the short info attachment in short form (optional).</param>
+        /// <param name="slackAddExtendedInfoAttachment">Add the extended info attachment to the log message (optional).</param>
+        /// <param name="slackDisplayExtendedInfoAttachmentShort">Display the extended info attachment in short form (optional).</param>
+        /// <param name="slackAddExceptionAttachment">Add the short exception to the log message (optional).</param>
+        /// <param name="slackDisplayExceptionAttachmentShort">Display the exception attachment in short form (optional).</param>
+        /// <param name="slackConnectionTimeout">Timeout for the connection to the Slack servers (optional).</param>
+        /// <param name="slackHttpClientObj">The <see cref="HttpClient"/> instance which the <see cref="SlackClient"/> uses.</param>
+        /// <param name="generateSlackFunctions">A <see cref="Tuple{Func{LogEvent, IFormatProvider, Object, String}, Func{LogEvent, IFormatProvider, Object, List{SlackAttachment}}, Func{LogEvent, IFormatProvider, object, List{Block}}}"/> containing custom functions [Item1 for message text generation, Item2 for message attachment list generation, Item3 for message block list generation] for the Slack message generation (optional).</param>
+        /// <param name="periodicBatchingSinkOptionsBatchSizeLimit">Size of the batch of messages that get send at once to Slack (recommended).</param>
+        /// <param name="periodicBatchingSinkOptionsPeriod">Time period between sending of batches of messages (recommended).</param>
+        /// <param name="periodicBatchingSinkOptionsQueueLimit">Maximum size of the queue that stores the messages before the messages were send in batches to Slack (optional).</param>
+        /// <param name="sinkRestrictedToMinimumLevel">The absolute minimum <see cref="LogEventLevel"/> a log message must have to be send to Slack (optional).</param>
+        /// <param name="sinkOutputTemplate">The template for the output format of the log messages (optional).</param>
+        /// <param name="sinkLevelSwitch">A <see cref="LoggingLevelSwitch"/> to change the minimum <see cref="LogEventLevel"/> a log message must have to be send to Slack (optional).</param>
+        /// <param name="sinkFormatProvider">A format provider (optional).</param>
         /// <returns>Instance of <see cref="LoggerConfiguration"/> object.</returns>
         public static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
@@ -197,12 +197,15 @@ namespace Serilog.Sinks.SlackWebHook
 
             if (generateSlackFunctions != null)
             {
-                generateSlackMessageText =
-                    (Func<LogEvent, IFormatProvider, object, string>)generateSlackFunctions.Item1;
-                generateSlackMessageAttachments =
-                    (Func<LogEvent, IFormatProvider, object, List<SlackAttachment>>)generateSlackFunctions.Item2;
-                generateSlackMessageBlocks =
-                    (Func<LogEvent, IFormatProvider, object, List<Block>>)generateSlackFunctions.Item3;
+                if (generateSlackFunctions.Item1 != null)
+                    generateSlackMessageText =
+                        (Func<LogEvent, IFormatProvider, object, string>)generateSlackFunctions.Item1;
+                if (generateSlackFunctions.Item2 != null)
+                    generateSlackMessageAttachments =
+                        (Func<LogEvent, IFormatProvider, object, List<SlackAttachment>>)generateSlackFunctions.Item2;
+                if (generateSlackFunctions.Item3 != null)
+                    generateSlackMessageBlocks =
+                        (Func<LogEvent, IFormatProvider, object, List<Block>>)generateSlackFunctions.Item3;
             }
 
             return Slack(loggerSinkConfiguration, slackWebHookUrl, slackUsername, slackEmojiIcon, slackUriIcon,
@@ -224,38 +227,38 @@ namespace Serilog.Sinks.SlackWebHook
         /// <see cref="LoggerSinkConfiguration"/> extension that provides configuration chaining.
         /// </summary>
         /// <param name="loggerSinkConfiguration">Instance of <see cref="LoggerSinkConfiguration"/> object.</param>
-        /// <param name="slackWebHookUrl"></param>
-        /// <param name="slackUsername"></param>
-        /// <param name="slackEmojiIcon"></param>
-        /// <param name="slackUriIcon"></param>
-        /// <param name="slackChannels"></param>
-        /// <param name="slackDeleteOriginal"></param>
-        /// <param name="slackLinkNames"></param>
-        /// <param name="slackMarkdown"></param>
-        /// <param name="slackParse"></param>
-        /// <param name="slackReplaceOriginal"></param>
-        /// <param name="slackResponseType"></param>
-        /// <param name="slackThreadId"></param>
-        /// <param name="slackAttachmentColors"></param>
-        /// <param name="slackAttachmentFooterIcon"></param>
-        /// <param name="slackAddShortInfoAttachment"></param>
-        /// <param name="slackDisplayShortInfoAttachmentShort"></param>
-        /// <param name="slackAddExtendedInfoAttachment"></param>
-        /// <param name="slackDisplayExtendedInfoAttachmentShort"></param>
-        /// <param name="slackAddExceptionAttachment"></param>
-        /// <param name="slackDisplayExceptionAttachmentShort"></param>
-        /// <param name="slackConnectionTimeout"></param>
-        /// <param name="slackHttpClient"></param>
-        /// <param name="generateSlackMessageText"></param>
-        /// <param name="generateSlackMessageAttachments"></param>
-        /// <param name="generateSlackMessageBlocks"></param>
-        /// <param name="periodicBatchingSinkOptionsBatchSizeLimit"></param>
-        /// <param name="periodicBatchingSinkOptionsPeriod"></param>
-        /// <param name="periodicBatchingSinkOptionsQueueLimit"></param>
-        /// <param name="sinkRestrictedToMinimumLevel"></param>
-        /// <param name="sinkOutputTemplate"></param>
-        /// <param name="sinkLevelSwitch"></param>
-        /// <param name="sinkFormatProvider"></param>
+        /// <param name="slackWebHookUrl">Slack WebHook URL.</param>
+        /// <param name="slackUsername">Slack username (recommended).</param>
+        /// <param name="slackEmojiIcon">Slack user-icon emoji string (optional).</param>
+        /// <param name="slackUriIcon">Slack user-icon image URI (optional).</param>
+        /// <param name="slackChannels">A <see cref="List{String}"/> containing the name of all Slack channels in which the log message should be posted (recommended).</param>
+        /// <param name="slackDeleteOriginal">Slack message option 'DeleteOriginal' (optional).</param>
+        /// <param name="slackLinkNames">Slack message option 'LinkNames' (optional).</param>
+        /// <param name="slackMarkdown">Slack message option 'Markdown' (optional).</param>
+        /// <param name="slackParse">Slack message option 'Parse' as <see cref="ParseMode"/></param>
+        /// <param name="slackReplaceOriginal">Slack message option 'ReplaceOriginal' (optional).</param>
+        /// <param name="slackResponseType">Slack message option 'ResponseType' (optional).</param>
+        /// <param name="slackThreadId">Slack message option 'ThreadID' (optional).</param>
+        /// <param name="slackAttachmentColors">Slack message attachment color list as <see cref="IDictionary{LogEventLevel,String}"/> (optional).</param>
+        /// <param name="slackAttachmentFooterIcon">Slack message attachment footer icon list as <see cref="IDictionary{LogEventLevel,String}"/> (optional).</param>
+        /// <param name="slackAddShortInfoAttachment">Add the short info attachment to the log message (optional).</param>
+        /// <param name="slackDisplayShortInfoAttachmentShort">Display the short info attachment in short form (optional).</param>
+        /// <param name="slackAddExtendedInfoAttachment">Add the extended info attachment to the log message (optional).</param>
+        /// <param name="slackDisplayExtendedInfoAttachmentShort">Display the extended info attachment in short form (optional).</param>
+        /// <param name="slackAddExceptionAttachment">Add the short exception to the log message (optional).</param>
+        /// <param name="slackDisplayExceptionAttachmentShort">Display the exception attachment in short form (optional).</param>
+        /// <param name="slackConnectionTimeout">Timeout for the connection to the Slack servers (optional).</param>
+        /// <param name="slackHttpClient">The <see cref="HttpClient"/> instance which the <see cref="SlackClient"/> uses.</param>
+        /// <param name="generateSlackMessageText">A <see cref="Func{LogEvent, IFormatProvider, Object, String}"/> for message text generation (optional).</param>
+        /// <param name="generateSlackMessageAttachments">A <see cref="Func{LogEvent, IFormatProvider, Object, List{SlackAttachment}}"/> message attachment list generation (optional).</param>
+        /// <param name="generateSlackMessageBlocks">A <see cref="Func{LogEvent, IFormatProvider, object, List{Block}}"/> for message block list generation (optional).</param>
+        /// <param name="periodicBatchingSinkOptionsBatchSizeLimit">Size of the batch of messages that get send at once to Slack (recommended).</param>
+        /// <param name="periodicBatchingSinkOptionsPeriod">Time period between sending of batches of messages (recommended).</param>
+        /// <param name="periodicBatchingSinkOptionsQueueLimit">Maximum size of the queue that stores the messages before the messages were send in batches to Slack (optional).</param>
+        /// <param name="sinkRestrictedToMinimumLevel">The absolute minimum <see cref="LogEventLevel"/> a log message must have to be send to Slack (optional).</param>
+        /// <param name="sinkOutputTemplate">The template for the output format of the log messages (optional).</param>
+        /// <param name="sinkLevelSwitch">A <see cref="LoggingLevelSwitch"/> to change the minimum <see cref="LogEventLevel"/> a log message must have to be send to Slack (optional).</param>
+        /// <param name="sinkFormatProvider">A format provider (optional).</param>
         /// <returns>Instance of <see cref="LoggerConfiguration"/> object.</returns>
         private static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
