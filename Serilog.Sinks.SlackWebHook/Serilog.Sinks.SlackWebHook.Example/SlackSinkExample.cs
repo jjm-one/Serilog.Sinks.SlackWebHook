@@ -64,7 +64,7 @@ namespace Serilog.Sinks.SlackWebHook.Example
 
             try
             {
-                throw new TestException("TEST EXCEPTION!", 42);
+                throw new Exception("TEST EXCEPTION!");
             }
             catch (Exception e)
             {
@@ -77,16 +77,6 @@ namespace Serilog.Sinks.SlackWebHook.Example
             Console.ReadKey();
 
             Environment.Exit(0);
-        }
-    }
-
-    public class TestException : Exception
-    {
-        public int? TestNumber { get; set; }
-
-        public TestException(string message, int? testNumber, Exception innerException = null) : base(message, innerException)
-        {
-            TestNumber = testNumber;
         }
     }
 }
