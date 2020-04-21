@@ -17,10 +17,10 @@ namespace Serilog.Sinks.SlackWebHook
         /// </summary>
         /// <param name="loggerSinkConfiguration">Instance of <see cref="LoggerSinkConfiguration"/> object.</param>
         /// <param name="slackWebHookUrl">Slack WebHook URL (required).</param>
+        /// <param name="slackChannel">Name of the Slack channel in which the log message should be posted (recommended).</param>
         /// <param name="slackUsername">Slack username (recommended).</param>
         /// <param name="slackEmojiIcon">Slack user-icon emoji string (recommended).</param>
         /// <param name="slackUriIcon">Slack user-icon image URI (optional).</param>
-        /// <param name="slackChannel">Name of the Slack channel in which the log message should be posted (recommended).</param>
         /// <param name="slackDeleteOriginal">Slack message option 'DeleteOriginal' (optional).</param>
         /// <param name="slackLinkNames">Slack message option 'LinkNames' (optional).</param>
         /// <param name="slackMarkdown">Slack message option 'Markdown' (optional).</param>
@@ -52,10 +52,10 @@ namespace Serilog.Sinks.SlackWebHook
 
             // slack options
             string slackWebHookUrl,
+            string slackChannel,
             string slackUsername = null,
             string slackEmojiIcon = null,
             Uri slackUriIcon = null,
-            string slackChannel = null,
             bool? slackDeleteOriginal = null,
             bool? slackLinkNames = null,
             bool? slackMarkdown = null,
