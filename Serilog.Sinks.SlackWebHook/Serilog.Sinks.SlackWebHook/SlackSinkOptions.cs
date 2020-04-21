@@ -5,6 +5,9 @@ using Slack.Webhooks;
 
 namespace Serilog.Sinks.SlackWebHook
 {
+    /// <summary>
+    /// Class to contain all relevant options of this sink.
+    /// </summary>
     public class SlackSinkOptions
     {
         #region default values

@@ -11,34 +11,34 @@ using Slack.Webhooks;
 namespace Serilog.Sinks.SlackWebHook
 {
     /// <summary>
-    /// Main Class of the SlackSink.
+    /// This class provides functions for sending log events (serilog) to slack an implements therefor <see cref="PeriodicBatchingSink"/>.
     /// </summary>
     public class SlackSink : PeriodicBatchingSink
     {
         #region private members
 
         /// <summary>
-        /// HttpClient instance for the SlackClient.
+        /// <see cref="HttpClient"/> instance for the SlackClient.
         /// </summary>
         private readonly HttpClient _slackHttpClient;
 
         /// <summary>
-        /// SlackClient.
+        /// <see cref="SlackSink"/> instance.
         /// </summary>
         private readonly SlackClient _slackClient;
 
         /// <summary>
-        /// Options for this Sink.
+        /// <see cref="SlackSinkOptions"/> object for this Sink.
         /// </summary>
         private readonly SlackSinkOptions _slackSinkOptions;
 
         /// <summary>
-        /// Switch to change the minimum LogEventLevel.
+        /// <see cref="LoggingLevelSwitch"/> to change the minimum LogEventLevel of this sink.
         /// </summary>
         private readonly LoggingLevelSwitch _sinkLevelSwitch;
 
         /// <summary>
-        /// FormatProvider.
+        /// <see cref="IFormatProvider"/ object.
         /// </summary>
         private readonly IFormatProvider _formatProvider;
 
@@ -62,15 +62,15 @@ namespace Serilog.Sinks.SlackWebHook
         #region constructor
 
         /// <summary>
-        /// Main constructor for the SlackSink.
+        /// Initializes new instance of <see cref="SlackSink"/>.
         /// </summary>
-        /// <param name="slackSinkOptions">Options for this Sink.</param>
-        /// <param name="formatProvider">FormatProvider.</param>
-        /// <param name="sinkLevelSwitch">LoggingLevelSwitch.</param>
-        /// <param name="slackHttpClient">HttpClient.</param>
-        /// <param name="generateSlackMessageText">GenerateSlackMessageText.</param>
-        /// <param name="generateSlackMessageAttachments">GenerateSlackMessageAttachments.</param>
-        /// <param name="generateSlackMessageBlocks">GenerateSlackMessageBlocks.</param>
+        /// <param name="slackSinkOptions">Slack Sink Options object.</param>
+        /// <param name="formatProvider">FormatProvider object.</param>
+        /// <param name="sinkLevelSwitch">LoggingLevelSwitch object.</param>
+        /// <param name="slackHttpClient">HttpClient instance.</param>
+        /// <param name="generateSlackMessageText">GenerateSlackMessageText function.</param>
+        /// <param name="generateSlackMessageAttachments">GenerateSlackMessageAttachments function.</param>
+        /// <param name="generateSlackMessageBlocks">GenerateSlackMessageBlocks function.</param>
         public SlackSink(
             SlackSinkOptions slackSinkOptions,
             IFormatProvider formatProvider,
@@ -104,7 +104,7 @@ namespace Serilog.Sinks.SlackWebHook
         #region function override
 
         /// <summary>
-        /// 
+        /// Overrides <see cref="PeriodicBatchingSink.Dispose"/> to close the <see cref="SlackClient"/> and the <see cref="HttpClient"/>.
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
@@ -115,10 +115,10 @@ namespace Serilog.Sinks.SlackWebHook
         }
 
         /// <summary>
-        /// 
+        /// Overrides <see cref="PeriodicBatchingSink.EmitBatchAsync"/> and sends the <see cref="LogEvent"/> with a <see cref="SlackClient"/> to Slack. 
         /// </summary>
-        /// <param name="events"></param>
-        /// <returns></returns>
+        /// <param name="events">A collection of <see cref="LogEvent"/>.</param>
+        /// <returns>An Awaitable Task.</returns>
         protected override async Task EmitBatchAsync(IEnumerable<LogEvent> events)
         {
             foreach (var logEvent in events)

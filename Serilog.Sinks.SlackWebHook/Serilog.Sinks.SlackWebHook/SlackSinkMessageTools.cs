@@ -15,17 +15,18 @@ namespace Serilog.Sinks.SlackWebHook
     {
 
         /// <summary>
-        /// 
+        /// DEFAULT GenerateSlackMessageText function.
         /// </summary>
-        /// <param name="logEvent"></param>
-        /// <param name="formatProvider"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
+        /// <param name="logEvent">The log event.</param>
+        /// <param name="formatProvider">A format provider</param>
+        /// <param name="options">Sink Options as SlackSinkOptions.</param>
+        /// <returns>The log message string.</returns>
         public static string GenerateSlackMessageText(LogEvent logEvent, IFormatProvider formatProvider, object options)
         {
             // input check
             var slackSinkOptions = (SlackSinkOptions)options ?? throw new InvalidCastException();
             
+            // generate the log message text
             var textFormatter = new MessageTemplateTextFormatter(slackSinkOptions.SinkOutputTemplate, formatProvider);
             var stringWriter = new StringWriter();
             textFormatter.Format(logEvent, stringWriter);
@@ -34,12 +35,12 @@ namespace Serilog.Sinks.SlackWebHook
         }
 
         /// <summary>
-        /// 
+        /// DEFAULT GenerateSlackMessageAttachments function.
         /// </summary>
-        /// <param name="logEvent"></param>
-        /// <param name="formatProvider"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
+        /// <param name="logEvent">The log event.</param>
+        /// <param name="formatProvider">A format provider</param>
+        /// <param name="options">Sink Options as SlackSinkOptions.</param>
+        /// <returns>The log message attachment list.</returns>
         public static List<SlackAttachment> GenerateSlackMessageAttachments(LogEvent logEvent, IFormatProvider formatProvider, object options)
         {
             // input check
@@ -47,8 +48,12 @@ namespace Serilog.Sinks.SlackWebHook
 
             var attachments = new List<SlackAttachment>(2);
 
+            #region information attachment
+
+            // Check if the short info attachment should be added
             if (slackSinkOptions.SlackAddShortInfoAttachment && !slackSinkOptions.SlackAddExtendedInfoAttachment)
             {
+                // create the attachment
                 var shotInfoAttach = new SlackAttachment
                 {
                     Actions = null,
@@ -87,24 +92,27 @@ namespace Serilog.Sinks.SlackWebHook
 
                 attachments.Add(shotInfoAttach);
             }
+            // Check if the extended info attachment should be added
             else if (slackSinkOptions.SlackAddExtendedInfoAttachment)
             {
                 var infoFields = new List<SlackField>();
                 var stringWriter = new StringWriter();
 
-                foreach (var logEventProperty in logEvent.Properties)
+                // collect all log event information
+                foreach (var (key, value) in logEvent.Properties)
                 {
-                    logEventProperty.Value.Render(stringWriter, formatProvider: formatProvider);
+                    value.Render(stringWriter, formatProvider: formatProvider);
                     var field = new SlackField
                     {
                         Short = slackSinkOptions.SlackDisplayExtendedInfoAttachmentShort,
-                        Title = logEventProperty.Key,
+                        Title = key,
                         Value = stringWriter.ToString()
                     };
                     infoFields.Add(field);
                     stringWriter.GetStringBuilder().Clear();
                 }
 
+                // create the attachment
                 var extInfoAttach = new SlackAttachment
                 {
                     Actions = null,
@@ -130,8 +138,14 @@ namespace Serilog.Sinks.SlackWebHook
                 attachments.Add(extInfoAttach);
             }
 
+            #endregion
+
+            #region exception attachment
+
+            // Check if the exception attachment should be added & if an exception is provided with to log event
             if (slackSinkOptions.SlackAddExceptionAttachment && logEvent.Exception != null)
             {
+                // create the attachment
                 var excAttach = new SlackAttachment
                 {
                     Actions = null,
@@ -186,21 +200,20 @@ namespace Serilog.Sinks.SlackWebHook
                 attachments.Add(excAttach);
             }
 
+            #endregion
+
             return attachments.Any() ? attachments : null;
         }
 
         /// <summary>
-        /// 
+        /// DEFAULT GenerateSlackMessageBlocks function.
         /// </summary>
-        /// <param name="logEvent"></param>
-        /// <param name="formatProvider"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
+        /// <param name="logEvent">The log event.</param>
+        /// <param name="formatProvider">A format provider</param>
+        /// <param name="options">Sink Options as SlackSinkOptions.</param>
+        /// <returns>The log message block list.</returns>
         public static List<Block> GenerateSlackMessageBlocks(LogEvent logEvent, IFormatProvider formatProvider, object options)
         {
-            // input check
-            //var slackSinkOptions = (SlackSinkOptions)options ?? throw new InvalidCastException();
-            
             return null;
         }
     }

@@ -13,9 +13,9 @@ namespace Serilog.Sinks.SlackWebHook
         #region public constructors
 
         /// <summary>
-        /// Public constructor which supports a single Slack Channels.
+        /// <see cref="LoggerSinkConfiguration"/> extension that provides configuration chaining.
         /// </summary>
-        /// <param name="loggerSinkConfiguration"></param>
+        /// <param name="loggerSinkConfiguration">Instance of <see cref="LoggerSinkConfiguration"/> object.</param>
         /// <param name="slackWebHookUrl"></param>
         /// <param name="slackUsername"></param>
         /// <param name="slackEmojiIcon"></param>
@@ -46,7 +46,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="sinkOutputTemplate"></param>
         /// <param name="sinkLevelSwitch"></param>
         /// <param name="sinkFormatProvider"></param>
-        /// <returns></returns>
+        /// <returns>Instance of <see cref="LoggerConfiguration"/> object.</returns>
         public static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
 
@@ -102,9 +102,9 @@ namespace Serilog.Sinks.SlackWebHook
         }
 
         /// <summary>
-        /// Public constructor which supports multiple Slack Channels.
+        /// <see cref="LoggerSinkConfiguration"/> extension that provides configuration chaining.
         /// </summary>
-        /// <param name="loggerSinkConfiguration"></param>
+        /// <param name="loggerSinkConfiguration">Instance of <see cref="LoggerSinkConfiguration"/> object.</param>
         /// <param name="slackWebHookUrl"></param>
         /// <param name="slackUsername"></param>
         /// <param name="slackEmojiIcon"></param>
@@ -135,7 +135,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="sinkOutputTemplate"></param>
         /// <param name="sinkLevelSwitch"></param>
         /// <param name="sinkFormatProvider"></param>
-        /// <returns></returns>
+        /// <returns>Instance of <see cref="LoggerConfiguration"/> object.</returns>
         public static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
 
@@ -221,9 +221,9 @@ namespace Serilog.Sinks.SlackWebHook
         #region private constructors
 
         /// <summary>
-        /// Main private constructor.
+        /// <see cref="LoggerSinkConfiguration"/> extension that provides configuration chaining.
         /// </summary>
-        /// <param name="loggerSinkConfiguration"></param>
+        /// <param name="loggerSinkConfiguration">Instance of <see cref="LoggerSinkConfiguration"/> object.</param>
         /// <param name="slackWebHookUrl"></param>
         /// <param name="slackUsername"></param>
         /// <param name="slackEmojiIcon"></param>
@@ -256,7 +256,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="sinkOutputTemplate"></param>
         /// <param name="sinkLevelSwitch"></param>
         /// <param name="sinkFormatProvider"></param>
-        /// <returns></returns>
+        /// <returns>Instance of <see cref="LoggerConfiguration"/> object.</returns>
         private static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
 
