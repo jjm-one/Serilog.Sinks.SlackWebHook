@@ -13,6 +13,9 @@ A basic Slack Sink for the Serilog framwork.
 | Sonar Code Quality    | [![Sonar Code Quality](https://img.shields.io/sonar/quality_gate/jonas-merkle_serilog-sinks-slackwebhook?server=https%3A%2F%2Fsonarcloud.io&style=flat-square)](https://sonarcloud.io/dashboard?id=jonas-merkle_serilog-sinks-slackwebhook) |
 | Maintenance Status    | [![Sonar Code Quality](https://img.shields.io/maintenance/yes/2020?style=flat-square)]() |
 
+## Description
+This tool provides a Serilog Sink which sends log messages to one or more channels in a Slack workspace. To send this messages this tool is using the [Slack.Webhooks](https://github.com/mrb0nj/Slack.Webhooks) project to handle the communication with Slack. Therfor you need a vaild WebHook URL to use this Sink. To get such a WebHook URL please read this [article](https://slack.com/help/articles/115005265063-Incoming-Webhooks-for-Slack). The log messages will be send in batches to the slack servers. You can setup the batch size to fit your needs.
+
 ## Nuget Package
 You can get the latest version of this software as a nuget package form [nuget.org](https://www.nuget.org/packages/Serilog.Sinks.SlackWebHook/)
 
