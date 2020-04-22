@@ -38,7 +38,7 @@ namespace Serilog.Sinks.SlackWebHook
         private readonly LoggingLevelSwitch _sinkLevelSwitch;
 
         /// <summary>
-        /// <see cref="IFormatProvider"/ object.
+        /// <see cref="IFormatProvider"/> object.
         /// </summary>
         private readonly IFormatProvider _formatProvider;
 
