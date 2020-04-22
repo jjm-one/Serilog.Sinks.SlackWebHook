@@ -106,7 +106,8 @@ Log.Logger = new LoggerConfiguration()
                     sinkRestrictedToMinimumLevel: null,
                     sinkOutputTemplate: null,
                     sinkLevelSwitch: null,
-                    sinkFormatProvider: null
+                    sinkFormatProvider: null,
+                    statusSwitch: null
                 )
                 .CreateLogger();
 ```
