@@ -38,6 +38,11 @@ namespace Serilog.Sinks.SlackWebHook
         private readonly LoggingLevelSwitch _sinkLevelSwitch;
 
         /// <summary>
+        /// <see cref="SlackSinkActivationSwitch"/> to change the activation status of the sink on the fly.
+        /// </summary>
+        private readonly SlackSinkActivationSwitch _statusSwitch;
+
+        /// <summary>
         /// <see cref="IFormatProvider"/> object.
         /// </summary>
         private readonly IFormatProvider _formatProvider;
@@ -71,10 +76,12 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="generateSlackMessageText">GenerateSlackMessageText function.</param>
         /// <param name="generateSlackMessageAttachments">GenerateSlackMessageAttachments function.</param>
         /// <param name="generateSlackMessageBlocks">GenerateSlackMessageBlocks function.</param>
+        /// <param name="statusSwitch">A Switch to change the activation status of the sink on the fly (optional).</param>
         public SlackSink(
             SlackSinkOptions slackSinkOptions,
             IFormatProvider formatProvider,
             LoggingLevelSwitch sinkLevelSwitch = null,
+            SlackSinkActivationSwitch statusSwitch = null,
             HttpClient slackHttpClient = null,
             Func<LogEvent, IFormatProvider, object, string> generateSlackMessageText = null,
             Func<LogEvent, IFormatProvider, object, List<SlackAttachment>> generateSlackMessageAttachments = null,
@@ -88,6 +95,7 @@ namespace Serilog.Sinks.SlackWebHook
             _slackSinkOptions = slackSinkOptions;
             _formatProvider = formatProvider;
             _sinkLevelSwitch = sinkLevelSwitch ?? new LoggingLevelSwitch(LevelAlias.Minimum);
+            _statusSwitch = statusSwitch ?? new SlackSinkActivationSwitch();
             _slackHttpClient = slackHttpClient ?? new HttpClient();
 
             // if no extern generation functions were specified, use the default ones
@@ -121,6 +129,9 @@ namespace Serilog.Sinks.SlackWebHook
         /// <returns>An Awaitable Task.</returns>
         protected override async Task EmitBatchAsync(IEnumerable<LogEvent> events)
         {
+            // check activation status
+            if (_statusSwitch.Status == SlackSinkActivationSwitch.ActivationStatus.InActive) return;
+
             foreach (var logEvent in events)
             {
                 // check log level
