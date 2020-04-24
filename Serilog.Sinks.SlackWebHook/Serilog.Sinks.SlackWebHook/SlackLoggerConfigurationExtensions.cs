@@ -347,11 +347,13 @@ namespace Serilog.Sinks.SlackWebHook
             if (periodicBatchingSinkOptionsPeriod != null) slackSinkOptions.PeriodicBatchingSinkOptionsPeriod = (TimeSpan)periodicBatchingSinkOptionsPeriod;
             if (periodicBatchingSinkOptionsQueueLimit != null) slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit = (int)periodicBatchingSinkOptionsQueueLimit;
 
-            if (sinkRestrictedToMinimumLevel != null) slackSinkOptions.SinkRestrictedToMinimumLevel = (LogEventLevel)sinkRestrictedToMinimumLevel;
             if (sinkOutputTemplate != null) slackSinkOptions.SinkOutputTemplate = sinkOutputTemplate;
 
-            return loggerSinkConfiguration.Sink(new SlackSink(slackSinkOptions, sinkFormatProvider, sinkLevelSwitch, statusSwitch, slackHttpClient,
-                generateSlackMessageText, generateSlackMessageAttachments, generateSlackMessageBlocks));
+            return loggerSinkConfiguration.Sink(
+                logEventSink: new SlackSink(slackSinkOptions, sinkFormatProvider, statusSwitch, slackHttpClient,
+                generateSlackMessageText, generateSlackMessageAttachments, generateSlackMessageBlocks),
+                restrictedToMinimumLevel: sinkRestrictedToMinimumLevel ?? LevelAlias.Minimum,
+                levelSwitch: sinkLevelSwitch);
         }
 
         #endregion

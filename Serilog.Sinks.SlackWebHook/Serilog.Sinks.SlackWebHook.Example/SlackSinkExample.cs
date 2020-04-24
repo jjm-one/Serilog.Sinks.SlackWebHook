@@ -37,6 +37,8 @@ namespace Serilog.Sinks.SlackWebHook.Example
             var slackUserIcon = string.IsNullOrEmpty(input) ? input : ":monkey_face:";
             Console.WriteLine();
 
+            var levelSwitch = new LoggingLevelSwitch(initialMinimumLevel: LogEventLevel.Verbose);
+
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .WriteTo.Slack(
@@ -51,7 +53,7 @@ namespace Serilog.Sinks.SlackWebHook.Example
 
                             sinkRestrictedToMinimumLevel: LogEventLevel.Verbose,
                             sinkOutputTemplate: "{Message}",
-                            sinkLevelSwitch:new LoggingLevelSwitch(initialMinimumLevel: LogEventLevel.Verbose)
+                            sinkLevelSwitch: levelSwitch
                 )
                 .CreateLogger();
 
@@ -70,6 +72,10 @@ namespace Serilog.Sinks.SlackWebHook.Example
             {
                 Log.Write(LogEventLevel.Fatal, e, "Fatal Logging Message with exception");
             }
+
+            levelSwitch.MinimumLevel = LogEventLevel.Fatal;
+
+            Log.Write(LogEventLevel.Error, "This Message shouldn't be send to Slack!");
 
             System.Threading.Thread.Sleep(10000);
 

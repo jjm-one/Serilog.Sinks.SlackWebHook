@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Serilog.Core;
 using Serilog.Events;
 using Serilog.Sinks.PeriodicBatching;
 using Slack.Webhooks;
@@ -31,11 +30,6 @@ namespace Serilog.Sinks.SlackWebHook
         /// <see cref="SlackSinkOptions"/> object for this Sink.
         /// </summary>
         private readonly SlackSinkOptions _slackSinkOptions;
-
-        /// <summary>
-        /// <see cref="LoggingLevelSwitch"/> to change the minimum LogEventLevel of this sink.
-        /// </summary>
-        private readonly LoggingLevelSwitch _sinkLevelSwitch;
 
         /// <summary>
         /// <see cref="SlackSinkActivationSwitch"/> to change the activation status of the sink on the fly.
@@ -71,7 +65,6 @@ namespace Serilog.Sinks.SlackWebHook
         /// </summary>
         /// <param name="slackSinkOptions">Slack Sink Options object.</param>
         /// <param name="formatProvider">FormatProvider object.</param>
-        /// <param name="sinkLevelSwitch">LoggingLevelSwitch object.</param>
         /// <param name="slackHttpClient">HttpClient instance.</param>
         /// <param name="generateSlackMessageText">GenerateSlackMessageText function.</param>
         /// <param name="generateSlackMessageAttachments">GenerateSlackMessageAttachments function.</param>
@@ -80,7 +73,6 @@ namespace Serilog.Sinks.SlackWebHook
         public SlackSink(
             SlackSinkOptions slackSinkOptions,
             IFormatProvider formatProvider,
-            LoggingLevelSwitch sinkLevelSwitch = null,
             SlackSinkActivationSwitch statusSwitch = null,
             HttpClient slackHttpClient = null,
             Func<LogEvent, IFormatProvider, object, string> generateSlackMessageText = null,
@@ -94,7 +86,6 @@ namespace Serilog.Sinks.SlackWebHook
         {
             _slackSinkOptions = slackSinkOptions;
             _formatProvider = formatProvider;
-            _sinkLevelSwitch = sinkLevelSwitch ?? new LoggingLevelSwitch(LevelAlias.Minimum);
             _statusSwitch = statusSwitch ?? new SlackSinkActivationSwitch();
             _slackHttpClient = slackHttpClient ?? new HttpClient();
 
@@ -134,10 +125,6 @@ namespace Serilog.Sinks.SlackWebHook
 
             foreach (var logEvent in events)
             {
-                // check log level
-                if (logEvent.Level < _slackSinkOptions.SinkRestrictedToMinimumLevel) continue;
-                if (logEvent.Level < _sinkLevelSwitch.MinimumLevel) continue;
-
                 // create new slack message
                 var msg = new SlackMessage
                 {

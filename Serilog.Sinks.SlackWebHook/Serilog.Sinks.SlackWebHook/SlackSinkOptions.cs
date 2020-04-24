@@ -198,11 +198,6 @@ namespace Serilog.Sinks.SlackWebHook
         #region general sink options
 
         /// <summary>
-        /// OPTIONAL: The absolute minimum <see cref="LogEventLevel"/> a log message must have to be send to Slack.
-        /// </summary>
-        public LogEventLevel SinkRestrictedToMinimumLevel { get; set; } = LevelAlias.Minimum;
-
-        /// <summary>
         /// OPTIONAL: The template for the output format of the log messages.
         /// </summary>
         public string SinkOutputTemplate { get; set; } = DefaultOutputTemplate;
