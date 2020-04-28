@@ -11,9 +11,9 @@
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>serilog, serilog-sink, slack, logging, csharp, example</PackageTags>
     <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</PackageProjectUrl>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyName>Serilog.Sinks.SlackWebHook.Example</AssemblyName>
     <RootNamespace>Serilog.Sinks.SlackWebHook.Example</RootNamespace>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>
