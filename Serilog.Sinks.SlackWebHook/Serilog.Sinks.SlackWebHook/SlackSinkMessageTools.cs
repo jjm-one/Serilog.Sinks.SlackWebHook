@@ -99,13 +99,13 @@ namespace Serilog.Sinks.SlackWebHook
                 var stringWriter = new StringWriter();
 
                 // collect all log event information
-                foreach (var (key, value) in logEvent.Properties)
+                foreach (var property in logEvent.Properties)
                 {
-                    value.Render(stringWriter, formatProvider: formatProvider);
+                    property.Value.Render(stringWriter, formatProvider: formatProvider);
                     var field = new SlackField
                     {
                         Short = slackSinkOptions.SlackDisplayExtendedInfoAttachmentShort,
-                        Title = key,
+                        Title = property.Key,
                         Value = stringWriter.ToString()
                     };
                     infoFields.Add(field);
