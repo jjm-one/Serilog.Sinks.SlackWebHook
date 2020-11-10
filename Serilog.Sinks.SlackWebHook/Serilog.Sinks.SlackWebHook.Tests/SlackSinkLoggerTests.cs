@@ -1,6 +1,6 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Serilog.Events;
+using System;
 
 namespace Serilog.Sinks.SlackWebHook.Tests
 {

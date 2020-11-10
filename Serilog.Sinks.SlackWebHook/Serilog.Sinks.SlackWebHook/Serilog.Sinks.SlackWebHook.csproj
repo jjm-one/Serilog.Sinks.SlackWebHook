@@ -15,7 +15,7 @@
     <NeutralLanguage></NeutralLanguage>
     <SignAssembly>false</SignAssembly>
     <PackageId>Serilog.Sinks.SlackWebHook</PackageId>
-    <Version>1.0.5</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Serilog.Events;
+﻿using Serilog.Events;
 using Slack.Webhooks;
+using System;
+using System.Collections.Generic;
 
 namespace Serilog.Sinks.SlackWebHook
 {
