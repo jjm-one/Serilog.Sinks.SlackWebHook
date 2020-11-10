@@ -10,7 +10,7 @@
         /// <summary>
         /// Enum to represent an activation status.
         /// </summary>
-        public enum ActivationStatus
+        public enum SlackActivationStatus
         {
             InActive = 0,
             Active = 1
@@ -23,15 +23,15 @@
         /// <summary>
         /// The current status.
         /// </summary>
-        public ActivationStatus Status { get; set; }
+        public SlackActivationStatus SlackStatus { get; set; }
 
         /// <summary>
         /// Initializes new instance of <see cref="SlackSinkActivationSwitch"/>.
         /// </summary>
-        /// <param name="activationStatus">The <see cref="ActivationStatus"/>.</param>
-        public SlackSinkActivationSwitch(ActivationStatus activationStatus = ActivationStatus.Active)
+        /// <param name="activationStatus">The <see cref="SlackActivationStatus"/>.</param>
+        public SlackSinkActivationSwitch(SlackActivationStatus activationStatus = SlackActivationStatus.Active)
         {
-            Status = activationStatus;
+            SlackStatus = activationStatus;
         }
 
         #endregion

@@ -27,7 +27,7 @@ namespace Serilog.Sinks.SlackWebHook
             var slackSinkOptions = (SlackSinkOptions)options ?? throw new InvalidCastException();
             
             // generate the log message text
-            var textFormatter = new MessageTemplateTextFormatter(slackSinkOptions.SinkOutputTemplate, formatProvider);
+            var textFormatter = new MessageTemplateTextFormatter(slackSinkOptions.SlackSinkOutputTemplate, formatProvider);
             var stringWriter = new StringWriter();
             textFormatter.Format(logEvent, stringWriter);
 
