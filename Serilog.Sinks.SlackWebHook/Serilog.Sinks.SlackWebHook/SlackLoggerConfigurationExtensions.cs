@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using Serilog.Configuration;
+﻿using Serilog.Configuration;
 using Serilog.Core;
 using Serilog.Events;
 using Slack.Webhooks;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
 
 namespace Serilog.Sinks.SlackWebHook
 {
@@ -28,8 +28,8 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="slackReplaceOriginal">Slack message option 'ReplaceOriginal' (optional).</param>
         /// <param name="slackResponseType">Slack message option 'ResponseType' (optional).</param>
         /// <param name="slackThreadId">Slack message option 'ThreadID' (optional).</param>
-        /// <param name="slackAttachmentColorsObj">Slack message attachment color list as <see cref="IDictionary{LogEventLevel,String}"/> (optional).</param>
-        /// <param name="slackAttachmentFooterIconObj">Slack message attachment footer icon list as <see cref="IDictionary{LogEventLevel,String}"/> (optional).</param>
+        /// <param name="slackAttachmentColorsObj">Slack message attachment color list as <see cref="IDictionary{LogEventLevel, String}"/> (optional).</param>
+        /// <param name="slackAttachmentFooterIconObj">Slack message attachment footer icon list as <see cref="IDictionary{LogEventLevel, String}"/> (optional).</param>
         /// <param name="slackAddShortInfoAttachment">Add the short info attachment to the log message (optional).</param>
         /// <param name="slackDisplayShortInfoAttachmentShort">Display the short info attachment in short form (optional).</param>
         /// <param name="slackAddExtendedInfoAttachment">Add the extended info attachment to the log message (optional).</param>
@@ -38,7 +38,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="slackDisplayExceptionAttachmentShort">Display the exception attachment in short form (optional).</param>
         /// <param name="slackConnectionTimeout">Timeout for the connection to the Slack servers (optional).</param>
         /// <param name="slackHttpClientObj">The <see cref="HttpClient"/> instance which the <see cref="SlackClient"/> uses.</param>
-        /// <param name="generateSlackFunctions">A <see cref="Tuple{Func{LogEvent, IFormatProvider, Object, String}, Func{LogEvent, IFormatProvider, Object, List{SlackAttachment}}, Func{LogEvent, IFormatProvider, object, List{Block}}}"/> containing custom functions [Item1 for message text generation, Item2 for message attachment list generation, Item3 for message block list generation] for the Slack message generation (optional).</param>
+        /// <param name="generateSlackFunctions">A <see cref="Tuple{Func{LogEvent, IFormatProvider, Object, String}, Func{LogEvent, IFormatProvider, Object, List{SlackAttachment}}, Func{LogEvent, IFormatProvider, Object, List{Block}}}"/> containing custom functions [Item1 for message text generation, Item2 for message attachment list generation, Item3 for message block list generation] for the Slack message generation (optional).</param>
         /// <param name="periodicBatchingSinkOptionsBatchSizeLimit">Size of the batch of messages that get send at once to Slack (recommended).</param>
         /// <param name="periodicBatchingSinkOptionsPeriod">Time period between sending of batches of messages (recommended).</param>
         /// <param name="periodicBatchingSinkOptionsQueueLimit">Maximum size of the queue that stores the messages before the messages were send in batches to Slack (optional).</param>
@@ -129,7 +129,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="slackDisplayExceptionAttachmentShort">Display the exception attachment in short form (optional).</param>
         /// <param name="slackConnectionTimeout">Timeout for the connection to the Slack servers (optional).</param>
         /// <param name="slackHttpClientObj">The <see cref="HttpClient"/> instance which the <see cref="SlackClient"/> uses.</param>
-        /// <param name="generateSlackFunctions">A <see cref="Tuple{Func{LogEvent, IFormatProvider, Object, String}, Func{LogEvent, IFormatProvider, Object, List{SlackAttachment}}, Func{LogEvent, IFormatProvider, object, List{Block}}}"/> containing custom functions [Item1 for message text generation, Item2 for message attachment list generation, Item3 for message block list generation] for the Slack message generation (optional).</param>
+        /// <param name="generateSlackFunctions">A <see cref="Tuple{Func{LogEvent, IFormatProvider, Object, String}, Func{LogEvent, IFormatProvider, Object, List{SlackAttachment}}, Func{LogEvent, IFormatProvider, Object, List{Block}}}"/> containing custom functions [Item1 for message text generation, Item2 for message attachment list generation, Item3 for message block list generation] for the Slack message generation (optional).</param>
         /// <param name="periodicBatchingSinkOptionsBatchSizeLimit">Size of the batch of messages that get send at once to Slack (recommended).</param>
         /// <param name="periodicBatchingSinkOptionsPeriod">Time period between sending of batches of messages (recommended).</param>
         /// <param name="periodicBatchingSinkOptionsQueueLimit">Maximum size of the queue that stores the messages before the messages were send in batches to Slack (optional).</param>
@@ -255,7 +255,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="slackHttpClient">The <see cref="HttpClient"/> instance which the <see cref="SlackClient"/> uses.</param>
         /// <param name="generateSlackMessageText">A <see cref="Func{LogEvent, IFormatProvider, Object, String}"/> for message text generation (optional).</param>
         /// <param name="generateSlackMessageAttachments">A <see cref="Func{LogEvent, IFormatProvider, Object, List{SlackAttachment}}"/> message attachment list generation (optional).</param>
-        /// <param name="generateSlackMessageBlocks">A <see cref="Func{LogEvent, IFormatProvider, object, List{Block}}"/> for message block list generation (optional).</param>
+        /// <param name="generateSlackMessageBlocks">A <see cref="Func{LogEvent, IFormatProvider, Object, List{Block}}"/> for message block list generation (optional).</param>
         /// <param name="periodicBatchingSinkOptionsBatchSizeLimit">Size of the batch of messages that get send at once to Slack (recommended).</param>
         /// <param name="periodicBatchingSinkOptionsPeriod">Time period between sending of batches of messages (recommended).</param>
         /// <param name="periodicBatchingSinkOptionsQueueLimit">Maximum size of the queue that stores the messages before the messages were send in batches to Slack (optional).</param>
@@ -343,11 +343,11 @@ namespace Serilog.Sinks.SlackWebHook
 
             if (slackConnectionTimeout != null) slackSinkOptions.SlackConnectionTimeout = (int)slackConnectionTimeout;
 
-            if (periodicBatchingSinkOptionsBatchSizeLimit != null) slackSinkOptions.PeriodicBatchingSinkOptionsBatchSizeLimit = (int)periodicBatchingSinkOptionsBatchSizeLimit;
-            if (periodicBatchingSinkOptionsPeriod != null) slackSinkOptions.PeriodicBatchingSinkOptionsPeriod = (TimeSpan)periodicBatchingSinkOptionsPeriod;
-            if (periodicBatchingSinkOptionsQueueLimit != null) slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit = (int)periodicBatchingSinkOptionsQueueLimit;
+            if (periodicBatchingSinkOptionsBatchSizeLimit != null) slackSinkOptions.SlackPeriodicBatchingSinkOptionsBatchSizeLimit = (int)periodicBatchingSinkOptionsBatchSizeLimit;
+            if (periodicBatchingSinkOptionsPeriod != null) slackSinkOptions.SlackPeriodicBatchingSinkOptionsPeriod = (TimeSpan)periodicBatchingSinkOptionsPeriod;
+            if (periodicBatchingSinkOptionsQueueLimit != null) slackSinkOptions.SlackPeriodicBatchingSinkOptionsQueueLimit = (int)periodicBatchingSinkOptionsQueueLimit;
 
-            if (sinkOutputTemplate != null) slackSinkOptions.SinkOutputTemplate = sinkOutputTemplate;
+            if (sinkOutputTemplate != null) slackSinkOptions.SlackSinkOutputTemplate = sinkOutputTemplate;
 
             return loggerSinkConfiguration.Sink(
                 logEventSink: new SlackSink(slackSinkOptions, sinkFormatProvider, statusSwitch, slackHttpClient,

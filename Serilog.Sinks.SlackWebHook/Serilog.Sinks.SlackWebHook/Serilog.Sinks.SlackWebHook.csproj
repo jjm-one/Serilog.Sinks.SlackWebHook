@@ -15,13 +15,13 @@
     <NeutralLanguage></NeutralLanguage>
     <SignAssembly>false</SignAssembly>
     <PackageId>Serilog.Sinks.SlackWebHook</PackageId>
-    <Version>1.0.4</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
     <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="2.3.0" />
-    <PackageReference Include="Slack.Webhooks" Version="1.1.3" />
+    <PackageReference Include="Slack.Webhooks" Version="1.1.4" />
   </ItemGroup>
 
   <ItemGroup>

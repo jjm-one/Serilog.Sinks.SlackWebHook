@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Serilog.Events;
+using Serilog.Sinks.PeriodicBatching;
+using Slack.Webhooks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Serilog.Events;
-using Serilog.Sinks.PeriodicBatching;
-using Slack.Webhooks;
 
 namespace Serilog.Sinks.SlackWebHook
 {
@@ -80,9 +80,9 @@ namespace Serilog.Sinks.SlackWebHook
             Func<LogEvent, IFormatProvider, object, List<Block>> generateSlackMessageBlocks = null
             )
             : base(
-                slackSinkOptions.PeriodicBatchingSinkOptionsBatchSizeLimit,
-                slackSinkOptions.PeriodicBatchingSinkOptionsPeriod,
-                slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit)
+                slackSinkOptions.SlackPeriodicBatchingSinkOptionsBatchSizeLimit,
+                slackSinkOptions.SlackPeriodicBatchingSinkOptionsPeriod,
+                slackSinkOptions.SlackPeriodicBatchingSinkOptionsQueueLimit)
         {
             _slackSinkOptions = slackSinkOptions;
             _formatProvider = formatProvider;
@@ -121,7 +121,7 @@ namespace Serilog.Sinks.SlackWebHook
         protected override async Task EmitBatchAsync(IEnumerable<LogEvent> events)
         {
             // check activation status
-            if (_statusSwitch.Status == SlackSinkActivationSwitch.ActivationStatus.InActive) return;
+            if (_statusSwitch.SlackStatus == SlackSinkActivationSwitch.SlackActivationStatus.InActive) return;
 
             foreach (var logEvent in events)
             {

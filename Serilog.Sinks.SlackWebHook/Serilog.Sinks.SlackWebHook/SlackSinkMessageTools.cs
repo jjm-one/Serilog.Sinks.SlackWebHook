@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Serilog.Events;
+using Serilog.Formatting.Display;
+using Slack.Webhooks;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Serilog.Events;
-using Serilog.Formatting.Display;
-using Slack.Webhooks;
 
 namespace Serilog.Sinks.SlackWebHook
 {
@@ -25,9 +25,9 @@ namespace Serilog.Sinks.SlackWebHook
         {
             // input check
             var slackSinkOptions = (SlackSinkOptions)options ?? throw new InvalidCastException();
-            
+
             // generate the log message text
-            var textFormatter = new MessageTemplateTextFormatter(slackSinkOptions.SinkOutputTemplate, formatProvider);
+            var textFormatter = new MessageTemplateTextFormatter(slackSinkOptions.SlackSinkOutputTemplate, formatProvider);
             var stringWriter = new StringWriter();
             textFormatter.Format(logEvent, stringWriter);
 

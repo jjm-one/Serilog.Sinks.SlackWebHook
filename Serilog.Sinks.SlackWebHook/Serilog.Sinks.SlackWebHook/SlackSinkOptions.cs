@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Serilog.Events;
+﻿using Serilog.Events;
 using Slack.Webhooks;
+using System;
+using System.Collections.Generic;
 
 namespace Serilog.Sinks.SlackWebHook
 {
@@ -181,17 +181,17 @@ namespace Serilog.Sinks.SlackWebHook
         /// <summary>
         /// RECOMMENDED: Size of the batch of messages that get send at once to Slack.
         /// </summary>
-        public int PeriodicBatchingSinkOptionsBatchSizeLimit { get; set; } = DefaultBatchSizeLimit;
+        public int SlackPeriodicBatchingSinkOptionsBatchSizeLimit { get; set; } = DefaultBatchSizeLimit;
 
         /// <summary>
         /// RECOMMENDED: Time period between sending of batches of messages.
         /// </summary>
-        public TimeSpan PeriodicBatchingSinkOptionsPeriod { get; set; } = DefaultPeriod;
+        public TimeSpan SlackPeriodicBatchingSinkOptionsPeriod { get; set; } = DefaultPeriod;
 
         /// <summary>
         /// OPTIONAL: Maximum size of the queue that stores the messages before the messages were send in batches to Slack.
         /// </summary>
-        public int PeriodicBatchingSinkOptionsQueueLimit { get; set; } = DefaultQueueLimit;
+        public int SlackPeriodicBatchingSinkOptionsQueueLimit { get; set; } = DefaultQueueLimit;
 
         #endregion
 
@@ -200,7 +200,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <summary>
         /// OPTIONAL: The template for the output format of the log messages.
         /// </summary>
-        public string SinkOutputTemplate { get; set; } = DefaultOutputTemplate;
+        public string SlackSinkOutputTemplate { get; set; } = DefaultOutputTemplate;
 
         #endregion
     }

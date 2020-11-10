@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Serilog.Events;
 using Slack.Webhooks;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
 
 namespace Serilog.Sinks.SlackWebHook.Tests
 {
@@ -119,7 +119,7 @@ namespace Serilog.Sinks.SlackWebHook.Tests
         [Test]
         public void SingleChannel_ConstructorTest_SlackParseObjCast()
         {
-            
+
             Assert.Throws<InvalidCastException>(() =>
             {
                 Log.Logger = new LoggerConfiguration()

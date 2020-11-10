@@ -1,5 +1,5 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using System;
 
 namespace Serilog.Sinks.SlackWebHook.Tests
 {
@@ -26,9 +26,9 @@ namespace Serilog.Sinks.SlackWebHook.Tests
             Assert.IsTrue(options.SlackAttachmentColors.Count == 6);
             Assert.IsTrue(options.SlackAttachmentFooterIcon.Count == 6);
 
-            Assert.IsTrue(options.PeriodicBatchingSinkOptionsBatchSizeLimit >= 0);
-            Assert.IsTrue(!options.PeriodicBatchingSinkOptionsPeriod.Equals(TimeSpan.Zero));
-            Assert.IsTrue(options.PeriodicBatchingSinkOptionsQueueLimit >= 0);
+            Assert.IsTrue(options.SlackPeriodicBatchingSinkOptionsBatchSizeLimit >= 0);
+            Assert.IsTrue(!options.SlackPeriodicBatchingSinkOptionsPeriod.Equals(TimeSpan.Zero));
+            Assert.IsTrue(options.SlackPeriodicBatchingSinkOptionsQueueLimit >= 0);
         }
 
         #endregion
