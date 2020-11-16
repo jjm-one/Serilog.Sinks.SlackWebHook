@@ -181,17 +181,20 @@ namespace Serilog.Sinks.SlackWebHook
         /// <summary>
         /// RECOMMENDED: Size of the batch of messages that get send at once to Slack.
         /// </summary>
-        public int SlackPeriodicBatchingSinkOptionsBatchSizeLimit { get; set; } = DefaultBatchSizeLimit;
+        // ReSharper disable once InconsistentNaming
+        public int PeriodicBatchingSinkOptionsBatchSizeLimit { get; set; } = DefaultBatchSizeLimit;
 
         /// <summary>
         /// RECOMMENDED: Time period between sending of batches of messages.
         /// </summary>
-        public TimeSpan SlackPeriodicBatchingSinkOptionsPeriod { get; set; } = DefaultPeriod;
+        // ReSharper disable once InconsistentNaming
+        public TimeSpan PeriodicBatchingSinkOptionsPeriod { get; set; } = DefaultPeriod;
 
         /// <summary>
         /// OPTIONAL: Maximum size of the queue that stores the messages before the messages were send in batches to Slack.
         /// </summary>
-        public int SlackPeriodicBatchingSinkOptionsQueueLimit { get; set; } = DefaultQueueLimit;
+        // ReSharper disable once InconsistentNaming
+        public int PeriodicBatchingSinkOptionsQueueLimit { get; set; } = DefaultQueueLimit;
 
         #endregion
 
@@ -200,7 +203,8 @@ namespace Serilog.Sinks.SlackWebHook
         /// <summary>
         /// OPTIONAL: The template for the output format of the log messages.
         /// </summary>
-        public string SlackSinkOutputTemplate { get; set; } = DefaultOutputTemplate;
+        // ReSharper disable once InconsistentNaming
+        public string SinkOutputTemplate { get; set; } = DefaultOutputTemplate;
 
         #endregion
     }

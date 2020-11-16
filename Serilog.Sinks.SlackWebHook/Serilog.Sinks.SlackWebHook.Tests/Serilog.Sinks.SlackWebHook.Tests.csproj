@@ -11,7 +11,7 @@
     <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>serilog, serilog-sink, slack, logging, csharp, unit-tests</PackageTags>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

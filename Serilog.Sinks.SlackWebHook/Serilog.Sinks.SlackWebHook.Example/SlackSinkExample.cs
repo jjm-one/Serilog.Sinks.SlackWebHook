@@ -6,7 +6,7 @@ namespace Serilog.Sinks.SlackWebHook.Example
 {
     public static class SlackSinkExample
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             string slackChannel = null;
 
@@ -17,9 +17,8 @@ namespace Serilog.Sinks.SlackWebHook.Example
 
             Console.Write("Slack WebHook Url: ");
             var input = Console.ReadLine();
-            string slackWebHookUrl;
             if (string.IsNullOrEmpty(input)) throw new ArgumentException("No valid WebHook Url!");
-            else slackWebHookUrl = input;
+            var slackWebHookUrl = input;
             Console.WriteLine();
 
             Console.Write("Slack Channel (optional): ");
