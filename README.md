@@ -1,4 +1,4 @@
-# serilog-sinks-slackwebhook
+# Serilog.Sinks.SlackWebHook
 
 A basic Slack Sink for the Serilog framework.
 
