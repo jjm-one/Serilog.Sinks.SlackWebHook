@@ -46,7 +46,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="sinkOutputTemplate">The template for the output format of the log messages (optional).</param>
         /// <param name="sinkLevelSwitch">A <see cref="LoggingLevelSwitch"/> to change the minimum <see cref="LogEventLevel"/> a log message must have to be send to Slack (optional).</param>
         /// <param name="sinkFormatProvider">A format provider (optional).</param>
-        /// <param name="statusSwitch">A Switch to change the activation status of the sink on the fly (optional).</param>
+        /// <param name="sinkActivationSwitch">A Switch to change the activation status of the sink on the fly (optional).</param>
         /// <returns>Instance of <see cref="LoggerConfiguration"/> object.</returns>
         public static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
@@ -89,7 +89,7 @@ namespace Serilog.Sinks.SlackWebHook
             string sinkOutputTemplate = null,
             LoggingLevelSwitch sinkLevelSwitch = null,
             IFormatProvider sinkFormatProvider = null,
-            SlackSinkActivationSwitch statusSwitch = null
+            SlackSinkActivationSwitch sinkActivationSwitch = null
         )
         {
             return Slack(loggerSinkConfiguration, slackWebHookUrl, slackUsername, slackEmojiIcon, slackUriIcon,
@@ -100,7 +100,7 @@ namespace Serilog.Sinks.SlackWebHook
                 slackDisplayExtendedInfoAttachmentShort, slackAddExceptionAttachment,
                 slackDisplayExceptionAttachmentShort, slackConnectionTimeout, slackHttpClientObj, generateSlackFunctions, periodicBatchingSinkOptionsBatchSizeLimit,
                 periodicBatchingSinkOptionsPeriod, periodicBatchingSinkOptionsQueueLimit, sinkRestrictedToMinimumLevel,
-                sinkOutputTemplate, sinkLevelSwitch, sinkFormatProvider, statusSwitch);
+                sinkOutputTemplate, sinkLevelSwitch, sinkFormatProvider, sinkActivationSwitch);
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="sinkOutputTemplate">The template for the output format of the log messages (optional).</param>
         /// <param name="sinkLevelSwitch">A <see cref="LoggingLevelSwitch"/> to change the minimum <see cref="LogEventLevel"/> a log message must have to be send to Slack (optional).</param>
         /// <param name="sinkFormatProvider">A format provider (optional).</param>
-        /// <param name="statusSwitch">A Switch to change the activation status of the sink on the fly (optional).</param>
+        /// <param name="sinkActivationSwitch">A Switch to change the activation status of the sink on the fly (optional).</param>
         /// <returns>Instance of <see cref="LoggerConfiguration"/> object.</returns>
         public static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
@@ -180,7 +180,7 @@ namespace Serilog.Sinks.SlackWebHook
             string sinkOutputTemplate = null,
             LoggingLevelSwitch sinkLevelSwitch = null,
             IFormatProvider sinkFormatProvider = null,
-            SlackSinkActivationSwitch statusSwitch = null
+            SlackSinkActivationSwitch sinkActivationSwitch = null
         )
         {
             ParseMode? slackParse = null;
@@ -220,7 +220,7 @@ namespace Serilog.Sinks.SlackWebHook
                 slackDisplayExceptionAttachmentShort, slackConnectionTimeout, slackHttpClient, generateSlackMessageText,
                 generateSlackMessageAttachments, generateSlackMessageBlocks, periodicBatchingSinkOptionsBatchSizeLimit,
                 periodicBatchingSinkOptionsPeriod, periodicBatchingSinkOptionsQueueLimit, sinkRestrictedToMinimumLevel,
-                sinkOutputTemplate, sinkLevelSwitch, sinkFormatProvider, statusSwitch);
+                sinkOutputTemplate, sinkLevelSwitch, sinkFormatProvider, sinkActivationSwitch);
         }
 
         #endregion
@@ -263,7 +263,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <param name="sinkOutputTemplate">The template for the output format of the log messages (optional).</param>
         /// <param name="sinkLevelSwitch">A <see cref="LoggingLevelSwitch"/> to change the minimum <see cref="LogEventLevel"/> a log message must have to be send to Slack (optional).</param>
         /// <param name="sinkFormatProvider">A format provider (optional).</param>
-        /// <param name="statusSwitch">A Switch to change the activation status of the sink on the fly (optional).</param>
+        /// <param name="sinkActivationSwitch">A Switch to change the activation status of the sink on the fly (optional).</param>
         /// <returns>Instance of <see cref="LoggerConfiguration"/> object.</returns>
         private static LoggerConfiguration Slack(
             this LoggerSinkConfiguration loggerSinkConfiguration,
@@ -308,7 +308,7 @@ namespace Serilog.Sinks.SlackWebHook
             string sinkOutputTemplate = null,
             LoggingLevelSwitch sinkLevelSwitch = null,
             IFormatProvider sinkFormatProvider = null,
-            SlackSinkActivationSwitch statusSwitch = null
+            SlackSinkActivationSwitch sinkActivationSwitch = null
         )
         {
             if (slackWebHookUrl == null) throw new ArgumentNullException(nameof(slackWebHookUrl), "The Slack WebHook can't be null!");
@@ -343,14 +343,14 @@ namespace Serilog.Sinks.SlackWebHook
 
             if (slackConnectionTimeout != null) slackSinkOptions.SlackConnectionTimeout = (int)slackConnectionTimeout;
 
-            if (periodicBatchingSinkOptionsBatchSizeLimit != null) slackSinkOptions.SlackPeriodicBatchingSinkOptionsBatchSizeLimit = (int)periodicBatchingSinkOptionsBatchSizeLimit;
-            if (periodicBatchingSinkOptionsPeriod != null) slackSinkOptions.SlackPeriodicBatchingSinkOptionsPeriod = (TimeSpan)periodicBatchingSinkOptionsPeriod;
-            if (periodicBatchingSinkOptionsQueueLimit != null) slackSinkOptions.SlackPeriodicBatchingSinkOptionsQueueLimit = (int)periodicBatchingSinkOptionsQueueLimit;
+            if (periodicBatchingSinkOptionsBatchSizeLimit != null) slackSinkOptions.PeriodicBatchingSinkOptionsBatchSizeLimit = (int)periodicBatchingSinkOptionsBatchSizeLimit;
+            if (periodicBatchingSinkOptionsPeriod != null) slackSinkOptions.PeriodicBatchingSinkOptionsPeriod = (TimeSpan)periodicBatchingSinkOptionsPeriod;
+            if (periodicBatchingSinkOptionsQueueLimit != null) slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit = (int)periodicBatchingSinkOptionsQueueLimit;
 
-            if (sinkOutputTemplate != null) slackSinkOptions.SlackSinkOutputTemplate = sinkOutputTemplate;
+            if (sinkOutputTemplate != null) slackSinkOptions.SinkOutputTemplate = sinkOutputTemplate;
 
             return loggerSinkConfiguration.Sink(
-                logEventSink: new SlackSink(slackSinkOptions, sinkFormatProvider, statusSwitch, slackHttpClient,
+                logEventSink: new SlackSink(slackSinkOptions, sinkFormatProvider, sinkActivationSwitch, slackHttpClient,
                 generateSlackMessageText, generateSlackMessageAttachments, generateSlackMessageBlocks),
                 restrictedToMinimumLevel: sinkRestrictedToMinimumLevel ?? LevelAlias.Minimum,
                 levelSwitch: sinkLevelSwitch);

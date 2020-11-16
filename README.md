@@ -53,13 +53,14 @@ Log.Logger = new LoggerConfiguration()
             .WriteTo.Slack(
                 slackWebHookUrl: "https://...",
                 slackChannel: null
+            )
             .CreateLogger();
 ```
 
 b) Recommended usage:
 
 ```csharp
-var logLevelSwitch = new LoggingLevelSwitch(initialMinimumLevel: LogEventLevel.Verbos);
+var logLevelSwitch = new LoggingLevelSwitch(initialMinimumLevel: LogEventLevel.Verbose);
 Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .WriteTo.Slack(
@@ -73,7 +74,7 @@ Log.Logger = new LoggerConfiguration()
                     periodicBatchingSinkOptionsQueueLimit: 10000,
 
                     sinkRestrictedToMinimumLevel: LogEventLevel.Verbose,
-                    sinkLevelSwitch:logLevelSwitch)
+                    sinkLevelSwitch:logLevelSwitch
                 )
                 .CreateLogger();
 ```
@@ -114,7 +115,7 @@ Log.Logger = new LoggerConfiguration()
                     sinkOutputTemplate: null,
                     sinkLevelSwitch: null,
                     sinkFormatProvider: null,
-                    statusSwitch: null
+                    sinkActivationSwitch: null
                 )
                 .CreateLogger();
 ```

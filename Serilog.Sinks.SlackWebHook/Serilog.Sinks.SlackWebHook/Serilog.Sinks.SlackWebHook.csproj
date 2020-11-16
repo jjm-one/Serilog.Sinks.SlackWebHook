@@ -15,7 +15,11 @@
     <NeutralLanguage></NeutralLanguage>
     <SignAssembly>false</SignAssembly>
     <PackageId>Serilog.Sinks.SlackWebHook</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>

@@ -34,7 +34,7 @@ namespace Serilog.Sinks.SlackWebHook
         /// <summary>
         /// <see cref="SlackSinkActivationSwitch"/> to change the activation status of the sink on the fly.
         /// </summary>
-        private readonly SlackSinkActivationSwitch _statusSwitch;
+        private readonly SlackSinkActivationSwitch _slackSinkActivationSwitch;
 
         /// <summary>
         /// <see cref="IFormatProvider"/> object.
@@ -80,13 +80,13 @@ namespace Serilog.Sinks.SlackWebHook
             Func<LogEvent, IFormatProvider, object, List<Block>> generateSlackMessageBlocks = null
             )
             : base(
-                slackSinkOptions.SlackPeriodicBatchingSinkOptionsBatchSizeLimit,
-                slackSinkOptions.SlackPeriodicBatchingSinkOptionsPeriod,
-                slackSinkOptions.SlackPeriodicBatchingSinkOptionsQueueLimit)
+                slackSinkOptions.PeriodicBatchingSinkOptionsBatchSizeLimit,
+                slackSinkOptions.PeriodicBatchingSinkOptionsPeriod,
+                slackSinkOptions.PeriodicBatchingSinkOptionsQueueLimit)
         {
             _slackSinkOptions = slackSinkOptions;
             _formatProvider = formatProvider;
-            _statusSwitch = statusSwitch ?? new SlackSinkActivationSwitch();
+            _slackSinkActivationSwitch = statusSwitch ?? new SlackSinkActivationSwitch();
             _slackHttpClient = slackHttpClient ?? new HttpClient();
 
             // if no extern generation functions were specified, use the default ones
@@ -121,9 +121,12 @@ namespace Serilog.Sinks.SlackWebHook
         protected override async Task EmitBatchAsync(IEnumerable<LogEvent> events)
         {
             // check activation status
-            if (_statusSwitch.SlackStatus == SlackSinkActivationSwitch.SlackActivationStatus.InActive) return;
+            if (_slackSinkActivationSwitch.SlackSinkStatus == SlackSinkActivationSwitch.SlackSinkActivationStatus.InActive)
+            {
+                return;
+            }
 
-            foreach (var logEvent in events)
+            foreach (LogEvent logEvent in events)
             {
                 // create new slack message
                 var msg = new SlackMessage
@@ -150,7 +153,7 @@ namespace Serilog.Sinks.SlackWebHook
                     // multi channel post
                     var logMsgPosts = _slackClient.PostToChannelsAsync(msg, _slackSinkOptions.SlackChannels);
 
-                    foreach (var logMsgPost in logMsgPosts)
+                    foreach (Task<bool> logMsgPost in logMsgPosts)
                     {
                         await logMsgPost;
                     }
