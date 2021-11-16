@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.1;netstandard2.0;</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1;netstandard2.0;net5;net6</TargetFrameworks>
     <Authors>Jonas Merkle [JJM]</Authors>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <RepositoryType>GitHub</RepositoryType>
@@ -15,17 +15,17 @@
     <NeutralLanguage></NeutralLanguage>
     <SignAssembly>false</SignAssembly>
     <PackageId>Serilog.Sinks.SlackWebHook</PackageId>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6|AnyCPU'">
     <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.10.0" />
     <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="2.3.0" />
-    <PackageReference Include="Slack.Webhooks" Version="1.1.4" />
+    <PackageReference Include="Slack.Webhooks" Version="1.1.5" />
   </ItemGroup>
 
   <ItemGroup>

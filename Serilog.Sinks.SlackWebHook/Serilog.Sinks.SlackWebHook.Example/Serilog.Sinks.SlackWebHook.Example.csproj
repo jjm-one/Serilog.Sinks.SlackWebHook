@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6</TargetFramework>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Authors>Jonas Merkle [JJM]</Authors>
     <Description>A example for the basic Slack Sink for the Serilog framwork.</Description>
@@ -13,7 +13,7 @@
     <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</PackageProjectUrl>
     <AssemblyName>Serilog.Sinks.SlackWebHook.Example</AssemblyName>
     <RootNamespace>Serilog.Sinks.SlackWebHook.Example</RootNamespace>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
