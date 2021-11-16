@@ -41,7 +41,7 @@ You can get the latest version of this software as a nuget package form [nuget.o
 
 ### Slack related
 
-- [Slack.Webhooks](https://github.com/mrb0nj/Slack.Webhooks) [Version 1.1.4](https://github.com/mrb0nj/Slack.Webhooks/releases/tag/v1.1.4)
+- [Slack.Webhooks](https://github.com/mrb0nj/Slack.Webhooks) [Version 1.1.5](https://github.com/mrb0nj/Slack.Webhooks/releases/tag/v1.1.5)
 
 ## Usage
 
