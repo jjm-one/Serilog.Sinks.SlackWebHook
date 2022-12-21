@@ -13,7 +13,7 @@ A basic Slack Sink for the Serilog framework.
 | Test Status Master    | [![Test Status Master](https://img.shields.io/azure-devops/tests/jonas-merkle/Serilog.Sinks.SlackWebHook/3?compact_message&style=flat-square)](https://dev.azure.com/jonas-merkle/Serilog.Sinks.SlackWebHook/_test/analytics?definitionId=3&contextType=build) |
 | Test Status Develop   | [![Test Status Master](https://img.shields.io/azure-devops/tests/jonas-merkle/Serilog.Sinks.SlackWebHook/4?compact_message&style=flat-square)](https://dev.azure.com/jonas-merkle/Serilog.Sinks.SlackWebHook/_test/analytics?definitionId=4&contextType=build) |
 | Sonar Code Quality    | [![Sonar Code Quality](https://img.shields.io/sonar/quality_gate/jonas-merkle_serilog-sinks-slackwebhook?server=https%3A%2F%2Fsonarcloud.io&style=flat-square)](https://sonarcloud.io/dashboard?id=jonas-merkle_serilog-sinks-slackwebhook) |
-| Maintenance Status    | ![Sonar Code Quality](https://img.shields.io/maintenance/yes/2021?style=flat-square) |
+| Maintenance Status    | ![Sonar Code Quality](https://img.shields.io/maintenance/yes/2023?style=flat-square) |
 
 ## Description
 
