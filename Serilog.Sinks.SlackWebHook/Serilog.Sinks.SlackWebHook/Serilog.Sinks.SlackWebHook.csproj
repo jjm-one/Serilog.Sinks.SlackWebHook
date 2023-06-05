@@ -6,14 +6,14 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Authors>Jonas Merkle [JJM]</Authors>
     <Description>A basic Slack Sink for the Serilog framwork.</Description>
-    <Copyright>© by Jonas Merkle [JJM], 2022.</Copyright>
+    <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
     <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>serilog, serilog-sink, slack, logging, csharp</PackageTags>
     <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</PackageProjectUrl>
     <AssemblyName>Serilog.Sinks.SlackWebHook</AssemblyName>
     <RootNamespace>Serilog.Sinks.SlackWebHook</RootNamespace>
-    <Version>1.4.0</Version>
+    <Version>1.4.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <NeutralLanguage></NeutralLanguage>
