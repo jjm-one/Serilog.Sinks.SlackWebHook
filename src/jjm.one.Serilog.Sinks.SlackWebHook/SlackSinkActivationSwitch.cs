@@ -1,4 +1,4 @@
-﻿namespace Serilog.Sinks.SlackWebHook
+﻿namespace jjm.one.Serilog.Sinks.SlackWebHook
 {
     /// <summary>
     /// Provides a switch to set a slack sink active or inactive on the fly.

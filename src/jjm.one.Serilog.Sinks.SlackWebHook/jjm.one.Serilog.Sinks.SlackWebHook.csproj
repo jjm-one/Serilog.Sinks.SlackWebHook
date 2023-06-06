@@ -7,18 +7,18 @@
     <Authors>Jonas Merkle [JJM]</Authors>
     <Description>A basic Slack Sink for the Serilog framwork.</Description>
     <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
-    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</RepositoryUrl>
+    <RepositoryUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>serilog, serilog-sink, slack, logging, csharp</PackageTags>
-    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</PackageProjectUrl>
-    <AssemblyName>Serilog.Sinks.SlackWebHook</AssemblyName>
-    <RootNamespace>Serilog.Sinks.SlackWebHook</RootNamespace>
-    <Version>1.4.1</Version>
+    <PackageProjectUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</PackageProjectUrl>
+    <AssemblyName>jjm.one.Serilog.Sinks.SlackWebHook</AssemblyName>
+    <RootNamespace>jjm.one.Serilog.Sinks.SlackWebHook</RootNamespace>
+    <Version>1.4.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <NeutralLanguage></NeutralLanguage>
     <SignAssembly>false</SignAssembly>
-    <PackageId>Serilog.Sinks.SlackWebHook</PackageId>
+    <PackageId>jjm.one.Serilog.Sinks.SlackWebHook</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6|AnyCPU'">

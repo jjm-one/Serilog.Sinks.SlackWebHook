@@ -7,7 +7,7 @@ using Serilog.Events;
 using Serilog.Sinks.PeriodicBatching;
 using Slack.Webhooks;
 
-namespace Serilog.Sinks.SlackWebHook
+namespace jjm.one.Serilog.Sinks.SlackWebHook
 {
 	public class SlackSerilogBatchedLogEventSink : IBatchedLogEventSink
     {

@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace Serilog.Sinks.SlackWebHook.Tests
+namespace jjm.one.Serilog.Sinks.SlackWebHook.Tests
 {
     [TestFixture]
     public class SlackSinkOptionsTests

@@ -7,13 +7,13 @@
     <Authors>Jonas Merkle [JJM]</Authors>
     <Description>Unit Tests for a basic Slack Sink for the Serilog framwork.</Description>
     <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
-    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</RepositoryUrl>
+    <RepositoryUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>serilog, serilog-sink, slack, logging, csharp, unit-tests</PackageTags>
-    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</PackageProjectUrl>
-    <AssemblyName>Serilog.Sinks.SlackWebHook.Tests</AssemblyName>
-    <RootNamespace>Serilog.Sinks.SlackWebHook.Tests</RootNamespace>
-    <Version>1.4.1</Version>
+    <PackageProjectUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</PackageProjectUrl>
+    <AssemblyName>jjm.one.Serilog.Sinks.SlackWebHook.Tests</AssemblyName>
+    <RootNamespace>jjm.one.Serilog.Sinks.SlackWebHook.Tests</RootNamespace>
+    <Version>1.4.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Serilog.Sinks.SlackWebHook\Serilog.Sinks.SlackWebHook.csproj" />
+    <ProjectReference Include="..\jjm.one.Serilog.Sinks.SlackWebHook\jjm.one.Serilog.Sinks.SlackWebHook.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Serilog.Sinks.SlackWebHook
+namespace jjm.one.Serilog.Sinks.SlackWebHook
 {
     /// <summary>
     /// Class with default tools for message generation.
