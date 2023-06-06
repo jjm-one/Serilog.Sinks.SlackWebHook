@@ -1,31 +1,34 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7</TargetFramework>
-    <IsPackable>false</IsPackable>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <Authors>Jonas Merkle [JJM]</Authors>
-    <Description>A example for the basic Slack Sink for the Serilog framwork.</Description>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Version>2.0.0</Version>
+    <Authors>Jonas Merkle [JJM] </Authors>
     <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
-    <RepositoryUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</RepositoryUrl>
-    <RepositoryType>GitHub</RepositoryType>
+    <RootNamespace>jm.one.Serilog.Sinks.SlackWebHook.Example</RootNamespace>
+    <Title>jm.one.Serilog.Sinks.SlackWebHook.Example</Title>
+    <Description>A basic Slack Sink for the Serilog framwork. (Example)</Description>
     <PackageTags>serilog, serilog-sink, slack, logging, csharp, example</PackageTags>
     <PackageProjectUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</PackageProjectUrl>
-    <AssemblyName>jjm.one.Serilog.Sinks.SlackWebHook.Example</AssemblyName>
-    <RootNamespace>jjm.one.Serilog.Sinks.SlackWebHook.Example</RootNamespace>
-    <Version>1.4.2</Version>
-    <OutputType>Exe</OutputType>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</RepositoryUrl>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>false</IsTestProject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>latestmajor</LangVersion>
+    <DocumentationFile>./jjm.one.MiscUtilFunctions.Tests.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>latestmajor</LangVersion>
+    <DocumentationFile>./jjm.one.MiscUtilFunctions.Tests.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.12.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
