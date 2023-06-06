@@ -120,4 +120,4 @@ The full documentation for this package can be found [here](https://jjm-one.gith
 
 ## Repo
 
-The associated repo for this package can be found [here](https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHooks).
+The associated repo for this package can be found [here](https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook).
