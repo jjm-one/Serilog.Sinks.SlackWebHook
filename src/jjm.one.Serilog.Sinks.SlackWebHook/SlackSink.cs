@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 
-namespace Serilog.Sinks.SlackWebHook
+namespace jjm.one.Serilog.Sinks.SlackWebHook
 {
     /// <summary>
     /// This class provides functions for sending log events (serilog) to slack an implements therefor <see cref="PeriodicBatchingSink"/>.

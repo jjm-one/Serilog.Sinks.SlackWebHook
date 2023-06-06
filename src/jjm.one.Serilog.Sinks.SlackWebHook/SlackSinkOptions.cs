@@ -3,7 +3,7 @@ using Slack.Webhooks;
 using System;
 using System.Collections.Generic;
 
-namespace Serilog.Sinks.SlackWebHook
+namespace jjm.one.Serilog.Sinks.SlackWebHook
 {
     /// <summary>
     /// Class to contain all relevant options of this sink.

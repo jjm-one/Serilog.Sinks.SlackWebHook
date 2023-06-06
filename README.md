@@ -1,4 +1,4 @@
-# Serilog.Sinks.SlackWebHook
+# jjm.one.Serilog.Sinks.SlackWebHook
 
 A basic Slack Sink for the Serilog framework.
 
@@ -6,14 +6,8 @@ A basic Slack Sink for the Serilog framework.
 
 |                       |                       |
 |----------------------:|-----------------------|
-| Nuget Package Version | [![Nuget Version](https://img.shields.io/nuget/v/Serilog.Sinks.SlackWebHook?style=flat-square)](https://www.nuget.org/packages/Serilog.Sinks.SlackWebHook/) |
-| nuget.org Deployment  | [![nuget.org Deployment](https://img.shields.io/azure-devops/release/jonas-merkle/09454b63-c969-4591-aa24-ea8867d031bd/1/2?style=flat-square)](https://dev.azure.com/jonas-merkle/Serilog.Sinks.SlackWebHook/_release?view=all&_a=releases&definitionId=1) |
-| Build Status Master   | [![Build Status Master](https://img.shields.io/azure-devops/build/jonas-merkle/Serilog.Sinks.SlackWebHook/3/master?style=flat-square)](https://dev.azure.com/jonas-merkle/Serilog.Sinks.SlackWebHook/_build/latest?definitionId=3) |
-| Build Status Develop  | [![Build status Develop](https://img.shields.io/azure-devops/build/jonas-merkle/Serilog.Sinks.SlackWebHook/4/develop?style=flat-square)](https://dev.azure.com/jonas-merkle/Serilog.Sinks.SlackWebHook/_build/latest?definitionId=4) |
-| Test Status Master    | [![Test Status Master](https://img.shields.io/azure-devops/tests/jonas-merkle/Serilog.Sinks.SlackWebHook/3?compact_message&style=flat-square)](https://dev.azure.com/jonas-merkle/Serilog.Sinks.SlackWebHook/_test/analytics?definitionId=3&contextType=build) |
-| Test Status Develop   | [![Test Status Master](https://img.shields.io/azure-devops/tests/jonas-merkle/Serilog.Sinks.SlackWebHook/4?compact_message&style=flat-square)](https://dev.azure.com/jonas-merkle/Serilog.Sinks.SlackWebHook/_test/analytics?definitionId=4&contextType=build) |
-| Sonar Code Quality    | [![Sonar Code Quality](https://img.shields.io/sonar/quality_gate/jonas-merkle_serilog-sinks-slackwebhook?server=https%3A%2F%2Fsonarcloud.io&style=flat-square)](https://sonarcloud.io/dashboard?id=jonas-merkle_serilog-sinks-slackwebhook) |
-| Maintenance Status    | ![Sonar Code Quality](https://img.shields.io/maintenance/yes/2023?style=flat-square) |
+| Nuget Package Version | [![Nuget Version](https://img.shields.io/nuget/v/jjm.one.Serilog.Sinks.SlackWebHook?style=flat-square)](https://www.nuget.org/packages/jjm.one.Serilog.Sinks.SlackWebHook/) |
+| SonarCloudQuality Gate Status | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jjm-one_jjm.one.Serilog.Sinks.SlackWebHook&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jjm-one_jjm.one.Serilog.Sinks.SlackWebHook) |
 
 ## Description
 
@@ -119,3 +113,11 @@ Log.Logger = new LoggerConfiguration()
                 )
                 .CreateLogger();
 ```
+
+## Full Documentation
+
+The full documentation for this package can be found [here](https://jjm-one.github.io/jjm.one.Serilog.Sinks.SlackWebHook/main/doc/html/index.html).
+
+## Repo
+
+The associated repo for this package can be found [here](https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHooks).

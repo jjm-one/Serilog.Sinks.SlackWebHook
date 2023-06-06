@@ -7,13 +7,13 @@
     <Authors>Jonas Merkle [JJM]</Authors>
     <Description>A example for the basic Slack Sink for the Serilog framwork.</Description>
     <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
-    <RepositoryUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</RepositoryUrl>
+    <RepositoryUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>serilog, serilog-sink, slack, logging, csharp, example</PackageTags>
-    <PackageProjectUrl>https://github.com/jonas-merkle/serilog-sinks-slackwebhook</PackageProjectUrl>
-    <AssemblyName>Serilog.Sinks.SlackWebHook.Example</AssemblyName>
-    <RootNamespace>Serilog.Sinks.SlackWebHook.Example</RootNamespace>
-    <Version>1.4.1</Version>
+    <PackageProjectUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</PackageProjectUrl>
+    <AssemblyName>jjm.one.Serilog.Sinks.SlackWebHook.Example</AssemblyName>
+    <RootNamespace>jjm.one.Serilog.Sinks.SlackWebHook.Example</RootNamespace>
+    <Version>1.4.2</Version>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 
@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Serilog.Sinks.SlackWebHook\Serilog.Sinks.SlackWebHook.csproj" />
+    <ProjectReference Include="..\jjm.one.Serilog.Sinks.SlackWebHook\jjm.one.Serilog.Sinks.SlackWebHook.csproj" />
   </ItemGroup>
 
 </Project>

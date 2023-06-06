@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 
-namespace Serilog.Sinks.SlackWebHook.Tests
+namespace jjm.one.Serilog.Sinks.SlackWebHook.Tests
 {
     [TestFixture]
     public class SlackLoggerConfigurationExtensionsConstructorParameterTests
