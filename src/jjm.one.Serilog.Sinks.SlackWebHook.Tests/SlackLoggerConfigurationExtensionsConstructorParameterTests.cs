@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Serilog;
 using Serilog.Events;
 using Slack.Webhooks;
 using System;
