@@ -30,8 +30,8 @@ You can get the latest version of this software as a nuget package form [nuget.o
 
 ### Serilog related
 
-- [Serilog](https://github.com/serilog/serilog) [Version 2.10.0](https://github.com/serilog/serilog/releases/tag/v2.10.0)
-- [Serilog.Sinks.PeriodicBatching](https://github.com/serilog/serilog-sinks-periodicbatching) [Version 2.3.0](https://github.com/serilog/serilog-sinks-periodicbatching/releases/tag/v2.3.0)
+- [Serilog](https://github.com/serilog/serilog) [Version 2.12.0](https://github.com/serilog/serilog/releases/tag/v2.10.0)
+- [Serilog.Sinks.PeriodicBatching](https://github.com/serilog/serilog-sinks-periodicbatching) [Version 3.1.0](https://github.com/serilog/serilog-sinks-periodicbatching/releases/tag/v2.3.0)
 
 ### Slack related
 
@@ -120,4 +120,4 @@ The full documentation for this package can be found [here](https://jjm-one.gith
 
 ## Repo
 
-The associated repo for this package can be found [here](https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHooks).
+The associated repo for this package can be found [here](https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook).

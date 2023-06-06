@@ -1,3 +1,5 @@
+# Ignore localy generated doc files
+doc
 
 # Created by https://www.gitignore.io/api/rider,linux,macos,csharp,windows,dotnetcore,aspnetcore,visualstudio,jetbrains+all,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=rider,linux,macos,csharp,windows,dotnetcore,aspnetcore,visualstudio,jetbrains+all,visualstudiocode
