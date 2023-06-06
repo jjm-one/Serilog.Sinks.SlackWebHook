@@ -1,0 +1,6 @@
+<map id="jjm.one.Serilog.Sinks.SlackWebHook.SlackSerilogBatchedLogEventSink" name="jjm.one.Serilog.Sinks.SlackWebHook.SlackSerilogBatchedLogEventSink">
+<area shape="rect" id="node1" title=" " alt="" coords="496,57,805,98"/>
+<area shape="rect" id="node2" title=" " alt="" coords="52,5,219,32"/>
+<area shape="rect" id="node3" href="$classjjm_1_1one_1_1Serilog_1_1Sinks_1_1SlackWebHook_1_1SlackSinkOptions.html" title="Class to contain all relevant options of this sink." alt="" coords="35,57,236,98"/>
+<area shape="rect" id="node4" href="$classjjm_1_1one_1_1Serilog_1_1Sinks_1_1SlackWebHook_1_1SlackSinkActivationSwitch.html" title="Provides a switch to set a slack sink active or inactive on the fly." alt="" coords="5,122,265,163"/>
+</map>
