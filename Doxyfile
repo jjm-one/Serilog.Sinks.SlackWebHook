@@ -1045,9 +1045,9 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = src/jjm.one.MiscUtilFunctions.Tests \
-                         src/jjm.one.MiscUtilFunctions/obj \
-                         src/jjm.one.MiscUtilFunctions/bin
+EXCLUDE                = src/Serilog.Sinks.SlackWebHook.Tests \
+                         src/Serilog.Sinks.SlackWebHook/obj \
+                         src/Serilog.Sinks.SlackWebHook/bin
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
