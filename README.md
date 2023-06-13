@@ -16,16 +16,19 @@ This tool provides a Serilog Sink which sends log messages to one or more channe
 
 ## Nuget Package
 
-You can get the latest version of this software as a nuget package form [nuget.org](https://www.nuget.org/packages/Serilog.Sinks.SlackWebHook/)
+You can get the latest version of this software as a nuget package form [nuget.org](https://www.nuget.org/packages/jjm.one.Serilog.Sinks.SlackWebHook/)
 
 ### Installing the Nuget Package
 
-| Tool             | Command/Code |
-|------------------|--------------|
-|Package Manager   | ```PM> Install-Package Serilog.Sinks.SlackWebHook -Version X.Y.Z``` |
-|.NET CLI          | ```> dotnet add package Serilog.Sinks.SlackWebHook --version X.Y.Z``` |
-| PackageReference | ```<PackageReference Include="Serilog.Sinks.SlackWebHook" Version="X.Y.Z" />``` |
-| Package CLI      | ```> paket add Serilog.Sinks.SlackWebHook --version X.Y.Z``` |
+| Tool                 | Command/Code |
+|----------------------|--------------|
+| Package Manager      | ```PM> Install-Package jjm.one.Serilog.Sinks.SlackWebHook -Version X.Y.Z``` |
+| .NET CLI             | ```> dotnet add package jjm.one.Serilog.Sinks.SlackWebHook --version X.Y.Z``` |
+| PackageReference     | ```<PackageReference Include="jjm.one.Serilog.Sinks.SlackWebHook" Version="X.Y.Z" />``` |
+| Package CLI          | ```> paket add jjm.one.Serilog.Sinks.SlackWebHook --version X.Y.Z``` |
+| Script & Interactive | ```> #r "nuget: jjm.one.Serilog.Sinks.SlackWebHook, X.Y.Z"``` |
+| Cake as Addin        | ```#addin nuget:?package=jjm.one.Serilog.Sinks.SlackWebHook&version=X.Y.Z``` |
+| Cake as Tool         | ```#tool nuget:?package=jjm.one.Serilog.Sinks.SlackWebHook&version=X.Y.Z``` |
 
 ## Dependencies
 
