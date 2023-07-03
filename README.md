@@ -34,8 +34,8 @@ You can get the latest version of this software as a nuget package form [nuget.o
 
 ### Serilog related
 
-- [Serilog](https://github.com/serilog/serilog) [Version 2.12.0](https://github.com/serilog/serilog/releases/tag/v2.10.0)
-- [Serilog.Sinks.PeriodicBatching](https://github.com/serilog/serilog-sinks-periodicbatching) [Version 3.1.0](https://github.com/serilog/serilog-sinks-periodicbatching/releases/tag/v2.3.0)
+- [Serilog](https://github.com/serilog/serilog) [Version 2.12.0](https://github.com/serilog/serilog/releases/tag/v2.12.0)
+- [Serilog.Sinks.PeriodicBatching](https://github.com/serilog/serilog-sinks-periodicbatching) [Version 3.1.0](https://github.com/serilog/serilog-sinks-periodicbatching/releases/tag/v3.1.0)
 
 ### Slack related
 
