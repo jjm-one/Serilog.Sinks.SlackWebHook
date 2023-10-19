@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace jjm.one.Serilog.Sinks.SlackWebHook;
 /// <summary>
 ///     This class implements the <see cref="IBatchedLogEventSink" /> for the use with slack as an endpoint.
 /// </summary>
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public class SlackSerilogBatchedLogEventSink : IBatchedLogEventSink
 {
     #region constructor
@@ -31,9 +33,9 @@ public class SlackSerilogBatchedLogEventSink : IBatchedLogEventSink
         IFormatProvider? formatProvider,
         SlackSinkActivationSwitch? statusSwitch = null,
         HttpClient? slackHttpClient = null,
-        Func<LogEvent, IFormatProvider, object, string>? generateSlackMessageText = null,
-        Func<LogEvent, IFormatProvider, object, List<SlackAttachment>>? generateSlackMessageAttachments = null,
-        Func<LogEvent, IFormatProvider, object, List<Block>>? generateSlackMessageBlocks = null
+        Func<LogEvent, IFormatProvider?, object, string?>? generateSlackMessageText = null,
+        Func<LogEvent, IFormatProvider?, object, List<SlackAttachment>?>? generateSlackMessageAttachments = null,
+        Func<LogEvent, IFormatProvider?, object, List<Block>?>? generateSlackMessageBlocks = null
     )
     {
         _slackSinkOptions = slackSinkOptions;
@@ -86,17 +88,17 @@ public class SlackSerilogBatchedLogEventSink : IBatchedLogEventSink
     /// <summary>
     ///     Function to generate the text of the slack message.
     /// </summary>
-    private static Func<LogEvent, IFormatProvider, object, string>? _generateSlackMessageText;
+    private static Func<LogEvent, IFormatProvider?, object, string>? _generateSlackMessageText;
 
     /// <summary>
     ///     Function to generate the attachments of the slack message.
     /// </summary>
-    private static Func<LogEvent, IFormatProvider, object, List<SlackAttachment>>? _generateSlackMessageAttachments;
+    private static Func<LogEvent, IFormatProvider?, object, List<SlackAttachment>?>? _generateSlackMessageAttachments;
 
     /// <summary>
     ///     Function to generate the blocks of the slack message.
     /// </summary>
-    private static Func<LogEvent, IFormatProvider, object, List<Block>>? _generateSlackMessageBlocks;
+    private static Func<LogEvent, IFormatProvider?, object, List<Block>?>? _generateSlackMessageBlocks;
 
     #endregion
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using Serilog.Events;
@@ -11,6 +12,7 @@ namespace jjm.one.Serilog.Sinks.SlackWebHook;
 /// <summary>
 ///     Class with default tools for message generation.
 /// </summary>
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public static class SlackSinkMessageTools
 {
     /// <summary>
@@ -205,7 +207,7 @@ public static class SlackSinkMessageTools
 
         #endregion
 
-        return attachments.Any() ? attachments : null;
+        return attachments.Any() ? attachments : null; 
     }
 
     /// <summary>

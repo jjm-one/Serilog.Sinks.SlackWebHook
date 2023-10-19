@@ -1,8 +1,11 @@
-﻿namespace jjm.one.Serilog.Sinks.SlackWebHook;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace jjm.one.Serilog.Sinks.SlackWebHook;
 
 /// <summary>
 ///     Provides a switch to set a slack sink active or inactive on the fly.
 /// </summary>
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public class SlackSinkActivationSwitch
 {
     #region public enum

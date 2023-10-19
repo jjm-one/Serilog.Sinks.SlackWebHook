@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using Serilog;
 using Serilog.Configuration;
@@ -13,6 +14,7 @@ namespace jjm.one.Serilog.Sinks.SlackWebHook;
 ///     This class contains the extenstion functions to add the Slack logger configuration to a existing logger
 ///     configuration.
 /// </summary>
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public static class SlackLoggerConfigurationExtensions
 {
     #region private constructors
@@ -112,9 +114,9 @@ public static class SlackLoggerConfigurationExtensions
         bool? slackDisplayExceptionAttachmentShort = null,
         int? slackConnectionTimeout = null,
         HttpClient? slackHttpClient = null,
-        Func<LogEvent, IFormatProvider, object, string>? generateSlackMessageText = null,
-        Func<LogEvent, IFormatProvider, object, List<SlackAttachment>>? generateSlackMessageAttachments = null,
-        Func<LogEvent, IFormatProvider, object, List<Block>>? generateSlackMessageBlocks = null,
+        Func<LogEvent, IFormatProvider?, object, string?>? generateSlackMessageText = null,
+        Func<LogEvent, IFormatProvider?, object, List<SlackAttachment>?>? generateSlackMessageAttachments = null,
+        Func<LogEvent, IFormatProvider?, object, List<Block>?>? generateSlackMessageBlocks = null,
 
         // periodic batch sink options
         int? periodicBatchingSinkOptionsBatchSizeLimit = null,
@@ -420,21 +422,21 @@ public static class SlackLoggerConfigurationExtensions
         HttpClient? slackHttpClient = null;
         if (slackHttpClientObj is not null) slackHttpClient = (HttpClient)slackHttpClientObj;
 
-        Func<LogEvent, IFormatProvider, object, string>? generateSlackMessageText = null;
-        Func<LogEvent, IFormatProvider, object, List<SlackAttachment>>? generateSlackMessageAttachments = null;
-        Func<LogEvent, IFormatProvider, object, List<Block>>? generateSlackMessageBlocks = null;
+        Func<LogEvent, IFormatProvider?, object, string?>? generateSlackMessageText = null;
+        Func<LogEvent, IFormatProvider?, object, List<SlackAttachment>?>? generateSlackMessageAttachments = null;
+        Func<LogEvent, IFormatProvider?, object, List<Block>?>? generateSlackMessageBlocks = null;
 
         if (generateSlackFunctions is not null)
         {
             if (generateSlackFunctions.Item1 is not null)
                 generateSlackMessageText =
-                    (Func<LogEvent, IFormatProvider, object, string>)generateSlackFunctions.Item1;
+                    (Func<LogEvent, IFormatProvider?, object, string?>)generateSlackFunctions.Item1;
             if (generateSlackFunctions.Item2 is not null)
                 generateSlackMessageAttachments =
-                    (Func<LogEvent, IFormatProvider, object, List<SlackAttachment>>)generateSlackFunctions.Item2;
+                    (Func<LogEvent, IFormatProvider?, object, List<SlackAttachment>?>)generateSlackFunctions.Item2;
             if (generateSlackFunctions.Item3 is not null)
                 generateSlackMessageBlocks =
-                    (Func<LogEvent, IFormatProvider, object, List<Block>>)generateSlackFunctions.Item3;
+                    (Func<LogEvent, IFormatProvider?, object, List<Block>?>)generateSlackFunctions.Item3;
         }
 
         return Slack(loggerSinkConfiguration, slackWebHookUrl, slackUsername, slackEmojiIcon, slackUriIcon,

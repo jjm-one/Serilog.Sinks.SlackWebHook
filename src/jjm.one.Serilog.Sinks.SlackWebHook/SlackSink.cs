@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using Serilog.Events;
 using Serilog.Sinks.PeriodicBatching;
@@ -11,6 +12,7 @@ namespace jjm.one.Serilog.Sinks.SlackWebHook;
 ///     This class provides functions for sending log events (serilog) to slack an implements therefor
 ///     <see cref="PeriodicBatchingSink" />.
 /// </summary>
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public class SlackSink : PeriodicBatchingSink
 {
     #region constructor
@@ -30,9 +32,9 @@ public class SlackSink : PeriodicBatchingSink
         IFormatProvider? formatProvider,
         SlackSinkActivationSwitch? statusSwitch = null,
         HttpClient? slackHttpClient = null,
-        Func<LogEvent, IFormatProvider, object, string>? generateSlackMessageText = null,
-        Func<LogEvent, IFormatProvider, object, List<SlackAttachment>>? generateSlackMessageAttachments = null,
-        Func<LogEvent, IFormatProvider, object, List<Block>>? generateSlackMessageBlocks = null
+        Func<LogEvent, IFormatProvider?, object, string?>? generateSlackMessageText = null,
+        Func<LogEvent, IFormatProvider?, object, List<SlackAttachment>?>? generateSlackMessageAttachments = null,
+        Func<LogEvent, IFormatProvider?, object, List<Block>?>? generateSlackMessageBlocks = null
     )
         : base(new SlackSerilogBatchedLogEventSink(
                 slackSinkOptions,

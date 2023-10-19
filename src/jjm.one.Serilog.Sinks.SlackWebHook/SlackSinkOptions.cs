@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Serilog.Events;
 using Slack.Webhooks;
 
@@ -8,6 +9,7 @@ namespace jjm.one.Serilog.Sinks.SlackWebHook;
 /// <summary>
 ///     Class to contain all relevant options of this sink.
 /// </summary>
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public class SlackSinkOptions
 {
     #region general sink options
@@ -56,7 +58,9 @@ public class SlackSinkOptions
     /// <summary>
     ///     REQUIRED: Slack WebHook URL.
     /// </summary>
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public string SlackWebHookUrl { get; set; }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
     /// <summary>
     ///     OPTIONAL: Timeout for the connection to the Slack servers.
@@ -75,18 +79,18 @@ public class SlackSinkOptions
     /// <summary>
     ///     RECOMMENDED: Slack user-icon emoji string.
     /// </summary>
-    public string SlackEmojiIcon { get; set; } = null;
+    public string? SlackEmojiIcon { get; set; } = null;
 
     /// <summary>
     ///     OPTIONAL: Slack user-icon image URI.
     /// </summary>
-    public Uri SlackUriIcon { get; set; } = null;
+    public Uri? SlackUriIcon { get; set; } = null;
 
     /// <summary>
     ///     RECOMMENDED: A <see cref="List{String}" /> containing the name of all Slack channels in which the log message
     ///     should be posted.
     /// </summary>
-    public List<string> SlackChannels { get; set; } = null;
+    public List<string?>? SlackChannels { get; set; } = null;
 
     /// <summary>
     ///     OPTIONAL: Slack message option 'DeleteOriginal'.
@@ -116,12 +120,12 @@ public class SlackSinkOptions
     /// <summary>
     ///     OPTIONAL: Slack message option 'ResponseType'.
     /// </summary>
-    public string SlackResponseType { get; set; } = null;
+    public string? SlackResponseType { get; set; } = null;
 
     /// <summary>
     ///     OPTIONAL: Slack message option 'ThreadID'.
     /// </summary>
-    public string SlackThreadId { get; set; } = null;
+    public string? SlackThreadId { get; set; } = null;
 
     #endregion
 
