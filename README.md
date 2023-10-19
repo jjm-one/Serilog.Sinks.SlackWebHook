@@ -4,31 +4,36 @@ A basic Slack Sink for the Serilog framework.
 
 ## Status
 
-|                       |                       |
-|----------------------:|-----------------------|
-| Build & Test Status (main) | [![Build&Test](https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook/actions/workflows/dotnet.yml/badge.svg)](https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook/actions/workflows/dotnet.yml) |
-| Nuget Package Version | [![Nuget Version](https://img.shields.io/nuget/v/jjm.one.Serilog.Sinks.SlackWebHook?style=flat-square)](https://www.nuget.org/packages/jjm.one.Serilog.Sinks.SlackWebHook/) |
+|                               |                                                                                                                                                                                                                                         |
+|------------------------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    Build & Test Status (main) | [![Build&Test](https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook/actions/workflows/dotnet.yml/badge.svg)](https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook/actions/workflows/dotnet.yml)                       |
+|         Nuget Package Version | [![Nuget Version](https://img.shields.io/nuget/v/jjm.one.Serilog.Sinks.SlackWebHook?style=flat-square)](https://www.nuget.org/packages/jjm.one.Serilog.Sinks.SlackWebHook/)                                                             |
 | SonarCloudQuality Gate Status | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jjm-one_jjm.one.Serilog.Sinks.SlackWebHook&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jjm-one_jjm.one.Serilog.Sinks.SlackWebHook) |
 
 ## Description
 
-This tool provides a Serilog Sink which sends log messages to one or more channels in a Slack workspace. To send this messages this tool is using the [Slack.Webhooks](https://github.com/mrb0nj/Slack.Webhooks) project to handle the communication with Slack. Therefor you need a valid WebHook URL to use this Sink. To get such a WebHook URL please read this [article](https://slack.com/help/articles/115005265063-Incoming-Webhooks-for-Slack). The log messages will be send in batches to the slack servers. You can setup the batch size to fit your needs.
+This tool provides a Serilog Sink which sends log messages to one or more channels in a Slack workspace. To send this
+messages this tool is using the [Slack.Webhooks](https://github.com/mrb0nj/Slack.Webhooks) project to handle the
+communication with Slack. Therefor you need a valid WebHook URL to use this Sink. To get such a WebHook URL please read
+this [article](https://slack.com/help/articles/115005265063-Incoming-Webhooks-for-Slack). The log messages will be send
+in batches to the slack servers. You can setup the batch size to fit your needs.
 
 ## Nuget Package
 
-You can get the latest version of this software as a nuget package form [nuget.org](https://www.nuget.org/packages/jjm.one.Serilog.Sinks.SlackWebHook/)
+You can get the latest version of this software as a nuget package
+form [nuget.org](https://www.nuget.org/packages/jjm.one.Serilog.Sinks.SlackWebHook/)
 
 ### Installing the Nuget Package
 
-| Tool                 | Command/Code |
-|----------------------|--------------|
-| Package Manager      | ```PM> Install-Package jjm.one.Serilog.Sinks.SlackWebHook -Version X.Y.Z``` |
-| .NET CLI             | ```> dotnet add package jjm.one.Serilog.Sinks.SlackWebHook --version X.Y.Z``` |
+| Tool                 | Command/Code                                                                            |
+|----------------------|-----------------------------------------------------------------------------------------|
+| Package Manager      | ```PM> Install-Package jjm.one.Serilog.Sinks.SlackWebHook -Version X.Y.Z```             |
+| .NET CLI             | ```> dotnet add package jjm.one.Serilog.Sinks.SlackWebHook --version X.Y.Z```           |
 | PackageReference     | ```<PackageReference Include="jjm.one.Serilog.Sinks.SlackWebHook" Version="X.Y.Z" />``` |
-| Package CLI          | ```> paket add jjm.one.Serilog.Sinks.SlackWebHook --version X.Y.Z``` |
-| Script & Interactive | ```> #r "nuget: jjm.one.Serilog.Sinks.SlackWebHook, X.Y.Z"``` |
-| Cake as Addin        | ```#addin nuget:?package=jjm.one.Serilog.Sinks.SlackWebHook&version=X.Y.Z``` |
-| Cake as Tool         | ```#tool nuget:?package=jjm.one.Serilog.Sinks.SlackWebHook&version=X.Y.Z``` |
+| Package CLI          | ```> paket add jjm.one.Serilog.Sinks.SlackWebHook --version X.Y.Z```                    |
+| Script & Interactive | ```> #r "nuget: jjm.one.Serilog.Sinks.SlackWebHook, X.Y.Z"```                           |
+| Cake as Addin        | ```#addin nuget:?package=jjm.one.Serilog.Sinks.SlackWebHook&version=X.Y.Z```            |
+| Cake as Tool         | ```#tool nuget:?package=jjm.one.Serilog.Sinks.SlackWebHook&version=X.Y.Z```             |
 
 ## Dependencies
 
@@ -120,7 +125,8 @@ Log.Logger = new LoggerConfiguration()
 
 ## Full Documentation
 
-The full documentation for this package can be found [here](https://jjm-one.github.io/jjm.one.Serilog.Sinks.SlackWebHook/main/doc/html/index.html).
+The full documentation for this package can be
+found [here](https://jjm-one.github.io/jjm.one.Serilog.Sinks.SlackWebHook/main/doc/html/index.html).
 
 ## Repo
 

@@ -1,45 +1,44 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>disable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Version>2.0.2</Version>
-    <Authors>Jonas Merkle [JJM] </Authors>
-    <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
-    <RootNamespace>jm.one.Serilog.Sinks.SlackWebHook.Tests</RootNamespace>
-    <Title>jm.one.Serilog.Sinks.SlackWebHook.Tests</Title>
-    <Description>A basic Slack Sink for the Serilog framwork. (Unit-Tests)</Description>
-    <PackageTags>serilog, serilog-sink, slack, logging, csharp, unit-tests</PackageTags>
-    <PackageProjectUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</PackageProjectUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</RepositoryUrl>
-    <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Version>2.1.0</Version>
+        <Authors>Jonas Merkle [JJM]</Authors>
+        <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
+        <Title>jm.one.Serilog.Sinks.SlackWebHook.Tests</Title>
+        <Description>A basic Slack Sink for the Serilog framwork. (Unit-Tests)</Description>
+        <PackageTags>serilog, serilog-sink, slack, logging, csharp, unit-tests</PackageTags>
+        <PackageProjectUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</RepositoryUrl>
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
+    </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <LangVersion>latestmajor</LangVersion>
-    <DocumentationFile>./jjm.one.MiscUtilFunctions.Tests.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <LangVersion>latestmajor</LangVersion>
-    <DocumentationFile>./jjm.one.MiscUtilFunctions.Tests.xml</DocumentationFile>
-  </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <LangVersion>latestmajor</LangVersion>
+        <DocumentationFile>./jjm.one.MiscUtilFunctions.Tests.xml</DocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <LangVersion>latestmajor</LangVersion>
+        <DocumentationFile>./jjm.one.MiscUtilFunctions.Tests.xml</DocumentationFile>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="nunit" Version="3.13.3" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
-    <PackageReference Include="Serilog" Version="3.0.1" />
-    <PackageReference Include="Slack.Webhooks" Version="1.1.5" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="nunit" Version="3.13.3"/>
+        <PackageReference Include="NUnit3TestAdapter" Version="4.5.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2"/>
+        <PackageReference Include="Serilog" Version="3.0.1"/>
+        <PackageReference Include="Slack.Webhooks" Version="1.1.5"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\jjm.one.Serilog.Sinks.SlackWebHook\jjm.one.Serilog.Sinks.SlackWebHook.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\jjm.one.Serilog.Sinks.SlackWebHook\jjm.one.Serilog.Sinks.SlackWebHook.csproj"/>
+    </ItemGroup>
 
 </Project>
