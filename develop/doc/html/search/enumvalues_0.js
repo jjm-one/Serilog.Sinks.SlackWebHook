@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['active_188',['Active',['../classjjm_1_1one_1_1Serilog_1_1Sinks_1_1SlackWebHook_1_1SlackSinkActivationSwitch.html#a7ac5d46d19c0bcb41f3f63df281e2d5ba4d3d769b812b6faa6b76e1a8abaece2d',1,'jjm::one::Serilog::Sinks::SlackWebHook::SlackSinkActivationSwitch']]]
+  ['active_174',['Active',['../classSlackSinkActivationSwitch.html#aedc2026ad706898009a9b8e0e35ca6a5a4d3d769b812b6faa6b76e1a8abaece2d',1,'SlackSinkActivationSwitch']]]
 ];
