@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['emitbatchasync_137',['EmitBatchAsync',['../classjjm_1_1one_1_1Serilog_1_1Sinks_1_1SlackWebHook_1_1SlackSerilogBatchedLogEventSink.html#af11c96c2e6bbf86eb9ecd96b77507915',1,'jjm::one::Serilog::Sinks::SlackWebHook::SlackSerilogBatchedLogEventSink']]]
+  ['emitbatchasync_123',['EmitBatchAsync',['../classSlackSerilogBatchedLogEventSink.html#a103a1183e79d929c246c5473f0b1f8f2',1,'SlackSerilogBatchedLogEventSink']]]
 ];

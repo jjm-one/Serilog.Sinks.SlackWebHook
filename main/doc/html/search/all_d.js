@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['validwebhook_106',['ValidWebHook',['../classjjm_1_1one_1_1Serilog_1_1Sinks_1_1SlackWebHook_1_1Tests_1_1SlackLoggerConfigurationExtensionsConstructorParameterTests.html#a52414fc9de959164d081181d34579849',1,'jjm.one.Serilog.Sinks.SlackWebHook.Tests.SlackLoggerConfigurationExtensionsConstructorParameterTests.ValidWebHook()'],['../classjjm_1_1one_1_1Serilog_1_1Sinks_1_1SlackWebHook_1_1Tests_1_1SlackSinkLoggerTests.html#aaf9cc8cec0afcfddc4c80f665eb63364',1,'jjm.one.Serilog.Sinks.SlackWebHook.Tests.SlackSinkLoggerTests.ValidWebHook()']]]
+  ['validwebhook_99',['ValidWebHook',['../classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#af1071ece50bcc3a5cfae0b8a1dc3e97b',1,'SlackLoggerConfigurationExtensionsConstructorParameterTests.ValidWebHook()'],['../classSlackSinkLoggerTests.html#a1ecdb05aed06ca8920123e5e58be1eb7',1,'SlackSinkLoggerTests.ValidWebHook()']]]
 ];
