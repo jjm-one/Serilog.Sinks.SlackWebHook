@@ -4,5 +4,17 @@
         <name>jjm.one.Serilog.Sinks.SlackWebHook.Example</name>
     </assembly>
     <members>
+        <member name="T:jjm.one.Serilog.Sinks.SlackWebHook.Example.SlackSinkExample">
+            <summary>
+            This class contains examples on how to use the library.
+            </summary>
+        </member>
+        <member name="M:jjm.one.Serilog.Sinks.SlackWebHook.Example.SlackSinkExample.Main">
+            <summary>
+            The main function of the <see cref="T:jjm.one.Serilog.Sinks.SlackWebHook.Example.SlackSinkExample"/> class.
+            </summary>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
     </members>
 </doc>
