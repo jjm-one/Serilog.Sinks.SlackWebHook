@@ -4,7 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Version>2.1.0</Version>
+        <Version>2.1.1</Version>
         <Authors>Jonas Merkle [JJM]</Authors>
         <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
         <Title>jjm.one.Serilog.Sinks.SlackWebHook.Example</Title>
@@ -27,7 +27,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Serilog" Version="3.0.1"/>
+        <PackageReference Include="Serilog" Version="3.1.1" />
     </ItemGroup>
 
     <ItemGroup>
