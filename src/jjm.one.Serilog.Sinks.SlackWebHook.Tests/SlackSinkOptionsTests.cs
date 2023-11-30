@@ -15,12 +15,12 @@ public class SlackSinkOptionsTests
     public void DefaultConstructorTest()
     {
         var options = new SlackSinkOptions();
+        
+        Assert.That(options.SlackAttachmentColors.Count == 6);
+        Assert.That(options.SlackAttachmentFooterIcon.Count == 6);
 
-        Assert.IsTrue(options.SlackAttachmentColors.Count == 6);
-        Assert.IsTrue(options.SlackAttachmentFooterIcon.Count == 6);
-
-        Assert.IsTrue(options.PeriodicBatchingSinkOptionsBatchSizeLimit >= 0);
-        Assert.IsTrue(!options.PeriodicBatchingSinkOptionsPeriod.Equals(TimeSpan.Zero));
-        Assert.IsTrue(options.PeriodicBatchingSinkOptionsQueueLimit >= 0);
+        Assert.That(options.PeriodicBatchingSinkOptionsBatchSizeLimit >= 0);
+        Assert.That(!options.PeriodicBatchingSinkOptionsPeriod.Equals(TimeSpan.Zero));
+        Assert.That(options.PeriodicBatchingSinkOptionsQueueLimit >= 0);
     }
 }
