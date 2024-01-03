@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Version>2.1.1</Version>
+        <Version>2.1.2</Version>
         <Authors>Jonas Merkle [JJM]</Authors>
-        <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
+        <Copyright>© by Jonas Merkle [JJM], 2024.</Copyright>
         <Title>jjm.one.Serilog.Sinks.SlackWebHook.Tests</Title>
         <Description>A basic Slack Sink for the Serilog framwork. (Unit-Tests)</Description>
         <PackageTags>serilog, serilog-sink, slack, logging, csharp, unit-tests</PackageTags>
@@ -27,7 +27,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="nunit" Version="3.14.0"/>
+        <PackageReference Include="nunit" Version="4.0.1" />
         <PackageReference Include="NUnit3TestAdapter" Version="4.5.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
