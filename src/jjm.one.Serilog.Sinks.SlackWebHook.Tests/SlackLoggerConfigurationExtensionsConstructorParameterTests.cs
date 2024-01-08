@@ -16,7 +16,7 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
     {
     }
 
-    public const string ValidWebHook = @"https://slack.com/api/api.test";
+    private const string ValidWebHook = @"https://slack.com/api/api.test";
 
     [Test]
     public void SingleChannel_ConstructorTest_WebHookUrlNull()
@@ -25,7 +25,7 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
-                    null,
+                    null!,
                     slackChannel: null
                 )
                 .CreateLogger();
@@ -67,7 +67,7 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
-                    null,
+                    null!,
                     slackChannel: null
                 )
                 .CreateLogger();

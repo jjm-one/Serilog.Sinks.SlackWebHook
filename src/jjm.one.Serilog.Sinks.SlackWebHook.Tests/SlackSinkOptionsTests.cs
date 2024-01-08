@@ -15,7 +15,7 @@ public class SlackSinkOptionsTests
     public void DefaultConstructorTest()
     {
         var options = new SlackSinkOptions();
-        
+
         Assert.That(options.SlackAttachmentColors.Count == 6);
         Assert.That(options.SlackAttachmentFooterIcon.Count == 6);
 

@@ -22,7 +22,7 @@ public class SlackSinkLoggerTests
             .CreateLogger();
     }
 
-    public const string ValidWebHook = @"https://slack.com/api/api.test";
+    private const string ValidWebHook = @"https://slack.com/api/api.test";
 
     [Test]
     public void SingleChannel_LoggerTests_LogVerbose()

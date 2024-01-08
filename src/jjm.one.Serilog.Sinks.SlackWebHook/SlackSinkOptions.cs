@@ -4,6 +4,8 @@ using System.Diagnostics.CodeAnalysis;
 using Serilog.Events;
 using Slack.Webhooks;
 
+// ReSharper disable RedundantDefaultMemberInitializer
+
 namespace jjm.one.Serilog.Sinks.SlackWebHook;
 
 /// <summary>
@@ -22,32 +24,32 @@ public class SlackSinkOptions
 
     #endregion
 
-    #region default values
+    #region private default values
 
     /// <summary>
     ///     Default value for the OutputTemplate.
     /// </summary>
-    public const string DefaultOutputTemplate = "{Message:lj}";
+    private const string DefaultOutputTemplate = "{Message:lj}";
 
     /// <summary>
     ///     Default value for the BatchSizeLimit.
     /// </summary>
-    public const int DefaultBatchSizeLimit = 10;
+    private const int DefaultBatchSizeLimit = 10;
 
     /// <summary>
     ///     Default value for the Period.
     /// </summary>
-    public static readonly TimeSpan DefaultPeriod = TimeSpan.FromSeconds(2);
+    private static readonly TimeSpan DefaultPeriod = TimeSpan.FromSeconds(2);
 
     /// <summary>
     ///     Default value for the QueueLimit.
     /// </summary>
-    public const int DefaultQueueLimit = 10000;
+    private const int DefaultQueueLimit = 10000;
 
     /// <summary>
     ///     Default value for the Timeout.
     /// </summary>
-    public const int DefaultTimeout = 1000;
+    private const int DefaultTimeout = 1000;
 
     #endregion
 

@@ -66,21 +66,22 @@ public static class SlackSinkMessageTools
                 Color = slackSinkOptions.SlackAttachmentColors[logEvent.Level],
                 Fallback =
                     $"{logEvent.Timestamp.ToString(formatProvider)} [{logEvent.Level}] - {logEvent.RenderMessage()}",
-                Fields = new List<SlackField>
-                {
-                    new()
+                Fields =
+                [
+                    new SlackField
                     {
                         Short = slackSinkOptions.SlackDisplayShortInfoAttachmentShort,
                         Title = "Level",
                         Value = logEvent.Level.ToString()
                     },
-                    new()
+
+                    new SlackField
                     {
                         Short = slackSinkOptions.SlackDisplayShortInfoAttachmentShort,
                         Title = "Timestamp",
                         Value = logEvent.Timestamp.ToString(formatProvider)
                     }
-                },
+                ],
                 Footer = null,
                 FooterIcon = slackSinkOptions.SlackAttachmentFooterIcon[logEvent.Level],
                 ImageUrl = null,
@@ -160,40 +161,40 @@ public static class SlackSinkMessageTools
                 Color = slackSinkOptions.SlackAttachmentColors[logEvent.Level],
                 Fallback =
                     $"{logEvent.Timestamp.ToString(formatProvider)} Exception: {logEvent.Exception.Message} \n {logEvent.Exception.StackTrace}",
-                Fields = new List<SlackField>
-                {
-                    new()
+                Fields =
+                [
+                    new SlackField
                     {
                         Short = slackSinkOptions.SlackDisplayExceptionAttachmentShort,
                         Title = "Message",
                         Value = logEvent.Exception.Message
                     },
-                    new()
+
+                    new SlackField
                     {
                         Short = slackSinkOptions.SlackDisplayExceptionAttachmentShort,
                         Title = "Type",
                         Value = $"`{logEvent.Exception.GetType().Name}`"
                     },
-                    new()
+
+                    new SlackField
                     {
                         Short = false,
                         Title = "Stack Trace",
                         Value = $"```{logEvent.Exception.StackTrace}```"
                     },
-                    new()
+
+                    new SlackField
                     {
                         Short = false,
                         Title = "Exception",
                         Value = $"```{logEvent.Exception}```"
                     }
-                },
+                ],
                 Footer = null,
                 FooterIcon = slackSinkOptions.SlackAttachmentFooterIcon[logEvent.Level],
                 ImageUrl = null,
-                MarkdownIn = new List<string>
-                {
-                    "fields"
-                },
+                MarkdownIn = ["fields"],
                 Pretext = null,
                 Text = null,
                 ThumbUrl = null,
@@ -207,7 +208,7 @@ public static class SlackSinkMessageTools
 
         #endregion
 
-        return attachments.Any() ? attachments : null; 
+        return attachments.Any() ? attachments : null;
     }
 
     /// <summary>

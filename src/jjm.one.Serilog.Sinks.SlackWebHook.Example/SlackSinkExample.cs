@@ -7,12 +7,12 @@ using Serilog.Events;
 namespace jjm.one.Serilog.Sinks.SlackWebHook.Example;
 
 /// <summary>
-/// This class contains examples on how to use the library.
+///     This class contains examples on how to use the library.
 /// </summary>
 public static class SlackSinkExample
 {
     /// <summary>
-    /// The main function of the <see cref="SlackSinkExample"/> class.
+    ///     The main function of the <see cref="SlackSinkExample" /> class.
     /// </summary>
     /// <exception cref="ArgumentException"></exception>
     /// <exception cref="Exception"></exception>

@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0;net8.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;net8.0;netstandard2.0;netstandard2.1</TargetFrameworks>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Version>2.1.2</Version>
+        <Version>2.1.3</Version>
         <Authors>Jonas Merkle [JJM]</Authors>
         <Copyright>© by Jonas Merkle [JJM], 2024.</Copyright>
         <PackageId>jjm.one.Serilog.Sinks.SlackWebHook</PackageId>
@@ -18,15 +18,15 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>jjm.one.Serilog.Sinks.SlackWebHook.SignKey.snk</AssemblyOriginatorKeyFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <LangVersion>latestmajor</LangVersion>
-        <DocumentationFile>.\jjm.one.Serilog.Extensions.Logging.Helpers.xml</DocumentationFile>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <LangVersion>latestmajor</LangVersion>
-        <DocumentationFile>.\jjm.one.Serilog.Extensions.Logging.Helpers.xml</DocumentationFile>
     </PropertyGroup>
     <ItemGroup>
         <None Include="..\..\LICENSE">
@@ -40,7 +40,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Serilog" Version="3.1.1" />
+        <PackageReference Include="Serilog" Version="3.1.1"/>
         <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="3.1.0"/>
         <PackageReference Include="Slack.Webhooks" Version="1.1.5"/>
     </ItemGroup>

@@ -19,6 +19,7 @@ public static class SlackLoggerConfigurationExtensions
 {
     #region private constructors
 
+#pragma warning disable CS1584 // XML comment has syntactically incorrect cref attribute
     /// <summary>
     ///     <see cref="LoggerSinkConfiguration" /> extension that provides configuration chaining.
     /// </summary>
@@ -88,6 +89,7 @@ public static class SlackLoggerConfigurationExtensions
     /// <param name="sinkFormatProvider">A format provider (optional).</param>
     /// <param name="sinkActivationSwitch">A Switch to change the activation status of the sink on the fly (optional).</param>
     /// <returns>Instance of <see cref="LoggerConfiguration" /> object.</returns>
+#pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute
     private static LoggerConfiguration Slack(
         this LoggerSinkConfiguration loggerSinkConfiguration,
 
@@ -155,7 +157,8 @@ public static class SlackLoggerConfigurationExtensions
         if (slackThreadId is not null) slackSinkOptions.SlackThreadId = slackThreadId;
 
         if (slackAttachmentColors is not null) slackSinkOptions.SlackAttachmentColors = slackAttachmentColors;
-        if (slackAttachmentFooterIcon is not null) slackSinkOptions.SlackAttachmentFooterIcon = slackAttachmentFooterIcon;
+        if (slackAttachmentFooterIcon is not null)
+            slackSinkOptions.SlackAttachmentFooterIcon = slackAttachmentFooterIcon;
         if (slackAddShortInfoAttachment is not null)
             slackSinkOptions.SlackAddShortInfoAttachment = (bool)slackAddShortInfoAttachment;
         if (slackDisplayShortInfoAttachmentShort is not null)
@@ -191,6 +194,7 @@ public static class SlackLoggerConfigurationExtensions
 
     #region public constructors
 
+#pragma warning disable CS1584 // XML comment has syntactically incorrect cref attribute
     /// <summary>
     ///     <see cref="LoggerSinkConfiguration" /> extension that provides configuration chaining.
     /// </summary>
@@ -251,6 +255,7 @@ public static class SlackLoggerConfigurationExtensions
     /// <param name="sinkFormatProvider">A format provider (optional).</param>
     /// <param name="sinkActivationSwitch">A Switch to change the activation status of the sink on the fly (optional).</param>
     /// <returns>Instance of <see cref="LoggerConfiguration" /> object.</returns>
+#pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute
     public static LoggerConfiguration Slack(
         this LoggerSinkConfiguration loggerSinkConfiguration,
 
@@ -293,7 +298,7 @@ public static class SlackLoggerConfigurationExtensions
     )
     {
         return Slack(loggerSinkConfiguration, slackWebHookUrl, slackUsername, slackEmojiIcon, slackUriIcon,
-            string.IsNullOrEmpty(slackChannel) ? null : new List<string?> { slackChannel }, slackDeleteOriginal,
+            string.IsNullOrEmpty(slackChannel) ? null : [slackChannel], slackDeleteOriginal,
             slackLinkNames, slackMarkdown, slackParseObj, slackReplaceOriginal,
             slackResponseType, slackThreadId, slackAttachmentColorsObj, slackAttachmentFooterIconObj,
             slackAddShortInfoAttachment, slackDisplayShortInfoAttachmentShort, slackAddExtendedInfoAttachment,
@@ -304,6 +309,7 @@ public static class SlackLoggerConfigurationExtensions
             sinkOutputTemplate, sinkLevelSwitch, sinkFormatProvider, sinkActivationSwitch);
     }
 
+#pragma warning disable CS1584 // XML comment has syntactically incorrect cref attribute
     /// <summary>
     ///     <see cref="LoggerSinkConfiguration" /> extension that provides configuration chaining.
     /// </summary>
@@ -367,6 +373,7 @@ public static class SlackLoggerConfigurationExtensions
     /// <param name="sinkFormatProvider">A format provider (optional).</param>
     /// <param name="sinkActivationSwitch">A Switch to change the activation status of the sink on the fly (optional).</param>
     /// <returns>Instance of <see cref="LoggerConfiguration" /> object.</returns>
+#pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute
     public static LoggerConfiguration Slack(
         this LoggerSinkConfiguration loggerSinkConfiguration,
 
@@ -428,15 +435,12 @@ public static class SlackLoggerConfigurationExtensions
 
         if (generateSlackFunctions is not null)
         {
-            if (generateSlackFunctions.Item1 is not null)
-                generateSlackMessageText =
-                    (Func<LogEvent, IFormatProvider?, object, string?>)generateSlackFunctions.Item1;
-            if (generateSlackFunctions.Item2 is not null)
-                generateSlackMessageAttachments =
-                    (Func<LogEvent, IFormatProvider?, object, List<SlackAttachment>?>)generateSlackFunctions.Item2;
-            if (generateSlackFunctions.Item3 is not null)
-                generateSlackMessageBlocks =
-                    (Func<LogEvent, IFormatProvider?, object, List<Block>?>)generateSlackFunctions.Item3;
+            generateSlackMessageText =
+                (Func<LogEvent, IFormatProvider?, object, string?>)generateSlackFunctions.Item1;
+            generateSlackMessageAttachments =
+                (Func<LogEvent, IFormatProvider?, object, List<SlackAttachment>?>)generateSlackFunctions.Item2;
+            generateSlackMessageBlocks =
+                (Func<LogEvent, IFormatProvider?, object, List<Block>?>)generateSlackFunctions.Item3;
         }
 
         return Slack(loggerSinkConfiguration, slackWebHookUrl, slackUsername, slackEmojiIcon, slackUriIcon,
