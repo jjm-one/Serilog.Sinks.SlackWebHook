@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['validwebhook_99',['ValidWebHook',['../classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#af1071ece50bcc3a5cfae0b8a1dc3e97b',1,'SlackLoggerConfigurationExtensionsConstructorParameterTests.ValidWebHook()'],['../classSlackSinkLoggerTests.html#a1ecdb05aed06ca8920123e5e58be1eb7',1,'SlackSinkLoggerTests.ValidWebHook()']]]
+  ['testf1_115',['TestF1',['../classSlackLoggerConfigurationExtensionsTests.html#a3a186684af7c1f86fac3d4beb4bc0529',1,'SlackLoggerConfigurationExtensionsTests']]],
+  ['testf2_116',['TestF2',['../classSlackLoggerConfigurationExtensionsTests.html#aaa49e200f52f0defe900a8fe1f26cff5',1,'SlackLoggerConfigurationExtensionsTests']]],
+  ['testf3_117',['TestF3',['../classSlackLoggerConfigurationExtensionsTests.html#aff4ebb26627c1582c616df7182829762',1,'SlackLoggerConfigurationExtensionsTests']]]
 ];

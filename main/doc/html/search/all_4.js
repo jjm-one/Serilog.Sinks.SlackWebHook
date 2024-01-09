@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['generateslackmessageattachments_17',['GenerateSlackMessageAttachments',['../classSlackSinkMessageTools.html#a6984dad7612a7ad7310340877e3b20aa',1,'SlackSinkMessageTools']]],
-  ['generateslackmessageblocks_18',['GenerateSlackMessageBlocks',['../classSlackSinkMessageTools.html#a36652f69dcf7e809153d8336fb06fa1d',1,'SlackSinkMessageTools']]],
-  ['generateslackmessagetext_19',['GenerateSlackMessageText',['../classSlackSinkMessageTools.html#a5d27e0c258c6921c26ec80c21799cf24',1,'SlackSinkMessageTools']]]
+  ['emitbatchasync_20',['EmitBatchAsync',['../classSlackSerilogBatchedLogEventSink.html#a103a1183e79d929c246c5473f0b1f8f2',1,'SlackSerilogBatchedLogEventSink']]],
+  ['emitbatchasyncworkscorrectly_21',['EmitBatchAsyncWorksCorrectly',['../classSlackSerilogBatchedLogEventSinkTests.html#a1a77fd38019b2ad8a4be962f651b8b80',1,'SlackSerilogBatchedLogEventSinkTests']]]
 ];

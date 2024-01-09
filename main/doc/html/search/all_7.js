@@ -1,12 +1,4 @@
 var searchData=
 [
-  ['main_22',['Main',['../classSlackSinkExample.html#abbd0b41cee7e9d968c7e499dcd4c17aa',1,'SlackSinkExample']]],
-  ['multichannel_5fconstructortest_5fgenerateslackfunctionscast_23',['MultiChannel_ConstructorTest_GenerateSlackFunctionsCast',['../classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a0f5d401840e89c63cb401d734ba5dc75',1,'SlackLoggerConfigurationExtensionsConstructorParameterTests']]],
-  ['multichannel_5fconstructortest_5fslackattachmentcolorsobjcast_24',['MultiChannel_ConstructorTest_SlackAttachmentColorsObjCast',['../classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#aff573574a8b0c73ab57184840a470acf',1,'SlackLoggerConfigurationExtensionsConstructorParameterTests']]],
-  ['multichannel_5fconstructortest_5fslackattachmentfootericonobjcast_25',['MultiChannel_ConstructorTest_SlackAttachmentFooterIconObjCast',['../classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#aeff97b3b81cb8cc46ae1c54d9c21db62',1,'SlackLoggerConfigurationExtensionsConstructorParameterTests']]],
-  ['multichannel_5fconstructortest_5fslackhttpclientobjcast_26',['MultiChannel_ConstructorTest_SlackHttpClientObjCast',['../classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#ace99f1f7254fba9c4be820ed4a519e33',1,'SlackLoggerConfigurationExtensionsConstructorParameterTests']]],
-  ['multichannel_5fconstructortest_5fslackparseobjcast_27',['MultiChannel_ConstructorTest_SlackParseObjCast',['../classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a4e8ec525efe1c8ef11042b0b0ca0d3c4',1,'SlackLoggerConfigurationExtensionsConstructorParameterTests']]],
-  ['multichannel_5fconstructortest_5fwebhookurlempty_28',['MultiChannel_ConstructorTest_WebHookUrlEmpty',['../classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a86cd56dfa8915430f60afe77e9e22e6e',1,'SlackLoggerConfigurationExtensionsConstructorParameterTests']]],
-  ['multichannel_5fconstructortest_5fwebhookurlnull_29',['MultiChannel_ConstructorTest_WebHookUrlNull',['../classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a19b14d9505035037cb2c6eaee8366ecb',1,'SlackLoggerConfigurationExtensionsConstructorParameterTests']]],
-  ['multichannel_5fconstructortest_5fwebhookurlvalid_30',['MultiChannel_ConstructorTest_WebHookUrlValid',['../classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a26c333c4221495d9b7e9743dbcc1e8eb',1,'SlackLoggerConfigurationExtensionsConstructorParameterTests']]]
+  ['jjm_2eone_2eserilog_2esinks_2eslackwebhook_32',['jjm.one.Serilog.Sinks.SlackWebHook',['../index.html',1,'']]]
 ];

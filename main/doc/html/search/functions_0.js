@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['defaultconstructortest_121',['DefaultConstructorTest',['../classSlackSinkOptionsTests.html#a419b3019cf6e0eeaaa07882e6b4504ac',1,'SlackSinkOptionsTests']]],
-  ['dispose_122',['Dispose',['../classSlackSerilogBatchedLogEventSink.html#ad5b7d6002242dab343cf04d77f21bb43',1,'SlackSerilogBatchedLogEventSink']]]
+  ['constructorworkscorrectly_149',['ConstructorWorksCorrectly',['../classSlackSerilogBatchedLogEventSinkTests.html#af8b731ec7e50b1ca6a7f32c9084ce4ab',1,'SlackSerilogBatchedLogEventSinkTests.ConstructorWorksCorrectly()'],['../classSlackSinkTests.html#a22d93ee260f15d24c2dd0f7d8bffd8a3',1,'SlackSinkTests.ConstructorWorksCorrectly()']]]
 ];
