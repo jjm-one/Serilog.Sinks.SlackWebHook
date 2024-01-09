@@ -1,27 +1,28 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using NUnit.Framework;
+using Moq;
 using Serilog;
 using Serilog.Events;
 using Slack.Webhooks;
 
 namespace jjm.one.Serilog.Sinks.SlackWebHook.Tests;
 
-[TestFixture]
-public class SlackLoggerConfigurationExtensionsConstructorParameterTests
+/// <summary>
+///     Unit tests for the SlackLoggerConfigurationExtensions class.
+/// </summary>
+public class SlackLoggerConfigurationExtensionsTests
 {
-    [SetUp]
-    public void SetUp()
-    {
-    }
+    private const string ValidWebHook = "https://slack.com/api/api.test";
 
-    private const string ValidWebHook = @"https://slack.com/api/api.test";
-
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an ArgumentNullException when the webhook URL is null.
+    /// </summary>
+    [Fact]
     public void SingleChannel_ConstructorTest_WebHookUrlNull()
     {
-        Assert.Throws<ArgumentNullException>(() =>
+        // Arrange
+        var act = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -29,13 +30,20 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackChannel: null
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        act.Should().Throw<ArgumentNullException>();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an ArgumentException when the webhook URL is empty.
+    /// </summary>
+    [Fact]
     public void SingleChannel_ConstructorTest_WebHookUrlEmpty()
     {
-        Assert.Throws<ArgumentException>(() =>
+        // Arrange
+        var act = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -43,13 +51,20 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackChannel: null
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        act.Should().Throw<ArgumentException>();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor does not throw an exception when the webhook URL is valid.
+    /// </summary>
+    [Fact]
     public void SingleChannel_ConstructorTest_WebHookUrlValid()
     {
-        Assert.DoesNotThrow(() =>
+        // Arrange
+        var act = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -57,13 +72,20 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackChannel: null
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        act.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an ArgumentNullException when the webhook URL is null.
+    /// </summary>
+    [Fact]
     public void MultiChannel_ConstructorTest_WebHookUrlNull()
     {
-        Assert.Throws<ArgumentNullException>(() =>
+        // Arrange
+        var act = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -71,13 +93,20 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackChannel: null
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        act.Should().Throw<ArgumentNullException>();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an ArgumentException when the webhook URL is empty.
+    /// </summary>
+    [Fact]
     public void MultiChannel_ConstructorTest_WebHookUrlEmpty()
     {
-        Assert.Throws<ArgumentException>(() =>
+        // Arrange
+        var act = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -85,13 +114,20 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackChannels: null
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        act.Should().Throw<ArgumentException>();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor does not throw an exception when the webhook URL is valid.
+    /// </summary>
+    [Fact]
     public void MultiChannel_ConstructorTest_WebHookUrlValid()
     {
-        Assert.DoesNotThrow(() =>
+        // Arrange
+        var act = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -99,13 +135,21 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackChannels: null
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        act.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an InvalidCastException when the slackParseObj is a string.
+    ///     Also, it should not throw any exception when the slackParseObj is of type ParseMode.
+    /// </summary>
+    [Fact]
     public void SingleChannel_ConstructorTest_SlackParseObjCast()
     {
-        Assert.Throws<InvalidCastException>(() =>
+        // Arrange
+        var actInvalidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -114,9 +158,9 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackParseObj: "TestObject"
                 )
                 .CreateLogger();
-        });
+        };
 
-        Assert.DoesNotThrow(() =>
+        var actValidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -125,13 +169,22 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackParseObj: ParseMode.None
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        actInvalidCast.Should().Throw<InvalidCastException>();
+        actValidCast.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an InvalidCastException when the slackParseObj is a string.
+    ///     Also, it should not throw any exception when the slackParseObj is of type ParseMode.
+    /// </summary>
+    [Fact]
     public void MultiChannel_ConstructorTest_SlackParseObjCast()
     {
-        Assert.Throws<InvalidCastException>(() =>
+        // Arrange
+        var actInvalidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -140,9 +193,9 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackParseObj: "TestObject"
                 )
                 .CreateLogger();
-        });
+        };
 
-        Assert.DoesNotThrow(() =>
+        var actValidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -151,13 +204,23 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackParseObj: ParseMode.None
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        actInvalidCast.Should().Throw<InvalidCastException>();
+        actValidCast.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an InvalidCastException when the slackAttachmentColorsObj is a string.
+    ///     Also, it should not throw any exception when the slackAttachmentColorsObj is of type Dictionary
+    ///     <LogEventLevel, string>.
+    /// </summary>
+    [Fact]
     public void SingleChannel_ConstructorTest_SlackAttachmentColorsObjCast()
     {
-        Assert.Throws<InvalidCastException>(() =>
+        // Arrange
+        var actInvalidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -166,9 +229,9 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackAttachmentColorsObj: "TestObject"
                 )
                 .CreateLogger();
-        });
+        };
 
-        Assert.DoesNotThrow(() =>
+        var actValidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -180,13 +243,23 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     }
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        actInvalidCast.Should().Throw<InvalidCastException>();
+        actValidCast.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an InvalidCastException when the slackAttachmentColorsObj is a string.
+    ///     Also, it should not throw any exception when the slackAttachmentColorsObj is of type Dictionary
+    ///     <LogEventLevel, string>.
+    /// </summary>
+    [Fact]
     public void MultiChannel_ConstructorTest_SlackAttachmentColorsObjCast()
     {
-        Assert.Throws<InvalidCastException>(() =>
+        // Arrange
+        var actInvalidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -195,9 +268,9 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackAttachmentColorsObj: "TestObject"
                 )
                 .CreateLogger();
-        });
+        };
 
-        Assert.DoesNotThrow(() =>
+        var actValidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -209,13 +282,24 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     }
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        actInvalidCast.Should().Throw<InvalidCastException>();
+        actValidCast.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an InvalidCastException when the slackAttachmentFooterIconObj is a
+    ///     string.
+    ///     Also, it should not throw any exception when the slackAttachmentFooterIconObj is of type Dictionary
+    ///     <LogEventLevel, string>.
+    /// </summary>
+    [Fact]
     public void SingleChannel_ConstructorTest_SlackAttachmentFooterIconObjCast()
     {
-        Assert.Throws<InvalidCastException>(() =>
+        // Arrange
+        var actInvalidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -224,9 +308,9 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackAttachmentFooterIconObj: "TestObject"
                 )
                 .CreateLogger();
-        });
+        };
 
-        Assert.DoesNotThrow(() =>
+        var actValidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -238,13 +322,24 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     }
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        actInvalidCast.Should().Throw<InvalidCastException>();
+        actValidCast.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an InvalidCastException when the slackAttachmentFooterIconObj is a
+    ///     string.
+    ///     Also, it should not throw any exception when the slackAttachmentFooterIconObj is of type Dictionary
+    ///     <LogEventLevel, string>.
+    /// </summary>
+    [Fact]
     public void MultiChannel_ConstructorTest_SlackAttachmentFooterIconObjCast()
     {
-        Assert.Throws<InvalidCastException>(() =>
+        // Arrange
+        var actInvalidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -253,9 +348,9 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackAttachmentFooterIconObj: "TestObject"
                 )
                 .CreateLogger();
-        });
+        };
 
-        Assert.DoesNotThrow(() =>
+        var actValidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -267,13 +362,22 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     }
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        actInvalidCast.Should().Throw<InvalidCastException>();
+        actValidCast.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an InvalidCastException when the slackHttpClientObj is a string.
+    ///     Also, it should not throw any exception when the slackHttpClientObj is of type HttpClient.
+    /// </summary>
+    [Fact]
     public void SingleChannel_ConstructorTest_SlackHttpClientObjCast()
     {
-        Assert.Throws<InvalidCastException>(() =>
+        // Arrange
+        var actInvalidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -282,24 +386,34 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackHttpClientObj: "TestObject"
                 )
                 .CreateLogger();
-        });
+        };
 
-        Assert.DoesNotThrow(() =>
+        var actValidCast = () =>
         {
+            var mockHttpClient = new Mock<HttpClient>();
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
                     ValidWebHook,
                     slackChannel: null,
-                    slackHttpClientObj: new HttpClient()
+                    slackHttpClientObj: mockHttpClient.Object
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        actInvalidCast.Should().Throw<InvalidCastException>();
+        actValidCast.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an InvalidCastException when the slackHttpClientObj is a string.
+    ///     Also, it should not throw any exception when the slackHttpClientObj is of type HttpClient.
+    /// </summary>
+    [Fact]
     public void MultiChannel_ConstructorTest_SlackHttpClientObjCast()
     {
-        Assert.Throws<InvalidCastException>(() =>
+        // Arrange
+        var actInvalidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -308,18 +422,23 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     slackHttpClientObj: "TestObject"
                 )
                 .CreateLogger();
-        });
+        };
 
-        Assert.DoesNotThrow(() =>
+        var actValidCast = () =>
         {
+            var mockHttpClient = new Mock<HttpClient>();
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
                     ValidWebHook,
                     slackChannels: null,
-                    slackHttpClientObj: new HttpClient()
+                    slackHttpClientObj: mockHttpClient.Object
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        actInvalidCast.Should().Throw<InvalidCastException>();
+        actValidCast.Should().NotThrow();
     }
 
     private static string? TestF1(LogEvent a, IFormatProvider b, object c)
@@ -337,14 +456,19 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
         return null;
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an InvalidCastException when the generateSlackFunctions is a Tuple of
+    ///     strings.
+    ///     Also, it should not throw any exception when the generateSlackFunctions is a Tuple of functions.
+    /// </summary>
+    [Fact]
     public void SingleChannel_ConstructorTest_GenerateSlackFunctionsCast()
     {
         var f1 = TestF1;
         var f2 = TestF2;
         var f3 = TestF3;
 
-        Assert.Throws<InvalidCastException>(() =>
+        var actInvalidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -353,9 +477,9 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     generateSlackFunctions: new Tuple<object, object, object>("", "", "")
                 )
                 .CreateLogger();
-        });
+        };
 
-        Assert.DoesNotThrow(() =>
+        var actValidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -364,17 +488,26 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     generateSlackFunctions: new Tuple<object, object, object>(f1, f2, f3)
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        actInvalidCast.Should().Throw<InvalidCastException>();
+        actValidCast.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the constructor throws an InvalidCastException when the generateSlackFunctions is a Tuple of
+    ///     strings.
+    ///     Also, it should not throw any exception when the generateSlackFunctions is a Tuple of functions.
+    /// </summary>
+    [Fact]
     public void MultiChannel_ConstructorTest_GenerateSlackFunctionsCast()
     {
         var f1 = TestF1;
         var f2 = TestF2;
         var f3 = TestF3;
 
-        Assert.Throws<InvalidCastException>(() =>
+        var actInvalidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -383,9 +516,9 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     generateSlackFunctions: new Tuple<object, object, object>("", "", "")
                 )
                 .CreateLogger();
-        });
+        };
 
-        Assert.DoesNotThrow(() =>
+        var actValidCast = () =>
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Slack(
@@ -394,6 +527,10 @@ public class SlackLoggerConfigurationExtensionsConstructorParameterTests
                     generateSlackFunctions: new Tuple<object, object, object>(f1, f2, f3)
                 )
                 .CreateLogger();
-        });
+        };
+
+        // Act & Assert
+        actInvalidCast.Should().Throw<InvalidCastException>();
+        actValidCast.Should().NotThrow();
     }
 }

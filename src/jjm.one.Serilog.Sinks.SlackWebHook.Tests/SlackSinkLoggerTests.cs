@@ -1,16 +1,18 @@
-﻿using System;
+using System;
 using System.Threading;
-using NUnit.Framework;
 using Serilog;
 using Serilog.Events;
 
 namespace jjm.one.Serilog.Sinks.SlackWebHook.Tests;
 
-[TestFixture]
+/// <summary>
+///     Tests for SlackSinkLogger.
+/// </summary>
 public class SlackSinkLoggerTests
 {
-    [SetUp]
-    public void SetUp()
+    private const string ValidWebHook = @"https://slack.com/api/api.test";
+
+    public SlackSinkLoggerTests()
     {
         Log.Logger = new LoggerConfiguration()
             .WriteTo.Slack(
@@ -22,12 +24,13 @@ public class SlackSinkLoggerTests
             .CreateLogger();
     }
 
-    private const string ValidWebHook = @"https://slack.com/api/api.test";
-
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the logger does not throw an exception when logging a verbose message.
+    /// </summary>
+    [Fact]
     public void SingleChannel_LoggerTests_LogVerbose()
     {
-        Assert.DoesNotThrow(() =>
+        var act = () =>
         {
             try
             {
@@ -39,13 +42,18 @@ public class SlackSinkLoggerTests
             }
 
             Thread.Sleep(500);
-        });
+        };
+
+        act.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the logger does not throw an exception when logging a debug message.
+    /// </summary>
+    [Fact]
     public void SingleChannel_LoggerTests_LogDebug()
     {
-        Assert.DoesNotThrow(() =>
+        var act = () =>
         {
             try
             {
@@ -57,13 +65,18 @@ public class SlackSinkLoggerTests
             }
 
             Thread.Sleep(500);
-        });
+        };
+
+        act.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the logger does not throw an exception when logging an information message.
+    /// </summary>
+    [Fact]
     public void SingleChannel_LoggerTests_LogInformation()
     {
-        Assert.DoesNotThrow(() =>
+        var act = () =>
         {
             try
             {
@@ -75,13 +88,18 @@ public class SlackSinkLoggerTests
             }
 
             Thread.Sleep(500);
-        });
+        };
+
+        act.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the logger does not throw an exception when logging a warning message.
+    /// </summary>
+    [Fact]
     public void SingleChannel_LoggerTests_LogWarning()
     {
-        Assert.DoesNotThrow(() =>
+        var act = () =>
         {
             try
             {
@@ -93,13 +111,18 @@ public class SlackSinkLoggerTests
             }
 
             Thread.Sleep(500);
-        });
+        };
+
+        act.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the logger does not throw an exception when logging an error message.
+    /// </summary>
+    [Fact]
     public void SingleChannel_LoggerTests_LogError()
     {
-        Assert.DoesNotThrow(() =>
+        var act = () =>
         {
             try
             {
@@ -111,13 +134,18 @@ public class SlackSinkLoggerTests
             }
 
             Thread.Sleep(500);
-        });
+        };
+
+        act.Should().NotThrow();
     }
 
-    [Test]
+    /// <summary>
+    ///     Test to ensure that the logger does not throw an exception when logging a fatal message.
+    /// </summary>
+    [Fact]
     public void SingleChannel_LoggerTests_LogFatal()
     {
-        Assert.DoesNotThrow(() =>
+        var act = () =>
         {
             try
             {
@@ -129,6 +157,8 @@ public class SlackSinkLoggerTests
             }
 
             Thread.Sleep(500);
-        });
+        };
+
+        act.Should().NotThrow();
     }
 }

@@ -11,7 +11,7 @@ using Slack.Webhooks;
 namespace jjm.one.Serilog.Sinks.SlackWebHook;
 
 /// <summary>
-///     This class contains the extenstion functions to add the Slack logger configuration to a existing logger
+///     This class contains the extension functions to add the Slack logger configuration to a existing logger
 ///     configuration.
 /// </summary>
 [SuppressMessage("ReSharper", "InconsistentNaming")]

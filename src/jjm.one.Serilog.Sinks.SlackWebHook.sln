@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jjm.one.Serilog.Sinks.SlackWebHook", "jjm.one.Serilog.Sinks.SlackWebHook\jjm.one.Serilog.Sinks.SlackWebHook.csproj", "{2601EA15-C615-426C-A4C2-34EA42329F52}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jjm.one.Serilog.Sinks.SlackWebHook.Tests", "jjm.one.Serilog.Sinks.SlackWebHook.Tests\jjm.one.Serilog.Sinks.SlackWebHook.Tests.csproj", "{FD8326AE-7EDE-4202-8D52-619475041043}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jjm.one.Serilog.Sinks.SlackWebHook.Example", "jjm.one.Serilog.Sinks.SlackWebHook.Example\jjm.one.Serilog.Sinks.SlackWebHook.Example.csproj", "{8F011789-5B6A-43B7-A804-BF940962FFBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jjm.one.Serilog.Sinks.SlackWebHook.Tests", "jjm.one.Serilog.Sinks.SlackWebHook.Tests\jjm.one.Serilog.Sinks.SlackWebHook.Tests.csproj", "{2276DD59-27FC-4E15-AC50-8CC9D501F7A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{2601EA15-C615-426C-A4C2-34EA42329F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2601EA15-C615-426C-A4C2-34EA42329F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2601EA15-C615-426C-A4C2-34EA42329F52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD8326AE-7EDE-4202-8D52-619475041043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD8326AE-7EDE-4202-8D52-619475041043}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD8326AE-7EDE-4202-8D52-619475041043}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD8326AE-7EDE-4202-8D52-619475041043}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8F011789-5B6A-43B7-A804-BF940962FFBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8F011789-5B6A-43B7-A804-BF940962FFBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F011789-5B6A-43B7-A804-BF940962FFBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F011789-5B6A-43B7-A804-BF940962FFBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2276DD59-27FC-4E15-AC50-8CC9D501F7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2276DD59-27FC-4E15-AC50-8CC9D501F7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2276DD59-27FC-4E15-AC50-8CC9D501F7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2276DD59-27FC-4E15-AC50-8CC9D501F7A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using Serilog;
 using Serilog.Core;
@@ -16,6 +17,7 @@ public static class SlackSinkExample
     /// </summary>
     /// <exception cref="ArgumentException"></exception>
     /// <exception cref="Exception"></exception>
+    [ExcludeFromCodeCoverage]
     public static void Main()
     {
         string? slackChannel = null;
