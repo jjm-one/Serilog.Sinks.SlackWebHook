@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jjm_2eone_2eserilog_2esinks_2eslackwebhook_21',['jjm.one.Serilog.Sinks.SlackWebHook',['../index.html',1,'']]]
+  ['inactive_31',['InActive',['../classSlackSinkActivationSwitch.html#aedc2026ad706898009a9b8e0e35ca6a5a896825475c52b43f14181f26aa500218',1,'SlackSinkActivationSwitch']]]
 ];

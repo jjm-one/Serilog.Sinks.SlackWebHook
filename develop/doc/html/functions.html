@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Serilog.Sinks.SlackWebHook
-   &#160;<span id="projectnumber">2.1.1</span>
+   &#160;<span id="projectnumber">2.1.3</span>
    </div>
    <div id="projectbrief">A basic Slack Sink for the Serilog framework.</div>
   </td>
@@ -78,6 +78,12 @@ $(function() {
 <li>_generateSlackMessageText
 : <a class="el" href="classSlackSerilogBatchedLogEventSink.html#ab6f593dac011b2f0a1c86cae1339719a">SlackSerilogBatchedLogEventSink</a>
 </li>
+<li>_logEvent
+: <a class="el" href="classSlackSinkMessageToolsTests.html#a8cded6cd243a22d9595993c8bfdb94ec">SlackSinkMessageToolsTests</a>
+</li>
+<li>_mockFormatProvider
+: <a class="el" href="classSlackSinkMessageToolsTests.html#a1bf15c387fa5189483440b15e2bc3b13">SlackSinkMessageToolsTests</a>
+</li>
 <li>_slackClient
 : <a class="el" href="classSlackSerilogBatchedLogEventSink.html#a27d129e66bcd7a4d28fed86bf5ddbb75">SlackSerilogBatchedLogEventSink</a>
 </li>
@@ -93,12 +99,17 @@ $(function() {
 </ul>
 
 
+<h3><a id="index_c"></a>- c -</h3><ul>
+<li>ConstructorWorksCorrectly()
+: <a class="el" href="classSlackSerilogBatchedLogEventSinkTests.html#af8b731ec7e50b1ca6a7f32c9084ce4ab">SlackSerilogBatchedLogEventSinkTests</a>
+, <a class="el" href="classSlackSinkTests.html#a22d93ee260f15d24c2dd0f7d8bffd8a3">SlackSinkTests</a>
+</li>
+</ul>
+
+
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>DefaultBatchSizeLimit
 : <a class="el" href="classSlackSinkOptions.html#ae5a643fb0acc7881e97632473fa45c10">SlackSinkOptions</a>
-</li>
-<li>DefaultConstructorTest()
-: <a class="el" href="classSlackSinkOptionsTests.html#a419b3019cf6e0eeaaa07882e6b4504ac">SlackSinkOptionsTests</a>
 </li>
 <li>DefaultOutputTemplate
 : <a class="el" href="classSlackSinkOptions.html#aec838eda14991dbd46077a90acefe70f">SlackSinkOptions</a>
@@ -112,8 +123,15 @@ $(function() {
 <li>DefaultTimeout
 : <a class="el" href="classSlackSinkOptions.html#a08edee4e35a4f2c09bb1531d94638911">SlackSinkOptions</a>
 </li>
+<li>DefaultValuesAreSetCorrectly()
+: <a class="el" href="classSlackSinkActivationSwitchTests.html#af82d58e9b3af65351109c77022610e0d">SlackSinkActivationSwitchTests</a>
+, <a class="el" href="classSlackSinkOptionsTests.html#af04e52130c741a930826c9c10f6afcd2">SlackSinkOptionsTests</a>
+</li>
 <li>Dispose()
 : <a class="el" href="classSlackSerilogBatchedLogEventSink.html#ad5b7d6002242dab343cf04d77f21bb43">SlackSerilogBatchedLogEventSink</a>
+</li>
+<li>DisposeWorksCorrectly()
+: <a class="el" href="classSlackSerilogBatchedLogEventSinkTests.html#af8fd7aea1350caaa35db8b7e41b4b8df">SlackSerilogBatchedLogEventSinkTests</a>
 </li>
 </ul>
 
@@ -122,6 +140,9 @@ $(function() {
 <li>EmitBatchAsync()
 : <a class="el" href="classSlackSerilogBatchedLogEventSink.html#a103a1183e79d929c246c5473f0b1f8f2">SlackSerilogBatchedLogEventSink</a>
 </li>
+<li>EmitBatchAsyncWorksCorrectly()
+: <a class="el" href="classSlackSerilogBatchedLogEventSinkTests.html#a1a77fd38019b2ad8a4be962f651b8b80">SlackSerilogBatchedLogEventSinkTests</a>
+</li>
 </ul>
 
 
@@ -129,11 +150,26 @@ $(function() {
 <li>GenerateSlackMessageAttachments()
 : <a class="el" href="classSlackSinkMessageTools.html#a6984dad7612a7ad7310340877e3b20aa">SlackSinkMessageTools</a>
 </li>
+<li>GenerateSlackMessageAttachments_WithExceptionAttachment()
+: <a class="el" href="classSlackSinkMessageToolsTests.html#a8df0961a53ba8ae8d34b0dd4274d2a6b">SlackSinkMessageToolsTests</a>
+</li>
+<li>GenerateSlackMessageAttachments_WithExtendedInfoAttachment()
+: <a class="el" href="classSlackSinkMessageToolsTests.html#a5891db7a15c6d4b257eb72dc1907b932">SlackSinkMessageToolsTests</a>
+</li>
+<li>GenerateSlackMessageAttachments_WithShortInfoAttachment()
+: <a class="el" href="classSlackSinkMessageToolsTests.html#afe372ecb12636b3a71f0ccee303c5607">SlackSinkMessageToolsTests</a>
+</li>
 <li>GenerateSlackMessageBlocks()
 : <a class="el" href="classSlackSinkMessageTools.html#a36652f69dcf7e809153d8336fb06fa1d">SlackSinkMessageTools</a>
 </li>
 <li>GenerateSlackMessageText()
 : <a class="el" href="classSlackSinkMessageTools.html#a5d27e0c258c6921c26ec80c21799cf24">SlackSinkMessageTools</a>
+</li>
+<li>GenerateSlackMessageText_InvalidOptions_ThrowsInvalidCastException()
+: <a class="el" href="classSlackSinkMessageToolsTests.html#a0509ea3e4057ce2f94d29eb311219f91">SlackSinkMessageToolsTests</a>
+</li>
+<li>GenerateSlackMessageText_ValidOptions_ReturnsExpectedMessage()
+: <a class="el" href="classSlackSinkMessageToolsTests.html#a414f4bd998558ed924984ddf56d531d6">SlackSinkMessageToolsTests</a>
 </li>
 </ul>
 
@@ -143,28 +179,28 @@ $(function() {
 : <a class="el" href="classSlackSinkExample.html#abbd0b41cee7e9d968c7e499dcd4c17aa">SlackSinkExample</a>
 </li>
 <li>MultiChannel_ConstructorTest_GenerateSlackFunctionsCast()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a0f5d401840e89c63cb401d734ba5dc75">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a861a877d1a4213ea512b6456e05018e3">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>MultiChannel_ConstructorTest_SlackAttachmentColorsObjCast()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#aff573574a8b0c73ab57184840a470acf">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#ae2224c5de1df7478e9fce92b2a60ec44">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>MultiChannel_ConstructorTest_SlackAttachmentFooterIconObjCast()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#aeff97b3b81cb8cc46ae1c54d9c21db62">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a17896285cedd81bddb2a640f3ba14bdb">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>MultiChannel_ConstructorTest_SlackHttpClientObjCast()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#ace99f1f7254fba9c4be820ed4a519e33">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a4265548120fe8abf7cd49a958c6fe26d">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>MultiChannel_ConstructorTest_SlackParseObjCast()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a4e8ec525efe1c8ef11042b0b0ca0d3c4">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a790ef159dd8a636881f273bd0e1da4be">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>MultiChannel_ConstructorTest_WebHookUrlEmpty()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a86cd56dfa8915430f60afe77e9e22e6e">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a219e43b415972b0a51e96d7e18b14f73">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>MultiChannel_ConstructorTest_WebHookUrlNull()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a19b14d9505035037cb2c6eaee8366ecb">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#abc7c90164b655e724758b214816b23d7">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>MultiChannel_ConstructorTest_WebHookUrlValid()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a26c333c4221495d9b7e9743dbcc1e8eb">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a5120945ba38a2d3010fc747b93b11304">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 </ul>
 
@@ -186,38 +222,37 @@ $(function() {
 <li>PeriodicBatchingSinkOptionsQueueLimit
 : <a class="el" href="classSlackSinkOptions.html#a4dd98c0f64ead2b278fe7a51f99df7dc">SlackSinkOptions</a>
 </li>
+<li>PropertiesCanBeSetAndRetrievedCorrectly()
+: <a class="el" href="classSlackSinkActivationSwitchTests.html#a86b478631bbabbde097686d2a2fc9321">SlackSinkActivationSwitchTests</a>
+, <a class="el" href="classSlackSinkOptionsTests.html#a5bce917a39387fc95cdc45aea96eca93">SlackSinkOptionsTests</a>
+</li>
 </ul>
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
-<li>SetUp()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a5a7bb78671f3054905358a9a454a8016">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
-, <a class="el" href="classSlackSinkLoggerTests.html#a74d45126c802f8a0b9ae680bc7ba3914">SlackSinkLoggerTests</a>
-, <a class="el" href="classSlackSinkOptionsTests.html#ac7665954bcc4c3ad592a0821924552c0">SlackSinkOptionsTests</a>
-</li>
 <li>SingleChannel_ConstructorTest_GenerateSlackFunctionsCast()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a78d6ae4bf6cb206e0395aef9caf5fdbc">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#ab66dfee65397b917bc8639d3fc83cc63">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>SingleChannel_ConstructorTest_SlackAttachmentColorsObjCast()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#aac38768f9afabf00f866901cd5378010">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#ae320caa47a35aa0e307a77fcf25747d7">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>SingleChannel_ConstructorTest_SlackAttachmentFooterIconObjCast()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#ad1052b19ff88b7edbea1e3fc52fee68c">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a6330d03a1762b1f0e9fdbb24c5d4742e">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>SingleChannel_ConstructorTest_SlackHttpClientObjCast()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a98945ca62badb537b125199531499ced">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#adf9a33e26cc26dcb19ecb09404fc8fc5">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>SingleChannel_ConstructorTest_SlackParseObjCast()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a5f9a590808a9c4c2c59b8f76c1b770df">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#ae564d9951fc01371d67153cdab89d0ea">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>SingleChannel_ConstructorTest_WebHookUrlEmpty()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a923cd1c01336f71bd078165bf9601e83">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a2c87dd5fb812f48080fe9b425ac4647d">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>SingleChannel_ConstructorTest_WebHookUrlNull()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#abf40e7fb6d4ba505c2ce6add5644a31f">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a1ed887f6b9cb406a2dc66d52e199044c">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>SingleChannel_ConstructorTest_WebHookUrlValid()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a7aa2fedf1a8801fee0ce508c672c418f">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a9f645de0b52124bfd3d676f7afe40f4e">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>SingleChannel_LoggerTests_LogDebug()
 : <a class="el" href="classSlackSinkLoggerTests.html#aaef00153b9207543be76c04bb365644b">SlackSinkLoggerTests</a>
@@ -306,6 +341,12 @@ $(function() {
 <li>SlackSinkActivationSwitch()
 : <a class="el" href="classSlackSinkActivationSwitch.html#a26e64ffbd7e8ea9ee409a504b87e3aee">SlackSinkActivationSwitch</a>
 </li>
+<li>SlackSinkLoggerTests()
+: <a class="el" href="classSlackSinkLoggerTests.html#a9bea3f9d51a04ff1102f756544ee684e">SlackSinkLoggerTests</a>
+</li>
+<li>SlackSinkMessageToolsTests()
+: <a class="el" href="classSlackSinkMessageToolsTests.html#a3931f0010bcb87a54cd4e189d405514d">SlackSinkMessageToolsTests</a>
+</li>
 <li>SlackSinkStatus
 : <a class="el" href="classSlackSinkActivationSwitch.html#a67736eb25410d7b4b7fafc956ed03230">SlackSinkActivationSwitch</a>
 </li>
@@ -326,20 +367,20 @@ $(function() {
 
 <h3><a id="index_t"></a>- t -</h3><ul>
 <li>TestF1()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#ab3653cb00260751ef5af564347cdae7c">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a3a186684af7c1f86fac3d4beb4bc0529">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>TestF2()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#ad5aeb5679b1667a7f3ce8a25a794fa17">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#aaa49e200f52f0defe900a8fe1f26cff5">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 <li>TestF3()
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#a6c23883c48e47b8209676d841b0045a2">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#aff4ebb26627c1582c616df7182829762">SlackLoggerConfigurationExtensionsTests</a>
 </li>
 </ul>
 
 
 <h3><a id="index_v"></a>- v -</h3><ul>
 <li>ValidWebHook
-: <a class="el" href="classSlackLoggerConfigurationExtensionsConstructorParameterTests.html#af1071ece50bcc3a5cfae0b8a1dc3e97b">SlackLoggerConfigurationExtensionsConstructorParameterTests</a>
+: <a class="el" href="classSlackLoggerConfigurationExtensionsTests.html#a1d5299cd1a178f2166ed29a4d109ac76">SlackLoggerConfigurationExtensionsTests</a>
 , <a class="el" href="classSlackSinkLoggerTests.html#a1ecdb05aed06ca8920123e5e58be1eb7">SlackSinkLoggerTests</a>
 </li>
 </ul>
