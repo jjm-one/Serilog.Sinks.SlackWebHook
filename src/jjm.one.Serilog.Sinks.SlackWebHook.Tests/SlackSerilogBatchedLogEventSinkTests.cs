@@ -30,7 +30,7 @@ public class SlackSerilogBatchedLogEventSinkTests
     ///     Test that the EmitBatchAsync function works correctly.
     /// </summary>
     [Fact]
-    public async void EmitBatchAsyncWorksCorrectly()
+    public async System.Threading.Tasks.Task EmitBatchAsyncWorksCorrectly()
     {
         var options = new SlackSinkOptions
         {
