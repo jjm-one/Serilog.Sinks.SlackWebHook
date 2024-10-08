@@ -4,7 +4,7 @@
         <TargetFrameworks>net6.0;net8.0;netstandard2.0;netstandard2.1</TargetFrameworks>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Version>2.1.4</Version>
+        <Version>3.0.0</Version>
         <Authors>Jonas Merkle [JJM]</Authors>
         <Copyright>© by Jonas Merkle [JJM], 2024.</Copyright>
         <PackageId>jjm.one.Serilog.Sinks.SlackWebHook</PackageId>
@@ -15,7 +15,7 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</RepositoryUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageLicenseFile>COPYING.LESSER.txt</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <SignAssembly>true</SignAssembly>
@@ -29,7 +29,11 @@
         <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
     <ItemGroup>
-        <None Include="..\..\LICENSE">
+        <None Include="..\..\COPYING.txt">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\COPYING.LESSER.txt">
             <Pack>True</Pack>
             <PackagePath>\</PackagePath>
         </None>
