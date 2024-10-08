@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0;net8.0;netstandard2.0;netstandard2.1</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0;net8.0</TargetFrameworks>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Version>3.0.0</Version>
@@ -15,11 +15,12 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/jjm-one/jjm.one.Serilog.Sinks.SlackWebHook</RepositoryUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageLicenseFile>COPYING.LESSER.txt</PackageLicenseFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <SignAssembly>true</SignAssembly>
+        <SignAssembly>True</SignAssembly>
         <AssemblyOriginatorKeyFile>jjm.one.Serilog.Sinks.SlackWebHook.SignKey.snk</AssemblyOriginatorKeyFile>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageIcon>jjm.one-logo_1024x1024.png</PackageIcon>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -28,12 +29,9 @@
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
+    
     <ItemGroup>
-        <None Include="..\..\COPYING.txt">
-            <Pack>True</Pack>
-            <PackagePath>\</PackagePath>
-        </None>
-        <None Include="..\..\COPYING.LESSER.txt">
+        <None Include="..\..\LICENSE">
             <Pack>True</Pack>
             <PackagePath>\</PackagePath>
         </None>
@@ -41,14 +39,18 @@
             <Pack>True</Pack>
             <PackagePath>\</PackagePath>
         </None>
+        <None Include="..\..\resources\logo\jjm.one-logo_1024x1024.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="jjm.one.Slack.Webhooks" Version="1.0.0-alpha.1" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Serilog" Version="4.0.2" />
         <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="5.0.0" />
         <PackageReference Include="System.Net.Http" Version="4.3.4" />
-        <PackageReference Include="Slack.Webhooks" Version="1.1.5" />
         <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
     </ItemGroup>
 

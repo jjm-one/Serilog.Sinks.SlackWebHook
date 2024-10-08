@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Slack.Webhooks;
+using jjm.one.Slack.Webhooks;
 
 namespace jjm.one.Serilog.Sinks.SlackWebHook.Tests;
 

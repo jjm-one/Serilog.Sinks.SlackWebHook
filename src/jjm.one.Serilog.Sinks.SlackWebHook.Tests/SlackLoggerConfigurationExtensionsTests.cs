@@ -4,7 +4,7 @@ using System.Net.Http;
 using Moq;
 using Serilog;
 using Serilog.Events;
-using Slack.Webhooks;
+using jjm.one.Slack.Webhooks;
 
 namespace jjm.one.Serilog.Sinks.SlackWebHook.Tests;
 

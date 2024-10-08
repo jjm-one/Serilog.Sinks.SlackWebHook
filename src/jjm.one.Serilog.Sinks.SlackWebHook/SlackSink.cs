@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using Serilog.Events;
 using Serilog.Sinks.PeriodicBatching;
-using Slack.Webhooks;
+using jjm.one.Slack.Webhooks;
 
 namespace jjm.one.Serilog.Sinks.SlackWebHook;
 

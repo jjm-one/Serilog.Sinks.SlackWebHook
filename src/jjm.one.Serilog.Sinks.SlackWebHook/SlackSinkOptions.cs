@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Serilog.Events;
-using Slack.Webhooks;
+using jjm.one.Slack.Webhooks;
 
 // ReSharper disable RedundantDefaultMemberInitializer
 

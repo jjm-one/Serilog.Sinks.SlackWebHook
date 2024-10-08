@@ -6,7 +6,7 @@ using Serilog;
 using Serilog.Configuration;
 using Serilog.Core;
 using Serilog.Events;
-using Slack.Webhooks;
+using jjm.one.Slack.Webhooks;
 
 namespace jjm.one.Serilog.Sinks.SlackWebHook;
 
